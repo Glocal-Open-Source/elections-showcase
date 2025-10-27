@@ -1,0 +1,143 @@
+:root {
+  --accent: #5b2bff;
+  --bg: #fff;
+  --border: #c9c9c9;
+  --sidebar-bg: #e7d2ff;
+  --deep-purple: #6D2D91;
+  --radius: 10px;
+  --transition: 0.3s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100vh;                   /* full screen height */
+  background: #f4eeff;
+  border-right: 1px solid #af9eff;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2rem 1.5rem;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.03);
+  overflow-y: auto;                /* scroll only inside sidebar if needed */
+  z-index: 100;                    /* stay above main content */
+}
+
+button {
+  border-radius: 0;
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2f235a;
+  margin: 0;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  background: transparent;
+  color: #3b2a72;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.sidebar-btn:hover {
+  background: #efe6ff;
+  border-color: #d5baff;
+}
+
+.sidebar-btn.active {
+  background: #e7d6ff;
+  border-color: #c2a3ff;
+  color: #3a0088;
+}
+
+.sidebar-btn .icon {
+  font-size: 1rem;
+  color: #6b42bf;
+}
+
+.sidebar-filters {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+}
+
+.filter-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #3a2c66;
+  margin-bottom: 0.8rem;
+}
+
+.filter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #3d326e;
+}
+
+.filter-item input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.filter-item input[type="checkbox"]:checked {
+  background-color: #6d2d91;
+  border-color: #6d2d91;
+}
+
+.filter-item input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
