@@ -22,7 +22,7 @@ const Sidebar = ({
   return (
     <aside className="sidebar">
       <div className="sidebar-header">
-        <img src="/logo.png" alt="GLOCAL Logo" className="logo" />
+        <img src="logo.png" alt="GLOCAL Logo" className="logo" />
         <h1 className="sidebar-title">Elections Showcase</h1>
       </div>
 
