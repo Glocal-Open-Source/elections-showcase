@@ -78,7 +78,7 @@ export default function CivicIssues() {
       <section style={{ marginBottom: "2rem" }}>
         <h3>An Analysis of 2021 Canadian Election Study Data</h3>
         <iframe
-          src="/content/civicissues.pdf"
+          src="content/civicissues.pdf"
           width="100%"
           height="600px"
           title="Civic Issues PDF"

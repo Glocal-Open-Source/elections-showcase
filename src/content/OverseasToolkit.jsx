@@ -30,7 +30,7 @@ export default function OverseasToolkit() {
       <section style={{ marginBottom: "2rem" }}>
         <h3>Read the Toolkit</h3>
         <iframe
-          src="/content/overseas.pdf"
+          src="content/overseas.pdf"
           width="100%"
           height="600px"
           title="Overseas Canadians Voting e-Toolkit PDF"
