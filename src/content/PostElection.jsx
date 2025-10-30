@@ -58,7 +58,7 @@ export default function PostElection() {
       {/* Embedded PDF */}
       <section style={{ marginTop: "2rem" }}>
         <iframe
-          src="/content/postelection.pdf"
+          src="content/postelection.pdf"
           width="100%"
           height="1000px"
           title="2025 Post-Election Analysis"

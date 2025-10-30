@@ -36,6 +36,41 @@ export default function VoteMatch() {
         </p>
       </section>
 
+            {/* PDFs Section */}
+      <section style={{ marginTop: "2rem" }}>
+        <h4>Related Files</h4>
+        <ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "1rem" }}>
+          <li style={{ marginBottom: "1rem" }}>
+            <a
+              href="content/votematch.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#5b2bff",
+                fontWeight: "600",
+                textDecoration: "none",
+              }}
+            >
+              📘 VoteMatch Presentation Slides
+            </a>
+          </li>
+          <li>
+            <a
+              href="content/votematchtechnical.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                color: "#5b2bff",
+                fontWeight: "600",
+                textDecoration: "none",
+              }}
+            >
+              📊 Technical Report: Modeling & Methodology
+            </a>
+          </li>
+        </ul>
+      </section>
+
       {/* Interactive App Embed */}
       <section
         style={{
@@ -65,41 +100,6 @@ export default function VoteMatch() {
             style={{ border: "none" }}
           ></iframe>
         </div>
-      </section>
-
-      {/* PDFs Section */}
-      <section style={{ marginTop: "2rem" }}>
-        <h4>Related Files</h4>
-        <ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "1rem" }}>
-          <li style={{ marginBottom: "1rem" }}>
-            <a
-              href="/content/votematch.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "#5b2bff",
-                fontWeight: "600",
-                textDecoration: "none",
-              }}
-            >
-              📘 VoteMatch Presentation Slides
-            </a>
-          </li>
-          <li>
-            <a
-              href="/content/votematchtechnical.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                color: "#5b2bff",
-                fontWeight: "600",
-                textDecoration: "none",
-              }}
-            >
-              📊 Technical Report: Modeling & Methodology
-            </a>
-          </li>
-        </ul>
       </section>
 
       <section style={{ marginTop: "2rem" }}>

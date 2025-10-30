@@ -48,7 +48,7 @@ export default function LocalGovernance() {
       {/* Embedded PDF Viewer */}
       <section style={{ marginTop: "2rem" }}>
         <iframe
-          src="/content/localgovernance.pdf"
+          src="content/localgovernance.pdf"
           width="100%"
           height="1000px"
           style={{

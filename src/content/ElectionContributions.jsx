@@ -30,7 +30,7 @@ export default function ElectionContributions() {
       {/* Embedded PDF */}
       <section style={{ marginTop: "2rem" }}>
         <iframe
-          src="/content/electionscontributions.pdf"
+          src="content/electionscontributions.pdf"
           width="100%"
           height="1000px"
           title="Elections Contributions Report"
