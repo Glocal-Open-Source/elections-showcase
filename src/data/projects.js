@@ -99,7 +99,7 @@ const projects = [
     description:
       "An analysis of campaign donation data in Canadian elections by Carmen Y through the Canada Summer Jobs program, exploring links between fundraising and results.",
     image: "thumbnails/election-contributions.jpg",
-    component: ElectionsContributions,
+    component: ElectionContributions,
   },
 
   {

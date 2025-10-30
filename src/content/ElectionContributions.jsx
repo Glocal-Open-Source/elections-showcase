@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ElectionsContributions() {
+export default function ElectionContributions() {
   return (
     <article style={{ lineHeight: 1.6 }}>
       <section style={{ marginBottom: "1.5rem" }}>
