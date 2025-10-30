@@ -1,5 +1,15 @@
 import OverseasToolkit from "../content/OverseasToolkit";
 import CivicIssuesReport from "../content/CivicIssuesReport";
+import EJournal from "../content/EJournal";
+import LocalGovernance from "../content/LocalGovernance";
+import ElectionsData from "../content/ElectionsData";
+import AskBeaver from "../content/AskBeaver";
+import VoteMatch from "../content/VoteMatch";
+import ElectionContributions from "../content/ElectionContributions";
+import FederalResults from "../content/FederalResults";
+import CandidatesData from "../content/CandidatesData";
+import PostElection from "../content/PostElection";
+import VoteGame from "../content/VoteGame";
 
 const projects = [
   {
@@ -33,6 +43,7 @@ const projects = [
     image: "thumbnails/ejournal.jpg",
     embed: "https://glocalfoundation.ca/e-journal-data",
     tags: ["data", "dashboard"],
+    component: EJournal,
   },
   {
     id: 4,
@@ -43,6 +54,7 @@ const projects = [
     image: "thumbnails/governance.jpg",
     embed: "/projects/governance.html",
     tags: ["governance", "report"],
+    component: LocalGovernance,
   },
   {
     id: 5,
@@ -53,17 +65,20 @@ const projects = [
     image: "thumbnails/data-explorer.jpg",
     embed: "/projects/election-data-explorer.html",
     tags: ["data", "dashboard"],
+    component: ElectionsData,
   },
+
   {
     id: 6,
-    title: "Canadian Voting Trends",
-    type: "report",
+    title: "Ask Eager Beaver",
+    type: "interactive",
     description:
-      "A longitudinal analysis of voting patterns in Canada, highlighting demographic, geographic, and temporal changes in electoral participation.",
-    image: "thumbnails/voting-trends.jpg",
-    embed: "/projects/canadian-voting-trends.html",
-    tags: ["voting", "analysis"],
+      "A civic engagement tool on YouCount.ca that allows Canadians to ask and upvote questions about government, democracy, and representation — bridging citizens and policymakers.",
+    image: "thumbnails/askbeaver.jpg",
+    tags: ["education", "engagement", "voting"],
+    component: AskBeaver,
   },
+
   {
     id: 7,
     title: "VoteMatch",
@@ -73,17 +88,20 @@ const projects = [
     image: "thumbnails/votematch.jpg",
     embed: "/projects/votematch.html",
     tags: ["interactive", "voting"],
+    component: VoteMatch,
   },
+
   {
     id: 8,
-    title: "Election Contributions and Outcomes",
-    type: "data",
+    title: "Elections Contributions and Outcomes",
+    type: "report",
+    tags: ["finance", "elections", "data"],
     description:
-      "Analyzes the relationship between campaign financing and electoral outcomes, using open data on political donations and candidate performance.",
-    image: "thumbnails/contributions.jpg",
-    embed: "/projects/election-contributions.html",
-    tags: ["finance", "analysis"],
+      "An analysis of campaign donation data in Canadian elections by Carmen Y through the Canada Summer Jobs program, exploring links between fundraising and results.",
+    image: "thumbnails/election-contributions.jpg",
+    component: ElectionsContributions,
   },
+
   {
     id: 9,
     title: "Canadian Federal Election Results Visualization",
@@ -93,6 +111,7 @@ const projects = [
     image: "thumbnails/federal-results.jpg",
     embed: "https://glocalfoundation.ca/educational-resources",
     tags: ["data", "dashboard"],
+    component: FederalResults,
   },
   {
     id: 10,
@@ -103,6 +122,7 @@ const projects = [
     image: "thumbnails/candidates-data.jpg",
     embed: "https://www.youcount.ca/elections/ng/fed-2025",
     tags: ["data", "voting"],
+    component: CandidatesData,
   },
   {
     id: 11,
@@ -113,6 +133,7 @@ const projects = [
     image: "thumbnails/post-election.jpg",
     embed: "https://glocalfoundation.ca/educational-resources",
     tags: ["report", "analysis"],
+    component: PostElection,
   },
   {
     id: 12,
@@ -123,6 +144,7 @@ const projects = [
     image: "thumbnails/gaming.jpg",
     embed: "https://voting-app-frontend-wheat.vercel.app/begin-journey",
     tags: ["interactive", "education"],
+    component: VoteGame,
   },
 ];
 

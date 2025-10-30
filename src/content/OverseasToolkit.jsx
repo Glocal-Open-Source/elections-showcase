@@ -41,25 +41,6 @@ export default function OverseasToolkit() {
           }}
         ></iframe>
       </section>
-
-      <section>
-        <h3>Community Feedback</h3>
-        <p>
-          Your suggestions and support are very much appreciated in helping us
-          improve our understanding of the matters explored in these
-          e-Toolkits. If you have recommendations, corrections, or new sources
-          to include, please reach out through our{" "}
-          <a
-            href="https://glocalfoundation.ca/contact"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#5b2bff", fontWeight: 600 }}
-          >
-            contact page
-          </a>
-          .
-        </p>
-      </section>
     </article>
   );
 }
