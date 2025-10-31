@@ -88,7 +88,7 @@ button {
 .sidebar-filters {
   background: #fff;
   border-radius: 12px;
-  padding: 1rem 1.2rem;
+  padding: 0.5rem 1.2rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
   border: 1px solid var(--border);
 }
@@ -140,4 +140,67 @@ button {
   border: solid white;
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+}
+
+.icon svg {
+  color: var(--deep-purple);
+  font-size: 1.2rem;
+  margin-right: 0.4rem;
+}
+
+.filter-search {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.search-input {
+  width: 80%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  background: #fff;
+  color:#6b42bf;
+  transition: all var(--transition);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(91, 43, 255, 0.2);
+}
+
+/* Limit tag section to a fixed height with scroll */
+.limited-scroll {
+  max-height: 320px; /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
+}
+
+/* Style scrollbar (for WebKit browsers) */
+.limited-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.limited-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(109, 45, 145, 0.3);
+  border-radius: 10px;
+}
+.limited-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(109, 45, 145, 0.5);
+}
+
+/* Hint when there are more tags */
+.scroll-hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+.no-tags {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+  text-align: center;
 }

@@ -20,7 +20,7 @@ const projects = [
       "Comprehensive toolkit designed to assist Canadians living abroad with voting procedures. Includes step-by-step instructions, timelines, and downloadable resources.",
     image: "thumbnails/overseas.jpg",
     embed: "/projects/overseas-canadians-voting.pdf",
-    tags: ["voting", "education"],
+    tags: ["digital-democracy", "voter-access", "civic-tech"],
     component: OverseasToolkit,
   },
   {
@@ -31,7 +31,7 @@ const projects = [
       "A data-driven exploration of civic participation, political trust, and voting behavior in Canada based on the 2021 Canadian Election Study.",
     image: "thumbnails/civic-issues.jpg",
     embed: "/projects/canadians-civic-issues.pdf",
-    tags: ["data", "civic"],
+    tags: ["civic-insight", "data-science", "democracy-research"],
     component: CivicIssuesReport,
   },
   {
@@ -42,7 +42,7 @@ const projects = [
       "An interactive mix of PDFs and embedded dashboards offering analytical insights across Canadian electoral and civic engagement datasets.",
     image: "thumbnails/ejournal.jpg",
     embed: "https://glocalfoundation.ca/e-journal-data",
-    tags: ["data", "dashboard"],
+    tags: ["open-data", "visual-analytics", "knowledge-integration"],
     component: EJournal,
   },
   {
@@ -53,7 +53,7 @@ const projects = [
       "Detailed examination of unique characteristics of local governance models within each province and territory in Canada.",
     image: "thumbnails/governance.jpg",
     embed: "/projects/governance.html",
-    tags: ["governance", "report"],
+    tags: ["governance-systems", "policy-mapping", "institutional-analysis"],
     component: LocalGovernance,
   },
   {
@@ -64,10 +64,9 @@ const projects = [
       "A dataset and dashboard hybrid that visualizes electoral data, voter turnout, and regional voting trends across Canada.",
     image: "thumbnails/data-explorer.jpg",
     embed: "/projects/election-data-explorer.html",
-    tags: ["data", "dashboard"],
+    tags: ["data-visualization", "election-trends", "civic-analytics"],
     component: ElectionsData,
   },
-
   {
     id: 6,
     title: "Ask Eager Beaver",
@@ -75,10 +74,9 @@ const projects = [
     description:
       "A civic engagement tool on YouCount.ca that allows Canadians to ask and upvote questions about government, democracy, and representation — bridging citizens and policymakers.",
     image: "thumbnails/askbeaver.jpg",
-    tags: ["education", "engagement", "voting"],
+    tags: ["public-engagement", "civic-literacy", "digital-dialogue"],
     component: AskBeaver,
   },
-
   {
     id: 7,
     title: "VoteMatch",
@@ -87,21 +85,19 @@ const projects = [
       "An interactive quiz that helps Canadians discover which party platforms align most closely with their values and priorities.",
     image: "thumbnails/votematch.jpg",
     embed: "/projects/votematch.html",
-    tags: ["interactive", "voting"],
+    tags: ["machine-learning", "political-alignment", "interactive-data"],
     component: VoteMatch,
   },
-
   {
     id: 8,
     title: "Elections Contributions and Outcomes",
     type: "report",
-    tags: ["finance", "elections", "data"],
+    tags: ["campaign-finance", "data-analysis", "evidence-based-policy"],
     description:
       "An analysis of campaign donation data in Canadian elections by Carmen Y through the Canada Summer Jobs program, exploring links between fundraising and results.",
-    image: "thumbnails/election-contributions.jpg",
+    image: "thumbnails/contributions.jpg",
     component: ElectionContributions,
   },
-
   {
     id: 9,
     title: "Canadian Federal Election Results Visualization",
@@ -110,7 +106,7 @@ const projects = [
       "A visual exploration of Canadian federal election results, highlighting seat distributions, turnout rates, and historical changes.",
     image: "thumbnails/federal-results.jpg",
     embed: "https://glocalfoundation.ca/educational-resources",
-    tags: ["data", "dashboard"],
+    tags: ["historical-trends", "data-storytelling", "visual-history"],
     component: FederalResults,
   },
   {
@@ -121,7 +117,7 @@ const projects = [
       "A comprehensive database of candidates running in the 2025 Canadian federal elections, including profiles, party affiliations, and electoral districts.",
     image: "thumbnails/candidates-data.jpg",
     embed: "https://www.youcount.ca/elections/ng/fed-2025",
-    tags: ["data", "voting"],
+    tags: ["representative-data", "open-governance", "civic-infrastructure"],
     component: CandidatesData,
   },
   {
@@ -132,20 +128,21 @@ const projects = [
       "An analytical report examining the outcomes of the 2025 Canadian federal elections, voter turnout, and implications for future political trends.",
     image: "thumbnails/post-election.jpg",
     embed: "https://glocalfoundation.ca/educational-resources",
-    tags: ["report", "analysis"],
+    tags: ["post-election", "insight-report", "democracy-forecasting"],
     component: PostElection,
   },
   {
     id: 12,
-    title: "Voting Information Game",
+    title: "VoteReady: Pre-Flight Checklist for Canadian Voters",
     type: "interactive",
     description:
       "An engaging game designed to educate Canadians about voting procedures, eligibility, and the importance of civic participation.",
     image: "thumbnails/gaming.jpg",
     embed: "https://voting-app-frontend-wheat.vercel.app/begin-journey",
-    tags: ["interactive", "education"],
+    tags: ["gamified-learning", "voter-preparedness", "civic-education"],
     component: VoteGame,
   },
 ];
+
 
 export default projects;

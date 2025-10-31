@@ -7,7 +7,7 @@ export default function VoteGame() {
         lineHeight: 1.6,
         display: "flex",
         flexWrap: "wrap",
-        alignItems: "flex-start",
+        alignItems: "center",
         gap: "2rem",
       }}
     >
