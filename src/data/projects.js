@@ -12,6 +12,9 @@ import PostElection from "../content/PostElection";
 import VoteGame from "../content/VoteGame";
 import FederalismReport from "../content/FederalismReport";
 import CDEM2019Report from "../content/CDEM2019Report";
+import VancouverRegional from "../content/events/VancouverRegional";
+import CalgaryRegional from "../content/events/CalgaryRegional";
+
 
 const projects = [
   {
@@ -144,7 +147,6 @@ const projects = [
     tags: ["gamified-learning", "voter-preparedness", "civic-education"],
     component: VoteGame,
   },
-
   {
     id: 13,
     title: "Understanding Federalism in Canada",
@@ -152,10 +154,9 @@ const projects = [
     description: "A comprehensive analysis of Canadian federalism, exploring the constitutional division of powers between federal and provincial governments.",
     image: "thumbnails/federalism.jpg",
     embed: "https://glocalfoundation.ca/projects/federalism-division-of-powers.pdf",
-    tags: ["governance", "federalism", "policy-analysis", "constitutional-law"],
+    tags: ["governance", "federalism", "policy-analysis"],
     component: FederalismReport
   },
-
   {
   id: 14,
   title: "Canadians and Civic Issues: An Analysis of 2019 Canadian Election Study Data",
@@ -163,10 +164,74 @@ const projects = [
   description: "An analytical report examining civic engagement and political awareness among Canadians using C-DEM’s 2019 Canadian Election Study data.",
   image: "thumbnails/cdem2019.jpg",
   embed: "https://glocalfoundation.ca/projects/cdem2019-canadians-and-civic-issues.pdf",
-  tags: ["data-analysis", "political-engagement", "democracy", "civic-awareness"],
+  tags: ["data-analysis", "political-engagement", "democracy"],
   component: CDEM2019Report
+},
+{
+  id: 16,
+  title: "Vancouver Regional Showcase",
+  type: "events",
+  description: "An in-person civic engagement showcase held in Vancouver, featuring MPs, MPPs, researchers, and community leaders discussing electoral participation, youth engagement, and civic literacy in Western Canada.",
+  image: "thumbnails/events/vancouver.jpg",
+  embed: "",
+  tags: ["elections", "regional", "showcase"],
+  component: VancouverRegional
+},
+{
+  id: 17,
+  title: "Calgary Regional Showcase",
+  type: "events",
+  description: "A live regional event in Calgary spotlighting civic dialogue between policymakers, academics, and youth. The showcase emphasized federal–provincial collaboration, representation, and accessible participation in democratic processes.",
+  image: "thumbnails/events/calgary-regional.jpg",
+  embed: "",
+  tags: ["elections", "regional", "showcase"],
+  component: CalgaryRegional
+},
+{
+  id: 18,
+  title: "Winnipeg Regional Showcase",
+  type: "events",
+  description: "An in-person showcase in Winnipeg convening MPs, MPPs, community advocates, and emerging scholars to discuss the evolution of Canada’s electoral landscape and civic education initiatives across the Prairies.",
+  image: "thumbnails/events/winnipeg-regional.jpg",
+  embed: "",
+  tags: ["elections", "regional", "showcase"]
+},
+{
+  id: 22,
+  title: "LegisTALK Roundtable with MP Carol Antsey",
+  type: "events",
+  description: "Join GLOCAL for a roundtable with MP Carol Antsey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
+  image: "thumbnails/events/carol-antsey.jpg",
+  embed: "thumbnails/events/carol-antsey.jpg",
+  tags: ["elections", "LegisTALK", "virtual-event"]
+},
+{
+  id: 23,
+  title: "LegisTALK Roundtable with MP Sean Casey",
+  type: "events",
+  description: "Join GLOCAL for a roundtable with MP Sean Casey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
+  image: "thumbnails/events/sean-casey.jpg",
+  embed: "thumbnails/events/sean-casey.jpg",
+  tags: ["elections", "LegisTALK", "virtual-event"]
+},
+{
+  id: 24,
+  title: "Understanding Economic Voting in Canadian Elections",
+  type: "events",
+  description: "Dr. Cameron Anderson, Professor of Political Science at Western University, presents his research on economic voting behaviour in Canadian federal elections.",
+  image: "thumbnails/events/carmen-anderson.jpg",
+  embed: "",
+  tags: ["elections", "education", "interactive"]
+},
+{
+  id: 25,
+  title: "GLOCAL Events Archive",
+  type: "events",
+  description: "Explore GLOCAL's past events, including regional showcases, panel discussions, and workshops focused on civic engagement and democratic participation across Canada.",
+  image: "thumbnails/events/events-archive.jpg",
+  embed: "",
+  tags: ["events", "archive", "elections"]
 }
-
 
 ];
 

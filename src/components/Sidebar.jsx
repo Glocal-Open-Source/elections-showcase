@@ -6,6 +6,7 @@ import {
   faSquarePollVertical,
   faGauge,
   faGamepad,
+  faCommentDots,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Capitalize helper
@@ -29,6 +30,7 @@ const typeIcons = {
   data: <FontAwesomeIcon icon={faSquarePollVertical} style={{ color: purple }} />,
   dashboard: <FontAwesomeIcon icon={faGauge} style={{ color: purple }} />,
   interactive: <FontAwesomeIcon icon={faGamepad} style={{ color: purple }} />,
+  events: <FontAwesomeIcon icon={faCommentDots} style={{ color: purple }} />,
 };
 
 const Sidebar = ({
@@ -51,7 +53,6 @@ const Sidebar = ({
       {/* Header */}
       <div className="sidebar-header">
         <img src="logo.png" alt="GLOCAL Logo" className="logo" />
-        <h1 className="sidebar-title">Elections Showcase</h1>
       </div>
 
       {/* Type Buttons */}
