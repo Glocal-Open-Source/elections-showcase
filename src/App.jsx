@@ -10,7 +10,7 @@ function App() {
   const [activeTags, setActiveTags] = useState([]);     // Article/Toolkit/etc.
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const typeOptions = ["report", "data", "dashboard", "interactive", "events"];
+  const typeOptions = ["report", "data", "interactive", "events"];
 
   // Build unique, sorted tags from data
   const tagOptions = useMemo(() => {

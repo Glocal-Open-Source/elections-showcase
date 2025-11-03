@@ -35,7 +35,7 @@ const projects = [
     type: "report",
     description:
       "A data-driven exploration of civic participation, political trust, and voting behavior in Canada based on the 2021 Canadian Election Study.",
-    image: "thumbnails/civic-issues.jpg",
+    image: "thumbnails/cdem2021.jpg",
     embed: "/projects/canadians-civic-issues.pdf",
     tags: ["civic-insight", "data-science", "democracy-research"],
     component: CivicIssuesReport,
@@ -43,7 +43,7 @@ const projects = [
   {
     id: 3,
     title: "E-Journal Data",
-    type: "dashboard",
+    type: "data",
     description:
       "An interactive mix of PDFs and embedded dashboards offering analytical insights across Canadian electoral and civic engagement datasets.",
     image: "thumbnails/ejournal.jpg",
@@ -65,7 +65,7 @@ const projects = [
   {
     id: 5,
     title: "Election Data Explorer",
-    type: "dashboard",
+    type: "data",
     description:
       "A dataset and dashboard hybrid that visualizes electoral data, voter turnout, and regional voting trends across Canada.",
     image: "thumbnails/data-explorer.jpg",
@@ -107,7 +107,7 @@ const projects = [
   {
     id: 9,
     title: "Canadian Federal Election Results Visualization",
-    type: "dashboard",
+    type: "data",
     description:
       "A visual exploration of Canadian federal election results, highlighting seat distributions, turnout rates, and historical changes.",
     image: "thumbnails/federal-results.jpg",
@@ -169,7 +169,7 @@ const projects = [
   component: CDEM2019Report
 },
 {
-  id: 16,
+  id: 15,
   title: "Vancouver Regional Showcase",
   type: "events",
   description: "An in-person civic engagement showcase held in Vancouver, featuring MPs, MPPs, researchers, and community leaders discussing electoral participation, youth engagement, and civic literacy in Western Canada.",
@@ -179,7 +179,7 @@ const projects = [
   component: VancouverRegional
 },
 {
-  id: 17,
+  id: 16,
   title: "Calgary Regional Showcase",
   type: "events",
   description: "A live regional event in Calgary spotlighting civic dialogue between policymakers, academics, and youth. The showcase emphasized federal–provincial collaboration, representation, and accessible participation in democratic processes.",
@@ -189,7 +189,7 @@ const projects = [
   component: CalgaryRegional
 },
 {
-  id: 18,
+  id: 17,
   title: "Winnipeg Regional Showcase",
   type: "events",
   description: "An in-person showcase in Winnipeg convening MPs, MPPs, community advocates, and emerging scholars to discuss the evolution of Canada’s electoral landscape and civic education initiatives across the Prairies.",
@@ -198,7 +198,7 @@ const projects = [
   tags: ["elections", "regional", "showcase"]
 },
 {
-  id: 22,
+  id: 18,
   title: "LegisTALK Roundtable with MP Carol Antsey",
   type: "events",
   description: "Join GLOCAL for a roundtable with MP Carol Antsey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
@@ -207,7 +207,7 @@ const projects = [
   tags: ["elections", "LegisTALK", "virtual-event"]
 },
 {
-  id: 23,
+  id: 19,
   title: "LegisTALK Roundtable with MP Sean Casey",
   type: "events",
   description: "Join GLOCAL for a roundtable with MP Sean Casey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
@@ -216,7 +216,7 @@ const projects = [
   tags: ["elections", "LegisTALK", "virtual-event"]
 },
 {
-  id: 24,
+  id: 20,
   title: "Understanding Economic Voting in Canadian Elections",
   type: "events",
   description: "Dr. Cameron Anderson, Professor of Political Science at Western University, presents his research on economic voting behaviour in Canadian federal elections.",
@@ -225,7 +225,7 @@ const projects = [
   tags: ["elections", "education", "interactive"]
 },
 {
-  id: 25,
+  id: 21,
   title: "GLOCAL Events Archive",
   type: "events",
   description: "Explore GLOCAL's past events, including regional showcases, panel discussions, and workshops focused on civic engagement and democratic participation across Canada.",
@@ -234,7 +234,7 @@ const projects = [
   tags: ["events", "archive", "elections"]
 },
 {
-  id: 25,
+  id: 22,
   title: "CivicEngage Mobile App",
   type: "interactive",
   description: "An innovative civic technology project by Chloe Sepulveda that integrates a live candidate dashboard and an iOS app designed to make political information more engaging and accessible. The platform combines personalized quizzes, live civic updates, and gamified learning tools to enhance democratic participation and awareness among Canadians.",

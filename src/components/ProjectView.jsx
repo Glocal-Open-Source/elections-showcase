@@ -24,11 +24,7 @@ const ProjectView = ({ project, onBack }) => {
           style={{ border: "none", marginTop: "1rem" }}
           title={project.title}
         ></iframe>
-      ) : (
-        <p style={{ marginTop: "2rem", fontStyle: "italic" }}>
-          This project does not have additional content available yet.
-        </p>
-      )}
+      ) : (<p>No additional content available for this project.</p>)}
     </div>
   );
 };
