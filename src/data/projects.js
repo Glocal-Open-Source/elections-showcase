@@ -14,6 +14,7 @@ import FederalismReport from "../content/FederalismReport";
 import CDEM2019Report from "../content/CDEM2019Report";
 import VancouverRegional from "../content/events/VancouverRegional";
 import CalgaryRegional from "../content/events/CalgaryRegional";
+import ChloeApp from "../content/ChloeApp";
 
 
 const projects = [
@@ -231,6 +232,16 @@ const projects = [
   image: "thumbnails/events/events-archive.jpg",
   embed: "",
   tags: ["events", "archive", "elections"]
+},
+{
+  id: 25,
+  title: "CivicEngage Mobile App",
+  type: "interactive",
+  description: "An innovative civic technology project by Chloe Sepulveda that integrates a live candidate dashboard and an iOS app designed to make political information more engaging and accessible. The platform combines personalized quizzes, live civic updates, and gamified learning tools to enhance democratic participation and awareness among Canadians.",
+  image: "thumbnails/chloe.jpg",
+  embed: "",
+  tags: ["events", "archive", "elections"],
+  component: ChloeApp
 }
 
 ];
