@@ -29,37 +29,20 @@ export default function FederalResults() {
       </section>
 
       {/* Video Embed */}
-      <section
-        style={{
-          position: "relative",
-          paddingBottom: "56.25%", // 16:9
-          height: 0,
-          overflow: "hidden",
-          borderRadius: "12px",
-          boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
-          backgroundImage:
-            'url("https://i.vimeocdn.com/video/1234738524-2221cda2b86c878b1e5966d97802cd2127aaf4e2cf8718e79835a3a0bc0c9de8-d?mw=1200&mh=675")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          marginBottom: "1.5rem",
-        }}
-      >
-        <iframe
-          src="https://player.vimeo.com/video/518882480?h=1b2b6fa91a"
-          title="Canadian Federal Election Results (1867–2015)"
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowFullScreen
+      <section style={{ marginTop: "2rem" }}>
+        <video
+          controls
+          width="100%"
           style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            border: "none",
-            borderRadius: "12px",
+            borderRadius: "8px",
+            border: "1px solid #ddd",
+            background: "#000",
+            marginTop: "1rem"
           }}
-        ></iframe>
+        >
+          <source src="content/sakib.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </section>
 
       <section>
