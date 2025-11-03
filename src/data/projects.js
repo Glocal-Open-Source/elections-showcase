@@ -10,6 +10,8 @@ import FederalResults from "../content/FederalResults";
 import CandidatesData from "../content/CandidatesData";
 import PostElection from "../content/PostElection";
 import VoteGame from "../content/VoteGame";
+import FederalismReport from "../content/FederalismReport";
+import CDEM2019Report from "../content/CDEM2019Report";
 
 const projects = [
   {
@@ -142,6 +144,30 @@ const projects = [
     tags: ["gamified-learning", "voter-preparedness", "civic-education"],
     component: VoteGame,
   },
+
+  {
+    id: 13,
+    title: "Understanding Federalism in Canada",
+    type: "report",
+    description: "A comprehensive analysis of Canadian federalism, exploring the constitutional division of powers between federal and provincial governments.",
+    image: "thumbnails/federalism.jpg",
+    embed: "https://glocalfoundation.ca/projects/federalism-division-of-powers.pdf",
+    tags: ["governance", "federalism", "policy-analysis", "constitutional-law"],
+    component: FederalismReport
+  },
+
+  {
+  id: 14,
+  title: "Canadians and Civic Issues: An Analysis of 2019 Canadian Election Study Data",
+  type: "report",
+  description: "An analytical report examining civic engagement and political awareness among Canadians using C-DEM’s 2019 Canadian Election Study data.",
+  image: "thumbnails/cdem2019.jpg",
+  embed: "https://glocalfoundation.ca/projects/cdem2019-canadians-and-civic-issues.pdf",
+  tags: ["data-analysis", "political-engagement", "democracy", "civic-awareness"],
+  component: CDEM2019Report
+}
+
+
 ];
 
 
