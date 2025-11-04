@@ -52,7 +52,9 @@ const Sidebar = ({
     <aside className="sidebar">
       {/* Header */}
       <div className="sidebar-header">
+        <a href="https://glocal-open-source.github.io/elections-showcase/" rel="noopener noreferrer">
         <img src="logo.png" alt="GLOCAL Logo" className="logo" />
+        </a>
       </div>
 
       {/* Type Buttons */}
