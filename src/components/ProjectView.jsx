@@ -105,7 +105,7 @@ const ProjectView = ({ project, onBack }) => {
               border: "1px solid #ddd",
               borderRadius: "8px",
               background: "#fafafa",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
+              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
             }}
           ></iframe>
         ) : (

@@ -15,6 +15,7 @@ import CDEM2019Report from "../content/CDEM2019Report";
 import VancouverRegional from "../content/events/VancouverRegional";
 import CalgaryRegional from "../content/events/CalgaryRegional";
 import ChloeApp from "../content/ChloeApp";
+import VirtualEvents from "../content/events/VirtualEvents";
 
 
 const projects = [
@@ -184,7 +185,7 @@ const projects = [
   type: "events",
   description: "A live regional event in Calgary spotlighting civic dialogue between policymakers, academics, and youth. The showcase emphasized federal–provincial collaboration, representation, and accessible participation in democratic processes.",
   image: "thumbnails/events/calgary-regional.jpg",
-  embed: "",
+  embed: "thumbnails/events/calgary-meet.jpg",
   tags: ["elections", "regional", "showcase"],
   component: CalgaryRegional
 },
@@ -199,42 +200,33 @@ const projects = [
 },
 {
   id: 18,
-  title: "Placeholder",
+  title: "Voices from Arctic Communities",
   type: "events",
-  description: "Gallia est omnis divisa in partes tres, quarum.",
-  image: "thumbnails/events/carol-antsey.jpg",
-  embed: "thumbnails/events/carol-antsey.jpg",
-  tags: ["elections", "LegisTALK", "virtual-event"]
+  description: "A virtual panel featuring Arctic community leaders discussing the unique challenges and opportunities for civic engagement and electoral participation in Northern Canada.",
+  image: "thumbnails/events/nunavut.jpg",
+  embed: "thumbnails/events/arctic.jpg",
+  tags: ["elections", "outreach", "virtual-event"]
 },
 {
   id: 19,
-  title: "Placeholder",
+  title: "Education and Community in the North: Lessons from Fort Resolution",
   type: "events",
-  description: "Gallia est omnis divisa in partes tres, quarum.",
-  image: "thumbnails/events/carol-antsey.jpg",
-  embed: "thumbnails/events/carol-antsey.jpg",
-  tags: ["elections", "LegisTALK", "virtual-event"]
+  description: "A virtual discussion with Deninu School Principal Simone Degannes-Lange, exploring the intersection of education, culture, and electoral participation in Northern Indigenous communities.",
+  image: "thumbnails/events/deninu.jpg",
+  embed: "thumbnails/events/fort-resolution-poster.jpg",
+  tags: ["elections", "outreach", "virtual-event"]
 },
 {
   id: 20,
   title: "Understanding Economic Voting in Canadian Elections",
   type: "events",
   description: "Dr. Cameron Anderson, Professor of Political Science at Western University, presents his research on economic voting behaviour in Canadian federal elections.",
-  image: "thumbnails/events/carmen-anderson.jpg",
-  embed: "",
+  image: "thumbnails/events/camand.jpg",
+  embed: "thumbnails/events/cameron-anderson.jpg",
   tags: ["elections", "education", "interactive"]
 },
 {
   id: 21,
-  title: "GLOCAL Events Archive",
-  type: "events",
-  description: "Explore GLOCAL's past events, including regional showcases, panel discussions, and workshops focused on civic engagement and democratic participation across Canada.",
-  image: "thumbnails/events/events-archive.jpg",
-  embed: "",
-  tags: ["events", "archive", "elections"]
-},
-{
-  id: 22,
   title: "CivicEngage Mobile App",
   type: "interactive",
   description: "An innovative civic technology project by Chloe Sepulveda that integrates a live candidate dashboard and an iOS app designed to make political information more engaging and accessible. The platform combines personalized quizzes, live civic updates, and gamified learning tools to enhance democratic participation and awareness among Canadians.",
@@ -242,6 +234,16 @@ const projects = [
   embed: "",
   tags: ["events", "archive", "elections"],
   component: ChloeApp
+},
+{
+  id: 22,
+  title: "GLOCAL Virtual Events",
+  type: "events",
+  description: "All of GLOCAL's upcoming and past events in one place, including regional showcases, virtual panels, and infographic poster series aimed at promoting civic engagement and electoral participation across Canada.",
+  image: "thumbnails/events/virtual-meeting.jpg",
+  embed: "",
+  tags: ["events", "archive", "elections"],
+  component: VirtualEvents
 }
 
 ];
