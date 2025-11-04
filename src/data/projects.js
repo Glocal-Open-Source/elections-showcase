@@ -139,7 +139,7 @@ const projects = [
   },
   {
     id: 12,
-    title: "VoteReady: Pre-Flight Checklist for Canadian Voters",
+    title: "VoteReady: Digital Checklist for Canadian Voters",
     type: "interactive",
     description:
       "An engaging game designed to educate Canadians about voting procedures, eligibility, and the importance of civic participation.",
@@ -199,20 +199,20 @@ const projects = [
 },
 {
   id: 18,
-  title: "LegisTALK Roundtable with MP Carol Antsey",
+  title: "Placeholder",
   type: "events",
-  description: "Join GLOCAL for a roundtable with MP Carol Antsey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
+  description: "Gallia est omnis divisa in partes tres, quarum.",
   image: "thumbnails/events/carol-antsey.jpg",
   embed: "thumbnails/events/carol-antsey.jpg",
   tags: ["elections", "LegisTALK", "virtual-event"]
 },
 {
   id: 19,
-  title: "LegisTALK Roundtable with MP Sean Casey",
+  title: "Placeholder",
   type: "events",
-  description: "Join GLOCAL for a roundtable with MP Sean Casey for an opportunity to gain experience engaging in cross-sectoral dialogue.",
-  image: "thumbnails/events/sean-casey.jpg",
-  embed: "thumbnails/events/sean-casey.jpg",
+  description: "Gallia est omnis divisa in partes tres, quarum.",
+  image: "thumbnails/events/carol-antsey.jpg",
+  embed: "thumbnails/events/carol-antsey.jpg",
   tags: ["elections", "LegisTALK", "virtual-event"]
 },
 {
