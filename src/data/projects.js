@@ -21,14 +21,46 @@ import VirtualEvents from "../content/events/VirtualEvents";
 const projects = [
   {
     id: 1,
-    title: "Overseas Canadians Voting e-Toolkit",
-    type: "report",
+    title: "VoteReady: Digital Checklist for Canadian Voters",
+    type: "interactive",
     description:
-      "Comprehensive toolkit designed to assist Canadians living abroad with voting procedures. Includes step-by-step instructions, timelines, and downloadable resources.",
-    image: "thumbnails/overseas.jpg",
-    embed: "/projects/overseas-canadians-voting.pdf",
-    tags: ["digital-democracy", "voter-access", "civic-tech"],
-    component: OverseasToolkit,
+      "An engaging game designed to educate Canadians about voting procedures, eligibility, and the importance of civic participation.",
+    image: "thumbnails/gaming.jpg",
+    embed: "https://voting-app-frontend-wheat.vercel.app/begin-journey",
+    tags: ["gamified-learning", "voter-preparedness", "civic-education"],
+    component: VoteGame,
+  },
+  {
+    id: 6,
+    title: "Ask Eager Beaver",
+    type: "interactive",
+    description:
+      "A civic engagement tool on YouCount.ca that allows Canadians to ask and upvote questions about government, democracy, and representation — bridging citizens and policymakers.",
+    image: "thumbnails/askbeaver.jpg",
+    tags: ["public-engagement", "civic-literacy", "digital-dialogue"],
+    component: AskBeaver,
+  },
+
+  {
+    id: 7,
+    title: "VoteMatch",
+    type: "interactive",
+    description:
+      "An interactive quiz that helps Canadians discover which party platforms align most closely with their values and priorities.",
+    image: "thumbnails/votematch.jpg",
+    embed: "/projects/votematch.html",
+    tags: ["machine-learning", "political-alignment", "interactive-data"],
+    component: VoteMatch,
+  },
+  {
+    id: 21,
+    title: "CivicEngage Mobile App",
+    type: "interactive",
+    description: "An innovative civic technology project by Chloe Sepulveda that integrates a live candidate dashboard and an iOS app designed to make political information more engaging and accessible. The platform combines personalized quizzes, live civic updates, and gamified learning tools to enhance democratic participation and awareness among Canadians.",
+    image: "thumbnails/chloe.jpg",
+    embed: "",
+    tags: ["events", "archive", "elections"],
+    component: ChloeApp
   },
   {
     id: 2,
@@ -74,27 +106,8 @@ const projects = [
     tags: ["data-visualization", "election-trends", "civic-analytics"],
     component: ElectionsData,
   },
-  {
-    id: 6,
-    title: "Ask Eager Beaver",
-    type: "interactive",
-    description:
-      "A civic engagement tool on YouCount.ca that allows Canadians to ask and upvote questions about government, democracy, and representation — bridging citizens and policymakers.",
-    image: "thumbnails/askbeaver.jpg",
-    tags: ["public-engagement", "civic-literacy", "digital-dialogue"],
-    component: AskBeaver,
-  },
-  {
-    id: 7,
-    title: "VoteMatch",
-    type: "interactive",
-    description:
-      "An interactive quiz that helps Canadians discover which party platforms align most closely with their values and priorities.",
-    image: "thumbnails/votematch.jpg",
-    embed: "/projects/votematch.html",
-    tags: ["machine-learning", "political-alignment", "interactive-data"],
-    component: VoteMatch,
-  },
+
+
   {
     id: 8,
     title: "Elections Contributions and Outcomes",
@@ -138,17 +151,19 @@ const projects = [
     tags: ["post-election", "insight-report", "democracy-forecasting"],
     component: PostElection,
   },
+
   {
     id: 12,
-    title: "VoteReady: Digital Checklist for Canadian Voters",
-    type: "interactive",
+    title: "Overseas Canadians Voting e-Toolkit",
+    type: "report",
     description:
-      "An engaging game designed to educate Canadians about voting procedures, eligibility, and the importance of civic participation.",
-    image: "thumbnails/gaming.jpg",
-    embed: "https://voting-app-frontend-wheat.vercel.app/begin-journey",
-    tags: ["gamified-learning", "voter-preparedness", "civic-education"],
-    component: VoteGame,
+      "Comprehensive toolkit designed to assist Canadians living abroad with voting procedures. Includes step-by-step instructions, timelines, and downloadable resources.",
+    image: "thumbnails/overseas.jpg",
+    embed: "/projects/overseas-canadians-voting.pdf",
+    tags: ["digital-democracy", "voter-access", "civic-tech"],
+    component: OverseasToolkit,
   },
+
   {
     id: 13,
     title: "Understanding Federalism in Canada",
@@ -225,16 +240,7 @@ const projects = [
   embed: "thumbnails/events/cameron-anderson.jpg",
   tags: ["elections", "education", "interactive"]
 },
-{
-  id: 21,
-  title: "CivicEngage Mobile App",
-  type: "interactive",
-  description: "An innovative civic technology project by Chloe Sepulveda that integrates a live candidate dashboard and an iOS app designed to make political information more engaging and accessible. The platform combines personalized quizzes, live civic updates, and gamified learning tools to enhance democratic participation and awareness among Canadians.",
-  image: "thumbnails/chloe.jpg",
-  embed: "",
-  tags: ["events", "archive", "elections"],
-  component: ChloeApp
-},
+
 {
   id: 22,
   title: "GLOCAL Virtual Events",

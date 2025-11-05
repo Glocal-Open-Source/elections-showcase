@@ -11,7 +11,7 @@ const CardGrid = ({ projects, onSelect }) => {
   return (
     <div className="card-grid">
       <AnimatePresence mode="sync">
-        {sortedProjects.map((project) => (
+        {projects.map((project) => (
           <motion.div
             key={project.id}
             layout
