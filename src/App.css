@@ -93,7 +93,8 @@ body::before {
 .content {
   margin-left: var(--sidebar-width);
   padding: 28px 24px 48px;
-  overflow-x: hidden;
+  /* clip doesn't create a scroll container (unlike hidden), so position:sticky works in Safari */
+  overflow-x: clip;
 }
 
 @media (max-width: 980px) {
@@ -366,10 +367,10 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
    ═══════════════════════ */
 
 .pv {
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  outline: none;
 }
 
 /* ── Sticky topbar ── */
@@ -461,10 +462,11 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 
 .pv-hero {
   width: 100%;
-  height: 220px;
+  height: 240px;
   overflow: hidden;
   background: #e8e3f2;
   flex-shrink: 0;
+  position: relative;
 }
 
 .pv-hero-img {
@@ -475,14 +477,14 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 }
 
 .pv-header-body {
-  padding: 20px 24px 0;
+  padding: 22px 24px 4px;
 }
 
 .pv-title {
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   font-family: var(--font-display);
-  font-size: 26px;
-  line-height: 1.15;
+  font-size: 28px;
+  line-height: 1.13;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: var(--text);
@@ -513,19 +515,15 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   font-size: 11px;
 }
 
-/* thumb */
-.pv-thumb {
-  border-radius: var(--radius-sm);
-  overflow: hidden;
+/* related thumbnail */
+.pv-related-img {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-xs);
+  object-fit: cover;
+  flex-shrink: 0;
   border: 1px solid var(--border);
   background: #e8e3f2;
-}
-
-.pv-thumb-img {
-  width: 100%;
-  height: 110px;
-  object-fit: cover;
-  display: block;
 }
 
 /* ── Tabs (underline style) ── */
@@ -533,9 +531,14 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   display: flex;
   gap: 0;
   padding: 0 20px;
-  margin-top: 18px;
+  margin-top: 20px;
   border-top: 1px solid var(--border);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
+
+.pv-tabs::-webkit-scrollbar { display: none; }
 
 .pv-tab {
   padding: 11px 14px;
@@ -570,7 +573,7 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 
 .pv-side {
   position: sticky;
-  top: 56px;
+  top: 60px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -689,6 +692,25 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   text-align: right;
 }
 
+.pv-v-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-end;
+}
+
+.pv-kv-col {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.pv-kv-col .pv-code {
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-all;
+}
+
 .pv-code, .pv-link {
   display: inline-block;
   max-width: 220px;
@@ -742,6 +764,9 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 
 .pv-related-row {
   width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   border: 1px solid var(--border);
   background: var(--panel-strong);
   border-radius: var(--radius-sm);
@@ -750,6 +775,11 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   text-align: left;
   font-family: inherit;
   transition: background var(--t), border-color var(--t);
+}
+
+.pv-related-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .pv-related-row:hover {
@@ -763,6 +793,9 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   color: var(--text);
   font-size: 13px;
   line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pv-related-sub {
@@ -773,16 +806,67 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 }
 
 /* ── Responsive: PV ── */
-@media (max-width: 1100px) {
-  .pv-head-grid { grid-template-columns: 1fr; }
-  .pv-thumb { display: none; }
-}
 
+/* Full-bleed mobile project view
+   .pv cancels .content's padding so the header + topbar span edge-to-edge.
+   .pv-grid adds the padding back for the inner content sections only. */
 @media (max-width: 980px) {
-  .pv-topbar { top: 57px; }
-  .pv-grid { grid-template-columns: 1fr; }
+
+  /* Make PV full-bleed by cancelling content padding */
+  .pv {
+    margin-top: -16px;
+    margin-left: -14px;
+    margin-right: -14px;
+    gap: 0;
+    padding-bottom: 24px;
+  }
+
+  /* Sticky nav bar: full-width, no rounding, below mobile topbar */
+  .pv-topbar {
+    top: 57px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 8px 16px;
+  }
+
+  /* Header card: full-width, no rounding */
+  .pv-head {
+    border-radius: 0;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  /* Hero image: slightly taller on mobile for impact */
+  .pv-hero { height: 190px; }
+
+  /* Header body: tighter sides match full-bleed style */
+  .pv-header-body { padding: 18px 16px 0; }
+
+  /* Title: scale down for narrow screens */
+  .pv-title { font-size: 22px; }
+
+  /* Tabs: comfortable tap targets, 48px min-height */
+  .pv-tabs { padding: 0 14px; margin-top: 16px; }
+  .pv-tab { padding: 14px 14px; font-size: 14px; }
+
+  /* Content grid: single column with breathing room */
+  .pv-grid {
+    grid-template-columns: 1fr;
+    padding: 14px 14px 0;
+    gap: 12px;
+  }
+
+  /* Related sidebar: static, full-width */
   .pv-side { position: static; top: auto; }
-  .pv-iframe-wrap { height: 70vh; min-height: 480px; }
+
+  /* Iframe: shorter on mobile */
+  .pv-iframe-wrap { height: 65vh; min-height: 360px; }
+
+  /* Box head: allow CTA to wrap on small screens */
+  .pv-box-head { flex-wrap: wrap; }
 }
 
 /* ── Reduced motion ── */

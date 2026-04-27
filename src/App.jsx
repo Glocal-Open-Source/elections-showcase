@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from "react";
+import { flushSync } from "react-dom";
 import Sidebar from "./components/Sidebar";
 import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
@@ -38,16 +39,21 @@ function App() {
     });
   }, [activeTypes, activeTags]);
 
-  // Scroll to top synchronously before state update so mobile browsers
-  // don't fight us with scroll restoration after re-render.
+  // flushSync forces React to render synchronously so window.scrollTo fires
+  // AFTER the new view is in the DOM — prevents mobile browsers from
+  // restoring old scroll position during the async re-paint window.
   const handleSelectProject = (project) => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-    setSelectedProject(project);
+    flushSync(() => setSelectedProject(project));
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   const handleBack = () => {
-    window.scrollTo({ top: 0, behavior: "instant" });
-    setSelectedProject(null);
+    flushSync(() => setSelectedProject(null));
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
   };
 
   return (

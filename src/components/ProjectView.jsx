@@ -93,11 +93,17 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
   const ContentComponent = project?.component;
   const [tab, setTab] = useState("overview");
 
-  // Belt-and-suspenders scroll fix: rAF ensures this fires after the browser
-  // has committed layout from the re-render (handles mobile scroll restoration).
+  // Double-rAF: first frame commits layout, second ensures Safari has settled.
   useEffect(() => {
-    const id = requestAnimationFrame(() => window.scrollTo({ top: 0, behavior: "instant" }));
-    return () => cancelAnimationFrame(id);
+    let id2;
+    const id1 = requestAnimationFrame(() => {
+      id2 = requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+      });
+    });
+    return () => { cancelAnimationFrame(id1); cancelAnimationFrame(id2); };
   }, [project?.id]);
 
   // Reset tab when switching projects
@@ -138,7 +144,7 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
   const hasPreview = embedMode !== "none";
 
   return (
-    <div className="pv">
+    <div className="pv" tabIndex={-1}>
       {/* ── Sticky nav bar ── */}
       <div className="pv-topbar">
         <button type="button" className="pv-back" onClick={onBack}>
