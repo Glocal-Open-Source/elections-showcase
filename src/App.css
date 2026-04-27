@@ -459,12 +459,23 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   box-shadow: var(--shadow-soft);
 }
 
-.pv-head-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 200px;
-  gap: 20px;
-  padding: 24px 24px 0;
-  align-items: start;
+.pv-hero {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #e8e3f2;
+  flex-shrink: 0;
+}
+
+.pv-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.pv-header-body {
+  padding: 20px 24px 0;
 }
 
 .pv-title {

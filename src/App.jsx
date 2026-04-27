@@ -38,6 +38,18 @@ function App() {
     });
   }, [activeTypes, activeTags]);
 
+  // Scroll to top synchronously before state update so mobile browsers
+  // don't fight us with scroll restoration after re-render.
+  const handleSelectProject = (project) => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setSelectedProject(project);
+  };
+
+  const handleBack = () => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+    setSelectedProject(null);
+  };
+
   return (
     <div className="app">
       <Sidebar
@@ -53,11 +65,10 @@ function App() {
         {selectedProject ? (
           <ProjectView
             project={selectedProject}
-            onBack={() => setSelectedProject(null)}
+            onBack={handleBack}
             allProjects={projectsData}
-            onSelectProject={setSelectedProject}
+            onSelectProject={handleSelectProject}
           />
-
         ) : (
           <>
             {(activeTypes.length > 0 || activeTags.length > 0) && (
@@ -70,7 +81,7 @@ function App() {
                 </button>
               </div>
             )}
-            <CardGrid projects={filteredProjects} onSelect={setSelectedProject} />
+            <CardGrid projects={filteredProjects} onSelect={handleSelectProject} />
           </>
         )}
       </main>
