@@ -11,7 +11,6 @@ import {
   faXmark,
   faMagnifyingGlass,
   faTrash,
-  faFilter,
   faSortAlphaDown,
   faCheckDouble,
 } from "@fortawesome/free-solid-svg-icons";
@@ -31,13 +30,12 @@ const fuzzyMatch = (pattern, str) => {
   return j === pattern.length;
 };
 
-const purple = "#6D2D91";
 const typeIcons = {
-  report: <FontAwesomeIcon icon={faBook} style={{ color: purple }} />,
-  data: <FontAwesomeIcon icon={faSquarePollVertical} style={{ color: purple }} />,
-  dashboard: <FontAwesomeIcon icon={faGauge} style={{ color: purple }} />,
-  interactive: <FontAwesomeIcon icon={faGamepad} style={{ color: purple }} />,
-  events: <FontAwesomeIcon icon={faCommentDots} style={{ color: purple }} />,
+  report: <FontAwesomeIcon icon={faBook} />,
+  data: <FontAwesomeIcon icon={faSquarePollVertical} />,
+  dashboard: <FontAwesomeIcon icon={faGauge} />,
+  interactive: <FontAwesomeIcon icon={faGamepad} />,
+  events: <FontAwesomeIcon icon={faCommentDots} />,
 };
 
 const Sidebar = ({
@@ -189,15 +187,15 @@ const Sidebar = ({
         <div className="panel-head">
           <div className="panel-title">
             Filter by Tag
-            {selectedTypeCount > 0 && <span className="badge">{selectedTypeCount}</span>}
+            {selectedTagCount > 0 && <span className="badge">{selectedTagCount}</span>}
           </div>
           <div className="panel-actions">
-            {selectedTypeCount > 0 && (
+            {selectedTagCount > 0 && (
               <button
                 type="button"
                 className="icon-btn"
-                onClick={clearTypes}
-                aria-label="Clear type filters"
+                onClick={clearTags}
+                aria-label="Clear tag filters"
               >
                 <FontAwesomeIcon icon={faTrash} />
               </button>

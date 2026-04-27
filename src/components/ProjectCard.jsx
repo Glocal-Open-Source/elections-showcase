@@ -16,10 +16,6 @@ const ProjectCard = ({ project, onSelect }) => {
             </span>
           ))}
         </div>
-
-        <div className="card-arrow">
-          <span className="arrow">➜</span>
-        </div>
       </div>
     </div>
   );

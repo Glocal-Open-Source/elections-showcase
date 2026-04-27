@@ -125,6 +125,10 @@ const ProjectView = ({
   const ContentComponent = project?.component;
   const [tab, setTab] = useState("overview"); // overview | preview | details
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [project?.id]);
+
   const embed = project?.embed || "";
   const ext = getExt(embed);
 
@@ -356,20 +360,6 @@ const ProjectView = ({
 
         {/* Side column */}
         <aside className="pv-side">
-          <div className="pv-card">
-            <div className="pv-card-title">Actions</div>
-            <div className="pv-actions">
-              <button type="button" className="pv-btn pv-btn-ghost" onClick={onBack}>
-                Back to grid
-              </button>
-              {embed && (
-                <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                  Open project →
-                </a>
-              )}
-            </div>
-          </div>
-
           {related.length > 0 && (
             <div className="pv-card">
               <div className="pv-card-title">Related</div>
