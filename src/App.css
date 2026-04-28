@@ -628,7 +628,8 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
   align-items: center;
 }
 
-.pv-content-inner { padding: 14px 16px; }
+.pv-content-inner { padding: 14px 16px; overflow-x: auto; }
+.pv-content-inner img { max-width: 100%; height: auto; }
 
 .pv-bullets {
   margin: 0;
@@ -854,7 +855,7 @@ img.shrinkToFit { display: block; width: 100% !important; height: auto !importan
 
   /* Content grid: single column with breathing room */
   .pv-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding: 14px 14px 0;
     gap: 12px;
   }
