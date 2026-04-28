@@ -3,10 +3,12 @@ import { flushSync } from "react-dom";
 import Sidebar from "./components/Sidebar";
 import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
+import StatsPage from "./components/StatsPage";
 import projectsData from "./data/projects";
 import "./App.css";
 
 function App() {
+  const [view, setView] = useState('home');
   const [activeTypes, setActiveTypes] = useState([]);
   const [activeTags, setActiveTags] = useState([]);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -39,22 +41,42 @@ function App() {
     });
   }, [activeTypes, activeTags]);
 
-  // flushSync forces React to render synchronously so window.scrollTo fires
-  // AFTER the new view is in the DOM — prevents mobile browsers from
-  // restoring old scroll position during the async re-paint window.
-  const handleSelectProject = (project) => {
-    flushSync(() => setSelectedProject(project));
+  const scrollTop = () => {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   };
 
+  const handleSelectProject = (project) => {
+    flushSync(() => {
+      setSelectedProject(project);
+      setView('grid');
+    });
+    scrollTop();
+  };
+
   const handleBack = () => {
     flushSync(() => setSelectedProject(null));
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    scrollTop();
   };
+
+  const handleNavHome = () => {
+    flushSync(() => {
+      setView('home');
+      setSelectedProject(null);
+    });
+    scrollTop();
+  };
+
+  const handleNavGrid = () => {
+    flushSync(() => {
+      setView('grid');
+      setSelectedProject(null);
+    });
+    scrollTop();
+  };
+
+  const activeNavView = selectedProject ? 'grid' : view;
 
   return (
     <div className="app">
@@ -65,6 +87,9 @@ function App() {
         tags={tagOptions}
         activeTags={activeTags}
         onToggleTag={toggleTag}
+        onNavHome={handleNavHome}
+        onNavGrid={handleNavGrid}
+        activeNavView={activeNavView}
       />
 
       <main className="content">
@@ -75,6 +100,8 @@ function App() {
             allProjects={projectsData}
             onSelectProject={handleSelectProject}
           />
+        ) : view === 'home' ? (
+          <StatsPage onExplore={handleNavGrid} />
         ) : (
           <>
             {(activeTypes.length > 0 || activeTags.length > 0) && (

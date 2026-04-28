@@ -13,6 +13,8 @@ import {
   faTrash,
   faSortAlphaDown,
   faCheckDouble,
+  faHouse,
+  faGrip,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Capitalize helper
@@ -45,6 +47,9 @@ const Sidebar = ({
   tags,
   activeTags,
   onToggleTag,
+  onNavHome,
+  onNavGrid,
+  activeNavView,
 }) => {
   const [tagSearch, setTagSearch] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -129,7 +134,7 @@ const Sidebar = ({
       {/* Header */}
       <div className="sidebar-header">
         <a
-          href="https://glocal-open-source.github.io/elections-showcase/"
+          href="https://www.glocalfoundation.ca"
           rel="noopener noreferrer"
         >
           <img src="logo.png" alt="GLOCAL Logo" className="logo" />
@@ -141,6 +146,28 @@ const Sidebar = ({
             </span>
           )}
         </div>
+      </div>
+
+      {/* Nav */}
+      <div className="sidebar-nav">
+        <button
+          type="button"
+          className={activeNavView === 'home' ? 'snav-btn active' : 'snav-btn'}
+          onClick={onNavHome}
+          aria-label="Go to overview"
+        >
+          <FontAwesomeIcon icon={faHouse} />
+          <span>Overview</span>
+        </button>
+        <button
+          type="button"
+          className={activeNavView === 'grid' ? 'snav-btn active' : 'snav-btn'}
+          onClick={onNavGrid}
+          aria-label="Browse projects"
+        >
+          <FontAwesomeIcon icon={faGrip} />
+          <span>Projects</span>
+        </button>
       </div>
 
       {/* Types */}
@@ -317,6 +344,25 @@ const Sidebar = ({
         >
           <img src="logo.png" alt="GLOCAL" />
         </a>
+
+        <div className="mobile-nav-btns">
+          <button
+            type="button"
+            className={activeNavView === 'home' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
+            onClick={onNavHome}
+            aria-label="Go to overview"
+          >
+            <FontAwesomeIcon icon={faHouse} />
+          </button>
+          <button
+            type="button"
+            className={activeNavView === 'grid' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
+            onClick={onNavGrid}
+            aria-label="Browse projects"
+          >
+            <FontAwesomeIcon icon={faGrip} />
+          </button>
+        </div>
 
         <button
           type="button"

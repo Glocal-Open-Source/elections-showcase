@@ -37,7 +37,7 @@ const projects = [
     description:
       "A civic engagement tool on YouCount.ca that allows Canadians to ask and upvote questions about government, democracy, and representation — bridging citizens and policymakers.",
     image: "thumbnails/askbeaver.jpg",
-    tags: ["civic-tech", "civic-education", "public-engagement"],
+    tags: ["civic-tech", "civic-education", "civic-engagement"],
     component: AskBeaver,
   },
 
@@ -81,7 +81,7 @@ const projects = [
       "An interactive mix of PDFs and embedded dashboards offering analytical insights across Canadian electoral and civic engagement datasets.",
     image: "thumbnails/ejournal.jpg",
     embed: "https://glocalfoundation.ca/e-journal-data",
-    tags: ["data-analysis", "open-data", "civic-research"],
+    tags: ["data-analysis", "open-data", "civic-education"],
     component: EJournal,
   },
   {
@@ -92,7 +92,7 @@ const projects = [
       "Detailed examination of unique characteristics of local governance models within each province and territory in Canada.",
     image: "thumbnails/governance.jpg",
     embed: "/projects/governance.html",
-    tags: ["governance", "policy-analysis", "civic-education"],
+    tags: ["governance", "civic-education"],
     component: LocalGovernance,
   },
   {
@@ -112,7 +112,7 @@ const projects = [
     id: 8,
     title: "Elections Contributions and Outcomes",
     type: "report",
-    tags: ["elections-canada", "data-analysis", "campaign-finance"],
+    tags: ["elections-canada", "data-analysis"],
     description:
       "An analysis of campaign donation data in Canadian elections by Carmen Y through the Canada Summer Jobs program, exploring links between fundraising and results.",
     image: "thumbnails/contributions.jpg",
@@ -126,7 +126,7 @@ const projects = [
       "A visual exploration of Canadian federal election results, highlighting seat distributions, turnout rates, and historical changes.",
     image: "thumbnails/federal-results.jpg",
     embed: "https://glocalfoundation.ca/educational-resources",
-    tags: ["elections-canada", "data-visualization", "historical-analysis"],
+    tags: ["elections-canada", "data-visualization", "data-analysis"],
     component: FederalResults,
   },
   {
@@ -137,7 +137,7 @@ const projects = [
       "A comprehensive database of candidates running in the 2025 Canadian federal elections, including profiles, party affiliations, and electoral districts.",
     image: "thumbnails/candidates-data.jpg",
     embed: "https://www.youcount.ca/elections/ng/fed-2025",
-    tags: ["elections-canada", "open-data", "civic-infrastructure"],
+    tags: ["elections-canada", "open-data", "civic-tech"],
     component: CandidatesData,
   },
   {
@@ -160,7 +160,7 @@ const projects = [
       "Comprehensive toolkit designed to assist Canadians living abroad with voting procedures. Includes step-by-step instructions, timelines, and downloadable resources.",
     image: "thumbnails/overseas.jpg",
     embed: "/projects/overseas-canadians-voting.pdf",
-    tags: ["elections-canada", "civic-education", "voter-access"],
+    tags: ["elections-canada", "civic-education"],
     component: OverseasToolkit,
   },
 
@@ -171,7 +171,7 @@ const projects = [
     description: "A comprehensive analysis of Canadian federalism, exploring the constitutional division of powers between federal and provincial governments.",
     image: "thumbnails/federalism.jpg",
     embed: "https://glocalfoundation.ca/projects/federalism-division-of-powers.pdf",
-    tags: ["governance", "policy-analysis", "civic-education"],
+    tags: ["governance", "civic-education"],
     component: FederalismReport
   },
   {
@@ -299,7 +299,7 @@ const projects = [
   description: "How has e-commerce in Canada evolved since the onset of the Covid-19 pandemic? This project analyzes shifts in consumer behavior, market growth, and regional variations in online shopping across Canada.",
   image: "thumbnails/ecommerce.jpg",
   embed: "https://vlevner.github.io/Post-COVID-E-commerce-Trends/#home",
-  tags: ["statistics-canada", "data-analysis", "economic-trends"]
+  tags: ["statistics-canada", "data-analysis"]
 },
 
 {
@@ -309,7 +309,7 @@ const projects = [
   description: "An in-depth analysis of the debt burden faced by young Canadians, exploring factors such as student loans, credit card debt, and housing costs, and their implications for financial stability and future economic prospects.",
   image: "thumbnails/debt.jpg",
   embed: "content/debt.pdf",
-  tags: ["statistics-canada", "data-analysis", "youth-economics"]
+  tags: ["statistics-canada", "data-analysis", "youth-engagement"]
 }
 ];
 

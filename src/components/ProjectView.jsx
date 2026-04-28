@@ -152,11 +152,6 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
         </button>
         <div className="pv-topbar-right">
           {project.type && <span className="pv-pill">{cap(project.type)}</span>}
-          {embed && (
-            <a className="pv-cta" href={embed} target="_blank" rel="noopener noreferrer">
-              Open ↗
-            </a>
-          )}
         </div>
       </div>
 
