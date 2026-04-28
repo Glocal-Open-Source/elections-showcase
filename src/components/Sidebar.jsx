@@ -345,25 +345,6 @@ const Sidebar = ({
           <img src="logo.png" alt="GLOCAL" />
         </a>
 
-        <div className="mobile-nav-btns">
-          <button
-            type="button"
-            className={activeNavView === 'home' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
-            onClick={onNavHome}
-            aria-label="Go to overview"
-          >
-            <FontAwesomeIcon icon={faHouse} />
-          </button>
-          <button
-            type="button"
-            className={activeNavView === 'grid' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
-            onClick={onNavGrid}
-            aria-label="Browse projects"
-          >
-            <FontAwesomeIcon icon={faGrip} />
-          </button>
-        </div>
-
         <button
           type="button"
           className="mobile-filter-btn"

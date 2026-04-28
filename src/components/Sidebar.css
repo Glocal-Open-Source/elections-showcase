@@ -41,8 +41,9 @@
 }
 
 .mobile-brand img {
-  height: 30px;
+  height: 28px;
   width: auto;
+  max-width: 130px;
   display: block;
   filter: brightness(0) invert(1);
   opacity: 0.92;
