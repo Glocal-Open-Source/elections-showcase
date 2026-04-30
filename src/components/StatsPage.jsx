@@ -23,12 +23,12 @@ const PROVINCE_DATA = {
 
 // ── Key stats ─────────────────────────────────────────────────────────────────
 const STATS = [
-  { id: 'volunteers',   label: 'Active Volunteers',        value: 1500, suffix: '+' },
-  { id: 'applications', label: 'Microgrant Applications',  value: 550,  suffix: '+' },
-  { id: 'projects',     label: 'Projects Funded',          value: 300,  suffix: '+' },
-  { id: 'certs',        label: 'Certificates Issued',      value: 150,  suffix: '+' },
-  { id: 'tasks',        label: 'Community Actions',        value: 5000, suffix: '+' },
-  { id: 'csj',          label: 'CSJ Participants',         value: 200,  suffix: '+' },
+  { id: 'members',      label: 'Members Nationwide',            value: 5200, suffix: '+' },
+  { id: 'volunteers',   label: 'Active Volunteers',             value: 1500, suffix: '+' },
+  { id: 'tasks',        label: 'Community Actions',             value: 7100, suffix: '+' },
+  { id: 'projects',     label: 'Microgrant Projects Completed', value: 300,  suffix: '+' },
+  { id: 'csj',          label: 'CSJ Participants',              value: 181,  suffix: '' },
+  { id: 'showcase',     label: 'Spotlighted Projects',           value: 28,   suffix: '' },
 ];
 
 // ── Helpers ───────────────────────────────────────────────────────────────────
@@ -106,14 +106,34 @@ export default function StatsPage({ onExplore }) {
     <div className="sp-page">
       {/* ── Hero ── */}
       <motion.div className="sp-hero" {...fadeUp}>
-        <span className="sp-badge">GLOCAL Foundation of Canada</span>
-        <h1 className="sp-title">Civic Engagement<br />by the Numbers</h1>
-        <p className="sp-sub">
-          Connecting youth, data, and democracy across every province and territory.
-        </p>
-        <button className="sp-cta" onClick={onExplore}>
-          Explore GLOCAL Projects <span className="sp-cta-arrow">→</span>
-        </button>
+        <span className="sp-badge">The GLOCAL Foundation of Canada · April 2026</span>
+        <div className="sp-hero-body">
+          <div className="sp-hero-text">
+            <h1 className="sp-title">Learn, Serve, Belong<br />Across Every Province</h1>
+            <p className="sp-sub">
+              GLOCAL's <em>All You Can Volunteer</em> pathway makes civic participation
+              accessible, flexible, and meaningful — tracked and recognized through YouCount.ca,
+              for any Canadian who wants to serve.
+            </p>
+            <button className="sp-cta" onClick={onExplore}>
+              Explore GLOCAL Projects <span className="sp-cta-arrow">→</span>
+            </button>
+          </div>
+          <div className="sp-hero-highlights">
+            <div className="sp-hero-hl">
+              <span className="sp-hero-hl-val">5,200+</span>
+              <span className="sp-hero-hl-label">Members Nationwide</span>
+            </div>
+            <div className="sp-hero-hl">
+              <span className="sp-hero-hl-val">13</span>
+              <span className="sp-hero-hl-label">Provinces & Territories</span>
+            </div>
+            <div className="sp-hero-hl">
+              <span className="sp-hero-hl-val">300+</span>
+              <span className="sp-hero-hl-label">Projects Completed</span>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* ── Key stats ── */}
@@ -161,7 +181,7 @@ export default function StatsPage({ onExplore }) {
         transition={{ delay: 0.32, duration: 0.55, ease: [0.2, 0, 0, 1] }}
       >
         <h2 className="sp-section-title">Participants Across Canada</h2>
-        <p className="sp-section-sub">Every province and territory represented equally — hover for details</p>
+        <p className="sp-section-sub">Every province and territory represented — hover for details</p>
         <CanadaMap data={PROVINCE_DATA} />
       </motion.section>
 

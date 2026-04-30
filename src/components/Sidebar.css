@@ -67,6 +67,23 @@
 
 .mobile-filter-btn:hover { background: rgba(255, 255, 255, 0.12); }
 
+.mobile-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: background 140ms;
+}
+.mobile-theme-btn:hover { background: rgba(255, 255, 255, 0.14); color: #fff; }
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -593,7 +610,33 @@
 }
 
 /* ── Footer spacer ── */
-.sidebar-footer { height: 24px; }
+.sidebar-footer {
+  padding: 12px;
+  border-top: 1px solid var(--sb-border);
+  margin-top: auto;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--sb-text-2);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 130ms, color 130ms;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--sb-text);
+}
 
 /* ═══════════════════════
    Responsive

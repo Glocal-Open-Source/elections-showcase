@@ -92,6 +92,26 @@ const DataPreview = ({ url }) => {
 const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = null }) => {
   const ContentComponent = project?.component;
   const [tab, setTab] = useState("overview");
+  const [progress, setProgress] = useState(0);
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      setProgress(total > 0 ? Math.min((scrolled / total) * 100, 100) : 0);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [project?.id]);
+
+  const copyLink = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {});
+  };
 
   // Double-rAF: first frame commits layout, second ensures Safari has settled.
   useEffect(() => {
@@ -145,12 +165,25 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
 
   return (
     <div className="pv" tabIndex={-1}>
+      {/* ── Reading progress ── */}
+      <div className="pv-progress" aria-hidden="true">
+        <div className="pv-progress-fill" style={{ width: `${progress}%` }} />
+      </div>
+
       {/* ── Sticky nav bar ── */}
       <div className="pv-topbar">
         <button type="button" className="pv-back" onClick={onBack}>
           ← Back
         </button>
         <div className="pv-topbar-right">
+          <button
+            type="button"
+            className={`pv-copy-btn${copied ? ' copied' : ''}`}
+            onClick={copyLink}
+            aria-label="Copy link to this project"
+          >
+            {copied ? '✓ Copied' : 'Copy link'}
+          </button>
           {project.type && <span className="pv-pill">{cap(project.type)}</span>}
         </div>
       </div>

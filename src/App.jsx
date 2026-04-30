@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { flushSync } from "react-dom";
 import Sidebar from "./components/Sidebar";
 import CardGrid from "./components/CardGrid";
@@ -7,12 +7,59 @@ import StatsPage from "./components/StatsPage";
 import projectsData from "./data/projects";
 import "./App.css";
 
-function App() {
-  const [view, setView] = useState('home');
-  const [activeTypes, setActiveTypes] = useState([]);
-  const [activeTags, setActiveTags] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
+// ── Hash routing helpers ──────────────────────────────────────────────────────
+const parseHash = () => {
+  const hash = window.location.hash.slice(1);
+  if (hash.startsWith('/project/')) {
+    const id = parseInt(hash.slice('/project/'.length), 10);
+    const project = projectsData.find(p => p.id === id) ?? null;
+    return { view: 'grid', selectedProject: project };
+  }
+  if (hash === '/projects') return { view: 'grid', selectedProject: null };
+  return { view: 'home', selectedProject: null };
+};
 
+function App() {
+  const initial = parseHash();
+  const [view, setView]                       = useState(initial.view);
+  const [selectedProject, setSelectedProject] = useState(initial.selectedProject);
+  const [activeTypes, setActiveTypes]         = useState([]);
+  const [activeTags, setActiveTags]           = useState([]);
+
+  // ── Theme ─────────────────────────────────────────────────────────────────
+  const [isDark, setIsDark] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark') return true;
+    if (saved === 'light') return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark(d => !d);
+
+  // ── Document title ────────────────────────────────────────────────────────
+  useEffect(() => {
+    document.title = selectedProject
+      ? `${selectedProject.title} — GLOCAL`
+      : 'GLOCAL • Open Source Projects';
+  }, [selectedProject]);
+
+  // ── Keyboard shortcuts ────────────────────────────────────────────────────
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      const tag = document.activeElement?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+      if (e.key === 'Escape' && selectedProject) handleBack();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [selectedProject]);
+
+  // ── Filters ───────────────────────────────────────────────────────────────
   const typeOptions = ["report", "data", "interactive", "events"];
 
   const tagOptions = useMemo(() => {
@@ -27,10 +74,7 @@ function App() {
   const toggleTag = (t) =>
     setActiveTags((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
 
-  const clearAllFilters = () => {
-    setActiveTypes([]);
-    setActiveTags([]);
-  };
+  const clearAllFilters = () => { setActiveTypes([]); setActiveTags([]); };
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((p) => {
@@ -41,40 +85,49 @@ function App() {
     });
   }, [activeTypes, activeTags]);
 
+  // ── Image preload while on StatsPage ──────────────────────────────────────
+  useEffect(() => {
+    if (view !== 'home' || selectedProject) return;
+    const preload = () => {
+      projectsData.forEach(p => {
+        if (!p.image) return;
+        const img = new Image();
+        img.src = p.image;
+      });
+    };
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(preload, { timeout: 3000 });
+      return () => cancelIdleCallback(id);
+    }
+    const id = setTimeout(preload, 1500);
+    return () => clearTimeout(id);
+  }, [view, selectedProject]);
+
+  // ── Hash routing sync ─────────────────────────────────────────────────────
   const scrollTop = () => {
     window.scrollTo(0, 0);
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   };
 
-  const handleSelectProject = (project) => {
-    flushSync(() => {
-      setSelectedProject(project);
-      setView('grid');
-    });
-    scrollTop();
-  };
+  useEffect(() => {
+    const onHashChange = () => {
+      const { view: nextView, selectedProject: nextProject } = parseHash();
+      flushSync(() => {
+        setView(nextView);
+        setSelectedProject(nextProject);
+      });
+      scrollTop();
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
-  const handleBack = () => {
-    flushSync(() => setSelectedProject(null));
-    scrollTop();
-  };
-
-  const handleNavHome = () => {
-    flushSync(() => {
-      setView('home');
-      setSelectedProject(null);
-    });
-    scrollTop();
-  };
-
-  const handleNavGrid = () => {
-    flushSync(() => {
-      setView('grid');
-      setSelectedProject(null);
-    });
-    scrollTop();
-  };
+  // ── Navigation ────────────────────────────────────────────────────────────
+  const handleSelectProject = (project) => { window.location.hash = `/project/${project.id}`; };
+  const handleBack          = ()          => { window.location.hash = '/projects'; };
+  const handleNavHome       = ()          => { window.location.hash = '/'; };
+  const handleNavGrid       = ()          => { window.location.hash = '/projects'; };
 
   const activeNavView = selectedProject ? 'grid' : view;
 
@@ -90,6 +143,8 @@ function App() {
         onNavHome={handleNavHome}
         onNavGrid={handleNavGrid}
         activeNavView={activeNavView}
+        isDark={isDark}
+        onToggleTheme={toggleTheme}
       />
 
       <main className="content">

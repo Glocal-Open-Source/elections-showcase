@@ -15,6 +15,8 @@ import {
   faCheckDouble,
   faHouse,
   faGrip,
+  faSun,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Capitalize helper
@@ -50,6 +52,8 @@ const Sidebar = ({
   onNavHome,
   onNavGrid,
   activeNavView,
+  isDark,
+  onToggleTheme,
 }) => {
   const [tagSearch, setTagSearch] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -328,8 +332,18 @@ const Sidebar = ({
         )}
       </div>
 
-      {/* Mobile close button area spacer */}
-      <div className="sidebar-footer" />
+      {/* Theme toggle */}
+      <div className="sidebar-footer">
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={onToggleTheme}
+          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
+          <span>{isDark ? "Light mode" : "Dark mode"}</span>
+        </button>
+      </div>
     </div>
   );
 
@@ -363,6 +377,15 @@ const Sidebar = ({
             <FontAwesomeIcon icon={faGrip} />
           </button>
         </div>
+
+        <button
+          type="button"
+          className="mobile-theme-btn"
+          onClick={onToggleTheme}
+          aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        >
+          <FontAwesomeIcon icon={isDark ? faSun : faMoon} />
+        </button>
 
         <button
           type="button"
