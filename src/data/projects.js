@@ -20,6 +20,7 @@ import VirtualEvents from "../content/events/VirtualEvents";
 import FromPipesToPeopleAddressing from "../content/FromPipesToPeopleAddressing";
 import MentalHealthAndDisability from "../content/MentalHealthAndDisability";
 import ImmigrationLawsTips from "../content/ImmigrationLawsTips";
+import YoucountMobileAppRedesigningAccess from "../content/YoucountMobileAppRedesigningAccess";
 
 
 const projects = [
@@ -409,6 +410,19 @@ const projects = [
   image: "thumbnails/making-a-budget-tracking-finances.jpg",
   embed: "content/GLOCAL Final Report.pdf",
   tags: ["civic-education", "data-analysis", "open-data"],
+},
+
+
+{
+  id: 37,
+  title: "Youcount Mobile App: Redesigning Access to Opportunity",
+  type: "interactive",
+  description:
+    "A project by Sooa Lee, Jaden Seaforth, and Areeb Mohsin that identified usability issues in the YouCount platform and developed a mobile solution with simplified navigation, clearer terminology, and centralized user features.",
+  image: "thumbnails/Screenshot 2026-05-01 141747.png",
+  embed: "content/YouCount Mobile Design Project Group Presentation.pdf",
+  tags: ["civic-tech", "open-data", "youth-engagement"],
+  component: YoucountMobileAppRedesigningAccess,
 },
 
 ];
