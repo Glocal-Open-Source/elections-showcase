@@ -73,7 +73,17 @@ export default function CDEM2019Report() {
             borderRadius: "8px",
             background: "#fafafa",
           }}
-        ></iframe>
+        />
+        <p style={{ marginTop: "0.5rem" }}>
+          <a
+            href="/content/cdem2019-canadians-and-civic-issues.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#5b2bff", fontWeight: 600 }}
+          >
+            Download PDF
+          </a>
+        </p>
       </section>
     </article>
   );

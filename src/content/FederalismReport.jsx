@@ -53,7 +53,17 @@ export default function FederalismReport() {
             borderRadius: "8px",
             background: "#fafafa",
           }}
-        ></iframe>
+        />
+        <p style={{ marginTop: "0.5rem" }}>
+          <a
+            href="/content/federalism-division-of-powers.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#5b2bff", fontWeight: 600 }}
+          >
+            Download PDF
+          </a>
+        </p>
       </section>
     </article>
   );

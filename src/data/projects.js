@@ -1,3 +1,4 @@
+import CanadianParties from "../content/CanadianParties";
 import OverseasToolkit from "../content/OverseasToolkit";
 import CivicIssuesReport from "../content/CivicIssuesReport";
 import EJournal from "../content/EJournal";
@@ -16,6 +17,9 @@ import VancouverRegional from "../content/events/VancouverRegional";
 import CalgaryRegional from "../content/events/CalgaryRegional";
 import ChloeApp from "../content/ChloeApp";
 import VirtualEvents from "../content/events/VirtualEvents";
+import FromPipesToPeopleAddressing from "../content/FromPipesToPeopleAddressing";
+import MentalHealthAndDisability from "../content/MentalHealthAndDisability";
+import ImmigrationLawsTips from "../content/ImmigrationLawsTips";
 
 
 const projects = [
@@ -303,6 +307,18 @@ const projects = [
 },
 
 {
+  id: 29,
+  title: "Canadian Political Parties Database",
+  type: "data",
+  description:
+    "Lillian Pianosi, Elias Titian, Joey Lee, Ethan Gallipeau, and Tim Guan compiled a national dataset of 358 Canadian political parties (340 active) over five weeks using Python/Pandas, addressing data quality challenges and identifying opportunities for automation and improved workflow design.",
+  image: "thumbnails/parties.png",
+  embed: "content/politicalparties.pdf",
+  tags: ["open-data", "data-analysis", "governance"],
+  component: CanadianParties,
+},
+
+{
   id: 28,
   title: "Debt Burden of Young Canadians: A Data-Driven Analysis",
   type: "data",
@@ -310,7 +326,91 @@ const projects = [
   image: "thumbnails/debt.jpg",
   embed: "content/debt.pdf",
   tags: ["statistics-canada", "data-analysis", "youth-engagement"]
-}
+},
+
+{
+  id: 30,
+  title: "Awesome GLOCAL: Open Source Scripts",
+  type: "data",
+  description:
+    "A curated list of useful, accessible scripts built by members of the GLOCAL community. Focused on simplifying workflows, improving usability, and supporting users across different technical skill levels.",
+  image: "thumbnails/github.png",
+  tags: ["civic-tech", "open-data"],
+},
+
+
+{
+  id: 31,
+  title: "Understanding Refugees in Canada",
+  type: "report",
+  description:
+    "An accessible overview of Canada's refugee system, tracing the journey from initial application and eligibility determination through to arrival, integration, and long-term settlement — with a focus on the policies and supports that shape each stage.",
+  image: "thumbnails/20260430-170052.jpg",
+  tags: ["democracy-research", "youth-engagement"],
+},
+
+
+{
+  id: 32,
+  title: "Ontario Housing Affordability Dashboard",
+  type: "data",
+  description:
+    "An interactive dashboard visualizing rental affordability trends across Ontario cities, comparing rent and income data to surface regional cost pressures and housing accessibility gaps.",
+  image: "",
+  embed: "https://edwardhe10.github.io/housing-affordability-analysis-dashboard/",
+  tags: ["data-analysis", "open-data", "housing-policy"],
+},
+
+
+{
+  id: 33,
+  title: "From Pipes to People: Addressing Lead in Drinking Water",
+  type: "report",
+  description:
+    "A health-based action toolkit for stakeholders and the public on lead contamination in drinking water, covering risks, prevention strategies, and practical resources for families and decision-makers.",
+  image: "thumbnails/ocean-water.jpg",
+  tags: ["civic-education", "open-data"],
+  component: FromPipesToPeopleAddressing,
+},
+
+
+{
+  id: 34,
+  title: "Mental Health and Disability",
+  type: "report",
+  description:
+    "A research-driven project translating mental health and disability policy insights into accessible public tools — including infographics, interactive quizzes, and a resource website — to bridge the gap between academic findings and everyday understanding.",
+  image: "thumbnails/mental-health.jpg",
+  embed: "content/Placement Presentation.pdf",
+  tags: ["open-data", "youth-engagement"],
+  component: MentalHealthAndDisability,
+},
+
+
+{
+  id: 35,
+  title: "Immigration Laws & Tips",
+  type: "report",
+  description:
+    "An International Law 3201 project that identified gaps in how international students access legal protections in Canada, addressing them through simplified, actionable resources covering immigration, labour, safety, and human rights.",
+  image: "thumbnails/poznan-poland-february-26-2025-600nw-2597914809.webp",
+  embed: "content/immigration laws.pdf",
+  tags: ["civic-education", "open-data", "democracy-research"],
+  component: ImmigrationLawsTips,
+},
+
+
+{
+  id: 36,
+  title: "From Pandemic to Paycheque: How COVID-19 Changed Canadian Gen Z's First Job Age, Financial Literacy and Investment Habits",
+  type: "report",
+  description:
+    "COVID-19 reduced youth employment and delayed early work experience for Gen Z, while economic pressures and increased digital engagement shaped their financial behaviour and learning.",
+  image: "thumbnails/making-a-budget-tracking-finances.jpg",
+  embed: "content/GLOCAL Final Report.pdf",
+  tags: ["civic-education", "data-analysis", "open-data"],
+},
+
 ];
 
 

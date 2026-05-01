@@ -17,41 +17,47 @@ export default function VoteMatch() {
           >
             2021 Canadian Election Study (CES)
           </a>
-          , the tool estimates how closely an individual’s views align with
+          , the tool estimates how closely an individual's views align with
           Canadian political parties based on demographic and attitudinal data.
         </p>
         <p>
-          The project’s goal is to make political data approachable and
-          personalized—helping Canadians better understand their place in the
+          The project's goal is to make political data approachable and
+          personalized — helping Canadians better understand their place in the
           political landscape. VoteMatch allows users to answer 16 short
           questions about their perspectives and then shows how similar profiles
           voted in the past federal election.
         </p>
         <p>
-          Behind the scenes, the system uses machine learning techniques—
-          including correlation tests, feature selection, and XGBoost modeling—
-          to predict probabilities for each major Canadian party. The underlying
-          work balances accessibility and rigor, demonstrating how civic
-          education and data science can work together.
+          Behind the scenes, the system uses machine learning techniques —
+          including correlation tests, feature selection, and XGBoost modeling —
+          to predict probabilities for each major Canadian party.
         </p>
       </section>
 
-            {/* PDFs Section */}
-      <section style={{ marginTop: "2rem" }}>
-        <h4>Related Files</h4>
-        <ul style={{ listStyle: "none", paddingLeft: 0, marginTop: "1rem" }}>
-          <li style={{ marginBottom: "1rem" }}>
+      <section style={{ marginBottom: "1.5rem" }}>
+        <ul style={{ listStyleType: "none", paddingLeft: 0, marginTop: 0 }}>
+          <li><strong>Research and Development:</strong> Ran Shi</li>
+          <li><strong>Program:</strong> Canada Summer Jobs – Data Analytical Specialist</li>
+          <li>
+            <strong>Contact:</strong>{" "}
+            <a href="mailto:ran@glocalfoundation.ca" style={{ color: "#5b2bff", fontWeight: 600 }}>
+              ran@glocalfoundation.ca
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Related Files</h3>
+        <ul style={{ listStyle: "none", paddingLeft: 0 }}>
+          <li style={{ marginBottom: "0.5rem" }}>
             <a
               href="content/votematch.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: "#5b2bff",
-                fontWeight: "600",
-                textDecoration: "none",
-              }}
+              style={{ color: "#5b2bff", fontWeight: 600, textDecoration: "none" }}
             >
-              📘 VoteMatch Presentation Slides
+              VoteMatch Presentation Slides
             </a>
           </li>
           <li>
@@ -59,35 +65,23 @@ export default function VoteMatch() {
               href="content/votematchtechnical.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                color: "#5b2bff",
-                fontWeight: "600",
-                textDecoration: "none",
-              }}
+              style={{ color: "#5b2bff", fontWeight: 600, textDecoration: "none" }}
             >
-              📊 Technical Report: Modeling & Methodology
+              Technical Report: Modeling &amp; Methodology
             </a>
           </li>
         </ul>
       </section>
 
-      {/* Interactive App Embed */}
-      <section
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        <h4 style={{ marginBottom: "1rem" }}>Try the Interactive Tool</h4>
+      <section style={{ marginBottom: "2rem" }}>
+        <h3>Try the Interactive Tool</h3>
         <div
           style={{
             width: "100%",
             maxWidth: "900px",
             height: "700px",
-            border: "1px solid #ccc",
-            borderRadius: "10px",
+            border: "1px solid #ddd",
+            borderRadius: "8px",
             overflow: "hidden",
             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
           }}
@@ -98,22 +92,8 @@ export default function VoteMatch() {
             width="100%"
             height="100%"
             style={{ border: "none" }}
-          ></iframe>
+          />
         </div>
-      </section>
-
-      <section style={{ marginTop: "2rem" }}>
-        <p style={{ fontSize: "0.9rem", color: "#555" }}>
-          <strong>Research and Development:</strong> Ran Shi<br />
-          <strong>Program:</strong> Canada Summer Jobs – Data Analytical Specialist<br />
-          <strong>Contact:</strong>{" "}
-          <a
-            href="mailto:ran@glocalfoundation.ca"
-            style={{ color: "#5b2bff", fontWeight: 600 }}
-          >
-            ran@glocalfoundation.ca
-          </a>
-        </p>
       </section>
     </article>
   );

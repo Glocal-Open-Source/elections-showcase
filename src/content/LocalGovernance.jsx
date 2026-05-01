@@ -19,17 +19,17 @@ export default function LocalGovernance() {
           regulations</em> of each province and territory, supplemented with official sources such
           as provincial and municipal websites and regional associations.
         </p>
-        <p>
-          The report provides a comprehensive overview of Canadian local governance,
-          presenting:
-        </p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>What This Report Covers</h3>
         <ul style={{ marginLeft: "1.2rem" }}>
           <li>
             An overview of the significance of local governance in Canadian democracy.
           </li>
           <li>
-            Identification of three main local governance models—incorporated communities,
-            unincorporated communities, and Indigenous communities—and exploration of
+            Identification of three main local governance models — incorporated communities,
+            unincorporated communities, and Indigenous communities — and exploration of
             special arrangements unique to specific regions.
           </li>
           <li>
@@ -39,25 +39,31 @@ export default function LocalGovernance() {
             A detailed examination of the unique characteristics within each jurisdiction.
           </li>
         </ul>
-        <p>
-          Strengthening local democracy is essential for ensuring representation, equity, and
-          sustainable governance in Canada’s diverse communities.
-        </p>
       </section>
 
-      {/* Embedded PDF Viewer */}
-      <section style={{ marginTop: "2rem" }}>
+      <section style={{ marginBottom: "2rem" }}>
+        <h3>Read the Full Report</h3>
         <iframe
           src="content/localgovernance.pdf"
           width="100%"
           height="1000px"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            background: "#faf8ff",
-          }}
           title="Local Governance Structures in Canada"
-        ></iframe>
+          style={{
+            border: "1px solid #ddd",
+            borderRadius: "8px",
+            background: "#fafafa",
+          }}
+        />
+        <p style={{ marginTop: "0.5rem" }}>
+          <a
+            href="/content/localgovernance.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#5b2bff", fontWeight: 600 }}
+          >
+            Download PDF
+          </a>
+        </p>
       </section>
     </article>
   );

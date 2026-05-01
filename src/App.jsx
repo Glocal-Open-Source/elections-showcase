@@ -7,6 +7,9 @@ import StatsPage from "./components/StatsPage";
 import projectsData from "./data/projects";
 import "./App.css";
 
+// ── Feature flags ─────────────────────────────────────────────────────────────
+const SHOW_HOME = false;
+
 // ── Hash routing helpers ──────────────────────────────────────────────────────
 const parseHash = () => {
   const hash = window.location.hash.slice(1);
@@ -16,7 +19,7 @@ const parseHash = () => {
     return { view: 'grid', selectedProject: project };
   }
   if (hash === '/projects') return { view: 'grid', selectedProject: null };
-  return { view: 'home', selectedProject: null };
+  return { view: SHOW_HOME ? 'home' : 'grid', selectedProject: null };
 };
 
 function App() {
@@ -155,7 +158,7 @@ function App() {
             allProjects={projectsData}
             onSelectProject={handleSelectProject}
           />
-        ) : view === 'home' ? (
+        ) : view === 'home' && SHOW_HOME ? (
           <StatsPage onExplore={handleNavGrid} />
         ) : (
           <>
