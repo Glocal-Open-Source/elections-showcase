@@ -89,6 +89,115 @@ const DataPreview = ({ url }) => {
   );
 };
 
+const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, related, embed, progress, copied, copyLink }) => {
+  const isLinkable = embed && (isHttp(embed) || embed.startsWith("/"));
+
+  return (
+    <div className="pv" tabIndex={-1}>
+      <div className="pv-progress" aria-hidden="true">
+        <div className="pv-progress-fill" style={{ width: `${progress}%` }} />
+      </div>
+
+      <div className="pv-topbar">
+        <button type="button" className="pv-back" onClick={onBack}>← Back</button>
+        <div className="pv-topbar-right">
+          <button
+            type="button"
+            className={`pv-copy-btn${copied ? ' copied' : ''}`}
+            onClick={copyLink}
+            aria-label="Copy link to this project"
+          >
+            {copied ? '✓ Copied' : 'Copy link'}
+          </button>
+          {project.type && <span className="pv-pill">{cap(project.type)}</span>}
+        </div>
+      </div>
+
+      <header className="pv-head pv-head-simple">
+        <div className="pv-header-body">
+          <h1 className="pv-title">{project.title}</h1>
+          {project.description && <p className="pv-desc">{project.description}</p>}
+          {project.tags?.length > 0 && (
+            <div className="pv-tags">
+              {project.tags.map((tag) => <span key={tag} className="pv-tag">{tag}</span>)}
+            </div>
+          )}
+        </div>
+      </header>
+
+      <div className="pv-grid">
+        <section className="pv-main">
+          {project.image && (
+            <div className="pv-box pv-banner-box">
+              <img src={project.image} alt={project.title} className="pv-banner-full" />
+            </div>
+          )}
+
+          <div className="pv-box">
+            <div className="pv-box-head">
+              <div className="pv-box-title">About this project</div>
+              {isLinkable && (
+                <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
+                  Open project ↗
+                </a>
+              )}
+            </div>
+            <ul className="pv-bullets">
+              {highlights.map((h, i) => <li key={i}>{h}</li>)}
+            </ul>
+          </div>
+
+          <div className="pv-box">
+            <div className="pv-box-head"><div className="pv-box-title">Details</div></div>
+            <div className="pv-kv">
+              <div className="pv-k">Type</div>
+              <div className="pv-v">{project.type ? cap(project.type) : "—"}</div>
+            </div>
+            <div className="pv-kv">
+              <div className="pv-k">Tags</div>
+              <div className="pv-v pv-v-tags">
+                {project.tags?.length ? project.tags.map((t) => (
+                  <span key={t} className="pv-tag">{t}</span>
+                )) : "—"}
+              </div>
+            </div>
+            {isLinkable && (
+              <div className="pv-kv pv-kv-col">
+                <div className="pv-k">Link</div>
+                <a className="pv-code" href={embed} target="_blank" rel="noopener noreferrer">{embed}</a>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {related.length > 0 && (
+          <aside className="pv-side">
+            <div className="pv-card">
+              <div className="pv-card-title">Related projects</div>
+              <div className="pv-related">
+                {related.map((p) => (
+                  <button
+                    key={p.id}
+                    type="button"
+                    className="pv-related-row"
+                    onClick={() => onSelectProject(p)}
+                  >
+                    {p.image && <img src={p.image} alt="" className="pv-related-img" />}
+                    <div className="pv-related-text">
+                      <div className="pv-related-title">{p.title}</div>
+                      <div className="pv-related-sub">{cap(p.type || "")}</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </aside>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = null }) => {
   const ContentComponent = project?.component;
   const [tab, setTab] = useState("overview");
@@ -160,6 +269,22 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
   }, [allProjects, onSelectProject, project]);
 
   if (!project) return null;
+
+  if (!ContentComponent) {
+    return (
+      <SimpleProjectView
+        project={project}
+        onBack={onBack}
+        onSelectProject={onSelectProject}
+        highlights={highlights}
+        related={related}
+        embed={embed}
+        progress={progress}
+        copied={copied}
+        copyLink={copyLink}
+      />
+    );
+  }
 
   const hasPreview = embedMode !== "none";
 

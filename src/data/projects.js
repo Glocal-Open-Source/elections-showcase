@@ -333,6 +333,7 @@ const projects = [
   id: 30,
   title: "Awesome GLOCAL: Open Source Scripts",
   type: "data",
+  embed: "https://github.com/dbiel-77/awesome-glocal",
   description:
     "A curated list of useful, accessible scripts built by members of the GLOCAL community. Focused on simplifying workflows, improving usability, and supporting users across different technical skill levels.",
   image: "thumbnails/github.png",
