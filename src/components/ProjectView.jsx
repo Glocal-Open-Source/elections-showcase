@@ -25,6 +25,23 @@ const tagHighlights = (tags = []) => {
   return out.slice(0, 5);
 };
 
+const EmbedViewer = ({ src, title, ext }) => (
+  <div className="pv-iframe-wrap">
+    {ext === "pdf" ? (
+      <object data={src} type="application/pdf" className="pv-iframe" aria-label={title}>
+        <div style={{ padding: "1.5rem", textAlign: "center" }}>
+          <p style={{ marginBottom: "0.75rem" }}>PDF preview not available in this browser.</p>
+          <a className="pv-btn pv-btn-primary" href={src} target="_blank" rel="noopener noreferrer">
+            Open PDF ↗
+          </a>
+        </div>
+      </object>
+    ) : (
+      <iframe src={src} title={title} className="pv-iframe" loading="lazy" referrerPolicy="no-referrer" />
+    )}
+  </div>
+);
+
 const DataPreview = ({ url }) => {
   const [state, setState] = useState({ status: "idle", text: "", err: "" });
   const ext = getExt(url);
@@ -91,6 +108,13 @@ const DataPreview = ({ url }) => {
 
 const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, related, embed, progress, copied, copyLink }) => {
   const isLinkable = embed && (isHttp(embed) || embed.startsWith("/"));
+  const ext = getExt(embed);
+  const embedMode = (() => {
+    if (!embed) return "none";
+    if (["csv", "json", "txt"].includes(ext)) return "data";
+    if (!isHttp(embed) && !embed.startsWith("/") && !ext) return "link";
+    return "iframe";
+  })();
 
   return (
     <div className="pv" tabIndex={-1}>
@@ -146,6 +170,20 @@ const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, relat
               {highlights.map((h, i) => <li key={i}>{h}</li>)}
             </ul>
           </div>
+
+          {embedMode === "iframe" && (
+            <div className="pv-box">
+              <div className="pv-box-head">
+                <div className="pv-box-title">{ext === "pdf" ? "Document" : "Embedded content"}</div>
+                <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
+                  Open ↗
+                </a>
+              </div>
+              <EmbedViewer src={embed} title={project.title} ext={ext} />
+            </div>
+          )}
+
+          {embedMode === "data" && <DataPreview url={embed} />}
 
           <div className="pv-box">
             <div className="pv-box-head"><div className="pv-box-title">Details</div></div>
@@ -243,10 +281,8 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
 
   const embedMode = useMemo(() => {
     if (!embed) return "none";
-    if (!isHttp(embed) && embed.startsWith("/")) return "iframe";
-    if (!isHttp(embed)) return "link";
-    if (["pdf", "html", "htm"].includes(ext)) return "iframe";
     if (["csv", "json", "txt"].includes(ext)) return "data";
+    if (!isHttp(embed) && !embed.startsWith("/") && !ext) return "link";
     return "iframe";
   }, [embed, ext]);
 
@@ -393,31 +429,17 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
           {/* Preview tab */}
           {tab === "preview" && hasPreview && (
             <>
-              {ContentComponent ? (
-                <div className="pv-box">
-                  <div className="pv-box-head">
-                    <div className="pv-box-title">Interactive preview</div>
-                    {embed && (
-                      <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                        Open project ↗
-                      </a>
-                    )}
-                  </div>
-                  <div className="pv-content-inner"><ContentComponent /></div>
-                </div>
-              ) : embedMode === "data" ? (
+              {embedMode === "data" ? (
                 <DataPreview url={embed} />
               ) : embedMode === "iframe" ? (
                 <div className="pv-box">
                   <div className="pv-box-head">
-                    <div className="pv-box-title">Embedded preview</div>
+                    <div className="pv-box-title">{ext === "pdf" ? "Document" : "Embedded preview"}</div>
                     <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                      Open project ↗
+                      Open ↗
                     </a>
                   </div>
-                  <div className="pv-iframe-wrap">
-                    <iframe src={embed} title={project.title} className="pv-iframe" loading="lazy" referrerPolicy="no-referrer" />
-                  </div>
+                  <EmbedViewer src={embed} title={project.title} ext={ext} />
                 </div>
               ) : (
                 <div className="pv-box">

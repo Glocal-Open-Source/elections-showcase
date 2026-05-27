@@ -21,6 +21,7 @@ import FromPipesToPeopleAddressing from "../content/FromPipesToPeopleAddressing"
 import MentalHealthAndDisability from "../content/MentalHealthAndDisability";
 import ImmigrationLawsTips from "../content/ImmigrationLawsTips";
 import YoucountMobileAppRedesigningAccess from "../content/YoucountMobileAppRedesigningAccess";
+import TheGlobalImpactFellowship from "../content/TheGlobalImpactFellowship";
 
 
 const projects = [
@@ -424,6 +425,33 @@ const projects = [
   embed: "content/YouCount Mobile Design Project Group Presentation.pdf",
   tags: ["civic-tech", "open-data", "youth-engagement"],
   component: YoucountMobileAppRedesigningAccess,
+},
+
+
+{
+  id: 38,
+  title: "Growing Plants in Our Arctic Classroom",
+  type: "events",
+  description:
+    "At Inuksuk High School in Iqaluit, this initiative empowers students to grow their own vegetables and herbs indoors, a step toward reclaiming food resilience in one of the most expensive food regions in the country.",
+  image: "thumbnails/glocal-foundation.png",
+  embed: "content/glocal-foundation.pdf",
+  tags: ["microgrant", "food-security", "youth-engagement", "indigenous-engagement"],
+},
+
+
+
+
+
+{
+  id: 39,
+  title: "The Global Impact Fellowship",
+  type: "interactive",
+  description:
+    "BacharLorai offers an 8-month online program for 10 youth (ages 18–25) to develop social impact leadership through workshops, networking, and a global capstone project supporting Bangladeshi diaspora communities in Canada, with public sharing of their learning and skills in areas like project management and advocacy.",
+  image: "thumbnails/the-global-impact-fellowship-thumbnail.png",
+  tags: ["youth-engagement", "leadership", "diaspora", "community-engagement"],
+  component: TheGlobalImpactFellowship,
 },
 
 ];

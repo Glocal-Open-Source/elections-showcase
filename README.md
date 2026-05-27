@@ -54,6 +54,50 @@ A green confirmation message appears in the bottom-left when done. You can then 
 
 ---
 
+## Collecting projects in bulk
+
+Use the standalone bulk tool when someone else needs to prepare multiple project entries without editing this repo.
+
+For the simplest no-install version, open this file in a browser:
+
+```text
+tools/bulk_project_adder/index.html
+```
+
+That version downloads a single JSON export file. Place the returned JSON file inside `imports/`, then run the importer below.
+
+If Python is available, the launcher version can also create export folders and open the created package location:
+
+```powershell
+.\tools\bulk_project_adder\launch-windows.ps1
+```
+
+On macOS, open:
+
+```bash
+tools/bulk_project_adder/launch-macos.command
+```
+
+The tool opens a local browser app, saves draft entries in that browser, and creates export package folders under `tools/bulk_project_adder/exports/`. Each package contains a `manifest.json` plus any uploaded thumbnail/content files.
+
+Inside the bulk tool, use **Download template** under **CSV import** to get a starter CSV. The CSV supports these columns:
+
+```text
+title,type,description,team,embedUrl,tags,useCustomPage,section1Heading,section1Body,section2Heading,section2Body,section3Heading,section3Body,notes
+```
+
+Use `|` between multiple tags, such as `open-data|housing-policy|custom-tag`. CSV-imported rows become editable draft projects, so thumbnails and local files can be attached after import before creating the final export.
+
+To import returned work, place either the JSON export file or the complete package folder inside `imports/`, then run:
+
+```bash
+python import_project_exports.py
+```
+
+The importer copies assets into `public/thumbnails/` and `public/content/`, creates optional overview components in `src/content/`, and appends the projects to `src/data/projects.js`.
+
+---
+
 ## Adding a project manually
 
 If you prefer to skip the tool, add an object to the `projects` array in `src/data/projects.js`:
