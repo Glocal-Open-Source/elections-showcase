@@ -35,3 +35,20 @@ ADDING_PROJECTS.md
 ARCHITECTURE.md
 bulk_project_adder/
 bulk_project_adder.zip
+
+# Keep the portable bulk adder and importer in the repo, but ignore generated payloads.
+!import_project_exports.py
+!tools/
+!tools/bulk_project_adder/
+!tools/bulk_project_adder/bulk_project_adder.py
+!tools/bulk_project_adder/index.html
+!tools/bulk_project_adder/launch-windows.ps1
+!tools/bulk_project_adder/launch-macos.command
+tools/bulk_project_adder/exports/
+!imports/
+imports/*
+!imports/.gitkeep
+
+# Public binary assets — only needed locally for npm run deploy (gh-pages)
+public/content/
+public/thumbnails/
