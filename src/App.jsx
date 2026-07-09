@@ -5,6 +5,7 @@ import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
 import DiscoveryHub from "./components/DiscoveryHub";
 import TagTool from "./components/TagTool";
+import SecretRepo from "./components/SecretRepo";
 import projectsData from "./data/projects";
 import "./App.css";
 
@@ -18,6 +19,7 @@ const parseHash = () => {
   }
   if (hash === '/overview' || hash === '') return { view: 'home', selectedProject: null };
   if (hash === '/tag-tool') return { view: 'tag-tool', selectedProject: null };
+  if (hash === '/super-secret-repo') return { view: 'super-secret-repo', selectedProject: null };
   return { view: 'grid', selectedProject: null };
 };
 
@@ -174,6 +176,7 @@ function App() {
   const activeNavView = selectedProject ? 'grid' : view;
 
   if (view === 'tag-tool') return <TagTool />;
+  if (view === 'super-secret-repo') return <SecretRepo />;
 
   return (
     <div className="app">
