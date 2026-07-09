@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function JourneyToMapleDreams() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>&quot;Journey to Maple Dreams&quot; tells the story of Nancy Diop, an 18-year-old from Senegal, pursuing environmental science in Canada with her family&#x27;s support. The project aims to highlight challenges in accessing education abroad, addressing the broader issue of unequal opportunities. The main goal is to promote understanding and empathy for individuals like Nancy, fostering dialogue on global education challenges. This aligns with CANConnect and the GLOCAL Foundation&#x27;s mission of civic engagement and knowledge mobilization. The project contributes to creating a more informed and compassionate society, advocating for positive social change, and encouraging active citizenship.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Fatou Kine</h3>
+        <p>My name is Fatou Kine, I am 17 and I currently live in Dakar, Sénégal, due to schooling. My sisters and I decided to form a group for the project so that we could each have a specific role and be more efficiant. I took care of the scene writing of our comic book, Mame Astou took care of the artistic part and Fatoumata Bintou was there to correct every mistake we made. We made a comic book about Nancy’s immigration process because we actually have (in real life) a cousin named Nancy going to study environnemental science in Montreal. She needed our help in each steps of the immigration process and when we got introduced to the project, our minds directly went to our cousin Nancy’s situation. Doing this project while I was going to school made me feel quite independant, I felt like I had something unique to manage, something that, for once, was not related to school. Overall, I had fun creating this project with my sisters.</p>
+      </section>
+    </article>
+  );
+}

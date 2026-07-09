@@ -16,30 +16,6 @@ export default function ImmigrationLawsTips() {
         <p>Overall, the project shows that improving access to legal information depends on how effectively it is communicated, not just on the availability of the information itself.</p>
       </section>
 
-      <section style={{ marginBottom: "2rem" }}>
-        <h3>Full Document</h3>
-        <iframe
-          src="content/immigration laws.pdf"
-          width="100%"
-          height="600px"
-          title="Immigration Laws & Tips"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            background: "#fafafa",
-          }}
-        />
-        <p style={{ marginTop: "0.5rem" }}>
-          <a
-            href="/content/immigration laws.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#5b2bff", fontWeight: 600 }}
-          >
-            Download PDF
-          </a>
-        </p>
-      </section>
     </article>
   );
 }

@@ -36,17 +36,21 @@ export default function ElectionContributions() {
 
       <section style={{ marginBottom: "2rem" }}>
         <h3>Read the Full Report</h3>
-        <iframe
-          src="content/electionscontributions.pdf"
+        <object
+          data="content/electionscontributions.pdf" type="application/pdf" aria-label="Elections Contributions Report"
           width="100%"
           height="1000px"
-          title="Elections Contributions Report"
           style={{
             border: "1px solid #ddd",
             borderRadius: "8px",
             background: "#fafafa",
           }}
-        />
+        >
+  <p style={{ padding: "1rem", textAlign: "center", margin: 0 }}>
+    PDF preview unavailable.{" "}
+    <a href="/content/electionscontributions.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#5b2bff", fontWeight: 600 }}>Open PDF ↗</a>
+  </p>
+</object>
         <p style={{ marginTop: "0.5rem" }}>
           <a
             href="/content/electionscontributions.pdf"

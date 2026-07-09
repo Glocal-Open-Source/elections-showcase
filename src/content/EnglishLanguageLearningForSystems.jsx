@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function EnglishLanguageLearningForSystems() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>Our program participants, who are primarily refugees from various areas of the Middle East and East Africa, report that they often face difficulties with achieving satisfactory levels of civic engagement due to language barriers and lack of civic knowledge. As a result, their children are often unable to participate fully in the classroom, causing developmental delays, and high levels of emotional stress for newcomer parents. The parents whom we serve have also expressed a strong interest in increasing their levels of civic engagement, having come from tight-knit communities in their home countries, and wishing to increase their participation in their new Canadian communities. Consequently, we are proposing that our organisation utilises funding from GLOCAL to host a two-month intensive program, titled “English Language Learning for Systems Navigation and Civic Engagement”. The dual objectives of the program would be to equip newcomer parents with English language skills which can be used practically to advocate for themselves and their children within local education systems, and to equip parents with civic knowledge, which can be used to improve their local education systems. Thus, in addition to covering the fundamentals of the English language, our program’s curriculum will also mobilise knowledge around the following topics: 1) Types of school systems in Ontario; 2) Navigating different academic and applied learning streams for students; 3) Engaging your local school trustee; 4) Understanding the local civil service, and the role which municipal, provincial and federal governments have in your child’s access to education.</p>
+      </section>
+    </article>
+  );
+}

@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function EmpowerblackYouthEntrepreneurshipPitchCompetition() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>The primary goal of this initiative is to provide a platform for black youth entrepreneurs to showcase their innovative ideas, connect with like-minded individuals, and receive recognition and support for their endeavors. By organizing a pitch competition, we aim to empower these individuals to pursue their business dreams with confidence and determination. Youth will attend an in person networking summit where business leaders will speak, they can connect, it will also include a pop-up shop, and then youth can sign up for a chance to compete in the pitch competition.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Taijah</h3>
+        <p>Growing up, compassion fueled my drive for positive change. My philanthropic journey began in 2017 while working at a Brampton non-profit. Passing the homeless community daily, I felt a calling to aid them. Hosting my first donation drive ignited a fervor for community assistance. Venturing into various non-profits, my focus turned to empowering youth. I championed their ability to effect change using their passions. In 2020, Peels March for Justice marked a pivotal initiative addressing systemic racism in Peel schools. With 500+ attendees, it sparked attention, but I sought more than marches. Enter &quot;I Will Make a Difference,&quot; aimed at nurturing compassionate youth leaders through school curriculums. This endeavor embodies my dedication to fostering tomorrow&#x27;s empathetic and driven change-makers.</p>
+      </section>
+    </article>
+  );
+}

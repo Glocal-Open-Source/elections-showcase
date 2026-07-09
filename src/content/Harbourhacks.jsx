@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function Harbourhacks() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Project Team</h3>
+        <p>Team Members: Laura W</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>Our endeavour is an in-person two day hackathon and coding workshops for young people in the Halifax area, aged 12 to 18. To make up for the current lack of an established in-person coding and technology community for youth, we aim to create one through workshops both before and during the hackathon. This community will be for young people in Halifax who love technology and coding, as well as those who want to learn new skills or are new to programming. Apart from imparting practical coding skills, our aim is to tackle the deficiency of in-person coding opportunities in the Halifax region and increase consciousness regarding cybersecurity, ethical technology usage, and digital privacy as current issues. We hope to give young people in Halifax the skills they need to become more digitally literate and capable of making decisions when using technology for the greater good. We also hope to increase their awareness of how businesses use their personal information and how to protect their own digital identities.</p>
+      </section>
+    </article>
+  );
+}

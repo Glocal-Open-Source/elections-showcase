@@ -77,17 +77,23 @@ export default function CivicIssues() {
 
       <section style={{ marginBottom: "2rem" }}>
         <h3>An Analysis of 2021 Canadian Election Study Data</h3>
-        <iframe
-          src="content/civicissues.pdf"
+        <object
+          data="content/civicissues.pdf"
+          type="application/pdf"
+          aria-label="Civic Issues PDF"
           width="100%"
           height="600px"
-          title="Civic Issues PDF"
           style={{
             border: "1px solid #ddd",
             borderRadius: "8px",
             background: "#fafafa",
           }}
-        ></iframe>
+        >
+  <p style={{ padding: "1rem", textAlign: "center", margin: 0 }}>
+    PDF preview unavailable.{" "}
+    <a href="/content/civicissues.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#5b2bff", fontWeight: 600 }}>Open PDF ↗</a>
+  </p>
+</object>
         <p style={{ marginTop: "0.5rem" }}>
           <a
             href="/content/civicissues.pdf"

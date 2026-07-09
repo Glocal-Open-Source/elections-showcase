@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function RefugeeBridgeAcademy() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Project Team</h3>
+        <p>Team Members: Omer M.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>Refugee Bridge Academy is a youth-led initiative that helps refugee and displaced youth access education, mentorship, leadership development, and career opportunities. Through workshops, mentorship, and community learning, the project empowers participants with the knowledge, confidence, and networks needed to engage in civic life and succeed in their new communities.</p>
+      </section>
+    </article>
+  );
+}

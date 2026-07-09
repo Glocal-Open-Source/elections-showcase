@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function GlobalGovernanceOnCampusCreating() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>Our project aims to address the direct correlation between civic involvement and global impact. Canada is a diverse community and also a global power. Humanitarian aid is such a large part of our global influence, which brings to question how civic involvement comes into play when regarding humanitarian aid? Our taxes and support directly tie into these global movements. It is important for all citizens to be informed, educated, and socially aware when regarding these issues. As a youth-led club, we understand that monetary contributions are not always easy to give. Being informed and raising awareness is a concept we greatly value. We hope to spread awareness and educate our audiences to enhance civic duty and the involvement of citizens in a great aspect of what Canada stands for. We greatly encourage youth empowerment as we understand that we are the future and our actions truly matter. This greatly aligns with the values of CANConnect. Additionally, we aim to make social progress by encouraging youth advocacy on global matters and civic involvement. We aim to be sustainable as an organization and hosted an event in the past year with the sustainability office of the University of Calgary to host an event with little waste and biodegradable materials! This aligns with GLOCAL’s values. Our project seems different, but it is a unique way of engaging youth and individuals for a greater cause!</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Laiba</h3>
+        <p>My name is Laiba Kahloon and I am representing UNICEF on Campus this year from the University of Calgary. I am very passionate about advocating for issues around the world and extremely passionate about working for underserved children. We had the opportunity to communicate with a recruiter on our campus and have been greatly interested in joining ever since! Our project aims to accomplish something that has not been done before by this campus, so we really hope you consider it!</p>
+      </section>
+    </article>
+  );
+}

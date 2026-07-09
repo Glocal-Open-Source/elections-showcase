@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : "");
 
@@ -25,6 +27,58 @@ const tagHighlights = (tags = []) => {
   return out.slice(0, 5);
 };
 
+const normalizeEmbed = (url) => {
+  if (!url || !url.startsWith("https://")) return url;
+  if (/\/(preview|embed|pubhtml|viewform)/.test(url) || url.includes("embedded=true")) return url;
+
+  // Drive folders can't be embedded — leave unchanged so embedMode can detect them
+  if (/drive\.google\.com\/drive\/folders\//.test(url)) return url;
+
+  let m;
+  m = url.match(/https:\/\/docs\.google\.com\/document\/d\/([^/?#]+)/);
+  if (m) return `https://docs.google.com/document/d/${m[1]}/preview`;
+
+  m = url.match(/https:\/\/docs\.google\.com\/spreadsheets\/d\/([^/?#]+)/);
+  if (m) return `https://docs.google.com/spreadsheets/d/${m[1]}/pubhtml?widget=true&headers=false`;
+
+  m = url.match(/https:\/\/docs\.google\.com\/presentation\/d\/([^/?#]+)/);
+  if (m) return `https://docs.google.com/presentation/d/${m[1]}/embed?start=false&loop=false&delayms=3000`;
+
+  m = url.match(/https:\/\/docs\.google\.com\/forms\/d\/([^/?#]+)/);
+  if (m) return `https://docs.google.com/forms/d/${m[1]}/viewform?embedded=true`;
+
+  m = url.match(/https:\/\/drive\.google\.com\/file\/d\/([^/?#]+)/);
+  if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+
+  m = url.match(/drive\.google\.com\/open\?id=([^&]+)/);
+  if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+
+  m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&?#]+)/);
+  if (m) return `https://www.youtube.com/embed/${m[1]}`;
+
+  m = url.match(/vimeo\.com\/(\d+)/);
+  if (m) return `https://player.vimeo.com/video/${m[1]}`;
+
+  return url;
+};
+
+// URLs that look external but can't be iframed
+const isNotEmbeddable = (url) =>
+  /drive\.google\.com\/drive\/folders\//.test(url);
+
+// After normalizeEmbed, only these origins reliably allow iframing
+const isKnownEmbeddable = (url) => {
+  if (!url || !isHttp(url)) return true; // local/relative paths are fine
+  const ext = getExt(url);
+  if (ext === 'pdf') return true;
+  return (
+    /\.google\.com\/.+(preview|pubhtml|embed|viewform)/.test(url) ||
+    /drive\.google\.com\/file\/d\//.test(url) ||
+    /youtube\.com\/embed\//.test(url) ||
+    /player\.vimeo\.com\/video\//.test(url)
+  );
+};
+
 const EmbedViewer = ({ src, title, ext }) => (
   <div className="pv-iframe-wrap">
     {ext === "pdf" ? (
@@ -37,7 +91,7 @@ const EmbedViewer = ({ src, title, ext }) => (
         </div>
       </object>
     ) : (
-      <iframe src={src} title={title} className="pv-iframe" loading="lazy" referrerPolicy="no-referrer" />
+      <iframe src={src} title={title} className="pv-iframe" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
     )}
   </div>
 );
@@ -106,13 +160,16 @@ const DataPreview = ({ url }) => {
   );
 };
 
-const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, related, embed, progress, copied, copyLink }) => {
+const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, related, embed: rawEmbed, progress, copied, copyLink }) => {
+  const embed = normalizeEmbed(rawEmbed || "");
   const isLinkable = embed && (isHttp(embed) || embed.startsWith("/"));
   const ext = getExt(embed);
   const embedMode = (() => {
     if (!embed) return "none";
     if (["csv", "json", "txt"].includes(ext)) return "data";
+    if (isNotEmbeddable(embed)) return "link";
     if (!isHttp(embed) && !embed.startsWith("/") && !ext) return "link";
+    if (!isKnownEmbeddable(embed)) return "link";
     return "iframe";
   })();
 
@@ -123,7 +180,7 @@ const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, relat
       </div>
 
       <div className="pv-topbar">
-        <button type="button" className="pv-back" onClick={onBack}>← Back</button>
+        <button type="button" className="pv-back" onClick={onBack}><FontAwesomeIcon icon={faArrowLeft} /><span>Back</span></button>
         <div className="pv-topbar-right">
           <button
             type="button"
@@ -134,6 +191,7 @@ const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, relat
             {copied ? '✓ Copied' : 'Copy link'}
           </button>
           {project.type && <span className="pv-pill">{cap(project.type)}</span>}
+          {project.cohort && <span className="pv-pill pv-pill-cohort">{project.cohort}</span>}
         </div>
       </div>
 
@@ -160,30 +218,26 @@ const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, relat
           <div className="pv-box">
             <div className="pv-box-head">
               <div className="pv-box-title">About this project</div>
-              {isLinkable && (
-                <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                  Open project ↗
-                </a>
-              )}
             </div>
             <ul className="pv-bullets">
               {highlights.map((h, i) => <li key={i}>{h}</li>)}
             </ul>
-          </div>
-
-          {embedMode === "iframe" && (
-            <div className="pv-box">
-              <div className="pv-box-head">
-                <div className="pv-box-title">{ext === "pdf" ? "Document" : "Embedded content"}</div>
-                <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                  Open ↗
+            {embedMode === "iframe" && <EmbedViewer src={embed} title={project.title} ext={ext} />}
+            {embedMode === "data" && <DataPreview url={embed} />}
+            {embedMode === "link" && embed && (
+              <div className="pv-visit-block">
+                <span className="pv-visit-label">This project lives on an external website.</span>
+                <a className="pv-btn-visit" href={embed} target="_blank" rel="noopener noreferrer">
+                  Visit Website ↗
                 </a>
               </div>
-              <EmbedViewer src={embed} title={project.title} ext={ext} />
-            </div>
-          )}
-
-          {embedMode === "data" && <DataPreview url={embed} />}
+            )}
+            {embedMode !== "link" && isLinkable && (
+              <a className="pv-btn pv-btn-cta" href={embed} target="_blank" rel="noopener noreferrer">
+                Open project ↗
+              </a>
+            )}
+          </div>
 
           <div className="pv-box">
             <div className="pv-box-head"><div className="pv-box-title">Details</div></div>
@@ -191,6 +245,12 @@ const SimpleProjectView = ({ project, onBack, onSelectProject, highlights, relat
               <div className="pv-k">Type</div>
               <div className="pv-v">{project.type ? cap(project.type) : "—"}</div>
             </div>
+            {project.cohort && (
+              <div className="pv-kv">
+                <div className="pv-k">Cohort</div>
+                <div className="pv-v"><span className="pv-pill pv-pill-cohort">{project.cohort}</span></div>
+              </div>
+            )}
             <div className="pv-kv">
               <div className="pv-k">Tags</div>
               <div className="pv-v pv-v-tags">
@@ -276,13 +336,15 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
   // Reset tab when switching projects
   useEffect(() => { setTab("overview"); }, [project?.id]);
 
-  const embed = project?.embed || "";
+  const embed = normalizeEmbed(project?.embed || "");
   const ext = getExt(embed);
 
   const embedMode = useMemo(() => {
     if (!embed) return "none";
     if (["csv", "json", "txt"].includes(ext)) return "data";
+    if (isNotEmbeddable(embed)) return "link";
     if (!isHttp(embed) && !embed.startsWith("/") && !ext) return "link";
+    if (!isKnownEmbeddable(embed)) return "link";
     return "iframe";
   }, [embed, ext]);
 
@@ -322,7 +384,7 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
     );
   }
 
-  const hasPreview = embedMode !== "none";
+  const hasPreview = embedMode === "iframe" || embedMode === "data";
 
   return (
     <div className="pv" tabIndex={-1}>
@@ -346,6 +408,7 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
             {copied ? '✓ Copied' : 'Copy link'}
           </button>
           {project.type && <span className="pv-pill">{cap(project.type)}</span>}
+          {project.cohort && <span className="pv-pill pv-pill-cohort">{project.cohort}</span>}
         </div>
       </div>
 
@@ -409,11 +472,6 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
             <div className="pv-box">
               <div className="pv-box-head">
                 <div className="pv-box-title">What this is</div>
-                {embed && (
-                  <a className="pv-btn pv-btn-primary" href={embed} target="_blank" rel="noopener noreferrer">
-                    Open project ↗
-                  </a>
-                )}
               </div>
               <ul className="pv-bullets">
                 {highlights.map((h, i) => <li key={i}>{h}</li>)}
@@ -422,6 +480,21 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
                 <div className="pv-content-inner">
                   <ContentComponent />
                 </div>
+              )}
+              {embedMode === "iframe" && <EmbedViewer src={embed} title={project.title} ext={ext} />}
+              {embedMode === "data" && <DataPreview url={embed} />}
+              {embedMode === "link" && embed && (
+                <div className="pv-visit-block">
+                  <span className="pv-visit-label">This project lives on an external website.</span>
+                  <a className="pv-btn-visit" href={embed} target="_blank" rel="noopener noreferrer">
+                    Visit Website ↗
+                  </a>
+                </div>
+              )}
+              {embedMode !== "link" && embed && (
+                <a className="pv-btn pv-btn-cta" href={embed} target="_blank" rel="noopener noreferrer">
+                  Open project ↗
+                </a>
               )}
             </div>
           )}

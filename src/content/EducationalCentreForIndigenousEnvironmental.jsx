@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function EducationalCentreForIndigenousEnvironmental() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>My research project is a website that contains information about how climate change is affecting Indigenous Peoples in Canada. My project aims to provide civic knowledge and encourage readers to mobilize based on that information. Climate change is a widely-known issue that is a great challenge of our time. However, the issue of climate change intersectionality is less discussed. In Canada, Indigenous Peoples are one of the populations that are most deeply impacted by climate change. The reasons for this are addressed in my research project. I believe that Canadians must advocate for the safety and autonomy of Indigenous Peoples as we live on their unceded territory. Most people are unlikely to read many of the sources I cited in my article first-hand. While academic literature is critical to research and innovation, it is inaccessible to many. One of the main aims of my project is to bridge the gap between researchers and people who do not read academic journals. Whether someone is not familiar with climate change or is well-versed in this subject of climate change intersectionality, I believe anyone can go to my website and learn something new. Since the topic I addressed is so urgent and severe, I expect that my audience will be motivated to take action on this subject. I made sure to include a “Take Action” section on my website for this reason. After people have learned on my website, they are encouraged to translate their knowledge into civic engagement.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Evelyn</h3>
+        <p>The intersectionality of climate change, being how different populations are affected by the phenomenon, is a subject I am passionate about. During my undergraduate degree, I wrote my capstone research paper on how gender-based violence is likely to increase as a result of climate change, using research from sub-Saharan Africa and Bangladesh to highlight this trend. As a non-Indigenous Canadian, I feel that it is important to advocate for the rights of Indigenous Peoples, which is why I chose to focus on the Indigenous population in Canada for my project.</p>
+      </section>
+    </article>
+  );
+}

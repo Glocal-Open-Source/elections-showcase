@@ -16,30 +16,6 @@ export default function YoucountMobileAppRedesigningAccess() {
         <p>The team developed a mobile application prototype that addressed these issues by restructuring navigation, simplifying language, and centralizing key functions. Changes included placing the dashboard in the main navigation, renaming features using familiar terms, and enabling direct access to records from expected locations. The solution also introduced a unified dashboard combining tasks, submissions, analytics, and resources, along with improved system feedback for tracking progress and approvals.</p>
       </section>
 
-      <section style={{ marginBottom: "2rem" }}>
-        <h3>Full Document</h3>
-        <iframe
-          src="content/YouCount Mobile Design Project Group Presentation.pdf"
-          width="100%"
-          height="600px"
-          title="Youcount Mobile App: Redesigning Access to Opportunity"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            background: "#fafafa",
-          }}
-        />
-        <p style={{ marginTop: "0.5rem" }}>
-          <a
-            href="/content/YouCount Mobile Design Project Group Presentation.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#5b2bff", fontWeight: 600 }}
-          >
-            Download PDF
-          </a>
-        </p>
-      </section>
     </article>
   );
 }

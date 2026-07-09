@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function TheYouthTutoringProject() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Project Team</h3>
+        <p>Team Members: Bupa</p>
+      </section>
+    </article>
+  );
+}

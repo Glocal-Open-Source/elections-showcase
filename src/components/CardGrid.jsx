@@ -1,5 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import ProjectCard from "./ProjectCard";
 
 const CardGrid = ({ projects, onSelect }) => {
@@ -40,11 +42,14 @@ const CardGrid = ({ projects, onSelect }) => {
       <div className="grid-top">
         <div className="grid-meta">
           <div className="grid-title">Projects</div>
-          <div className="grid-count">{viewProjects.length} shown</div>
+          <span className="grid-count">{viewProjects.length}</span>
         </div>
 
         <div className="grid-controls">
           <div className="grid-search">
+            <span className="grid-search-icon">
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </span>
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
@@ -83,14 +88,18 @@ const CardGrid = ({ projects, onSelect }) => {
       ) : (
         <div className="card-grid">
           <AnimatePresence mode="sync">
-            {viewProjects.map((project) => (
+            {viewProjects.map((project, i) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -12 }}
-                transition={{ duration: 0.22, ease: "easeOut" }}
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{
+                  duration: 0.26,
+                  delay: Math.min(i, 16) * 0.028,
+                  ease: [0.2, 0, 0, 1],
+                }}
               >
                 <ProjectCard project={project} onSelect={onSelect} />
               </motion.div>

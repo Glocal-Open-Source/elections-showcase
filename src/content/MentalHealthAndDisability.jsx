@@ -16,30 +16,6 @@ export default function MentalHealthAndDisability() {
         <p>Overall, the work demonstrates that effective impact in this space depends less on generating new information and more on how clearly and accessibly existing knowledge is communicated.</p>
       </section>
 
-      <section style={{ marginBottom: "2rem" }}>
-        <h3>Full Document</h3>
-        <iframe
-          src="content/Placement Presentation.pdf"
-          width="100%"
-          height="600px"
-          title="Mental Health and Disability"
-          style={{
-            border: "1px solid #ddd",
-            borderRadius: "8px",
-            background: "#fafafa",
-          }}
-        />
-        <p style={{ marginTop: "0.5rem" }}>
-          <a
-            href="/content/Placement Presentation.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: "#5b2bff", fontWeight: 600 }}
-          >
-            Download PDF
-          </a>
-        </p>
-      </section>
     </article>
   );
 }

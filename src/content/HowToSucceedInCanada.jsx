@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function HowToSucceedInCanada() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>How to Succeed in Canada as a newly arrived refugee; by Education and Work. This project will help guide on what steps to take as newcomers in order to quickly integrate into Canadian Society and successfully get into the workforce in the least amount of time. As well as getting more engaged and continuing education in the desired educational field. Project Goals: The goals of my project are to educate newly arrived refugees in Canada to understand how and in which ways they can be successful. For example, people who have already completed higher education overseas and want to continue education in Canada. This research guide will show what the process would be and how an individual can continue education in another country such as Canada. The following are the goals of my project: 1. Learning English: There are many free English courses and resources that are available throughout Canada to accomplish this. 2. Finding educational path: Once the language is learned, a person must have a goal in terms of what they would like to accomplish regarding education and their future career. Understanding the education system in Canada is essential. 3. Career Options: There are many ways to acquire information regarding future classes and career options. For example, a school counselor or career services. 4. Finding an educational institution: If possible while going to university it helps to work in the field they are going to work in. For example, a person can take a personal support worker course and start working in their field of choice. Multiple courses like this are available to every person trying to start their career. 6. Understanding the culture: in Canada will help a person acclimate into society. Understanding cultural norms and the language will help immensely.&quot;</p>
+      </section>
+    </article>
+  );
+}

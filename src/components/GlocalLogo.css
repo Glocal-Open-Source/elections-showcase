@@ -1,0 +1,49 @@
+/* ═══════════════════════════════════
+   GlocalLogo — animated logo component
+   ═══════════════════════════════════ */
+
+.gl-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  user-select: none;
+}
+
+.gl-globe {
+  flex-shrink: 0;
+  width: auto;
+  height: 116px;
+  display: block;
+  filter: drop-shadow(0 6px 20px rgba(109, 40, 217, 0.20));
+}
+
+.gl-text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.gl-name {
+  font-family: var(--font-display, 'Outfit', sans-serif);
+  font-size: 62px;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: #1eadd6;
+}
+
+.gl-tagline {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(12, 9, 19, 0.45);
+  padding-left: 2px;
+}
+
+@media (max-width: 600px) {
+  .gl-logo  { gap: 14px; }
+  .gl-globe { height: 72px; filter: none; }
+  .gl-name  { font-size: 38px; }
+  .gl-tagline { font-size: 9.5px; letter-spacing: 0.12em; }
+}

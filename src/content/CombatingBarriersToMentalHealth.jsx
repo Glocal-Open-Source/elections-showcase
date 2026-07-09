@@ -1,0 +1,18 @@
+import React from "react";
+
+export default function CombatingBarriersToMentalHealth() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>Racialized immigrants in Canada experience severely high rates of mental health challenges. However, few research studies have shed light on these issues, including the barriers limiting racialized immigrants’ access to mental health services in Canada. Thus, the current research project seeks to explore the underlying risk factors that contribute to the pervasiveness of mental health issues among this demographic and to explore the barriers that impede racialized immigrants’ access to mental health services. Understanding the limitations immigrants face when attempting to access mental health resources/services is significant for informing practical solutions to this problem. Thus, the current project aims to use the research findings to create a web-based resource that accumulates mental health resources for culturally-diverse immigrant populations. The anticipated outcomes of the project are to increase awareness of mental health issues among racialized immigrants and to improve the mental well-being of this demographic.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Esther</h3>
+        <p>Having immigrated to Canada seven years earlier from Pakistan, I have always been deeply passionate about conducting research that seeks to improve the mental health of diverse immigrant populations in Canada. I have developed many prospective research designs and proposals in this regard at the University of Guelph-Humber, where I recently graduated from with an Honors Bachelor in Psychology and a specialization in research and analysis. I intend to pursue my Masters in Clinical Psychology for Fall 2024 with the goal of becoming a culturally-inclusive mental health practitioner that seeks to better the lives of vulnerable population groups in Canada, which this research project serves as a pivotal stepping stone toward.</p>
+      </section>
+    </article>
+  );
+}

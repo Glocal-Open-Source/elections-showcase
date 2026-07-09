@@ -11,18 +11,15 @@ import {
   faXmark,
   faMagnifyingGlass,
   faTrash,
-  faSortAlphaDown,
-  faCheckDouble,
   faHouse,
   faGrip,
   faSun,
   faMoon,
+  faSliders,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Capitalize helper
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : "");
 
-// Simple fuzzy match function
 const fuzzyMatch = (pattern, str) => {
   pattern = (pattern || "").toLowerCase().trim();
   str = (str || "").toLowerCase();
@@ -35,36 +32,39 @@ const fuzzyMatch = (pattern, str) => {
 };
 
 const typeIcons = {
-  report: <FontAwesomeIcon icon={faBook} />,
-  data: <FontAwesomeIcon icon={faSquarePollVertical} />,
-  dashboard: <FontAwesomeIcon icon={faGauge} />,
+  report:      <FontAwesomeIcon icon={faBook} />,
+  data:        <FontAwesomeIcon icon={faSquarePollVertical} />,
+  dashboard:   <FontAwesomeIcon icon={faGauge} />,
   interactive: <FontAwesomeIcon icon={faGamepad} />,
-  events: <FontAwesomeIcon icon={faCommentDots} />,
+  events:      <FontAwesomeIcon icon={faCommentDots} />,
 };
 
 const Sidebar = ({
   types,
   activeTypes,
   onToggleType,
-  tags,
-  activeTags,
-  onToggleTag,
+  categories,
+  activeCategories,
+  onToggleCategory,
+  cohorts,
+  activeCohorts,
+  onToggleCohort,
+  provinces,
+  activeProvinces,
+  onToggleProvince,
+  onClearAll,
   onNavHome,
   onNavGrid,
   activeNavView,
   isDark,
   onToggleTheme,
 }) => {
-  const [tagSearch, setTagSearch] = useState("");
+  const [catSearch, setCatSearch] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [tagsOpen, setTagsOpen] = useState(true);
-  const [typesOpen, setTypesOpen] = useState(true);
-  const [tagSort, setTagSort] = useState("selected"); // "selected" | "az"
 
-  const asideRef = useRef(null);
+  const asideRef  = useRef(null);
   const searchRef = useRef(null);
 
-  // Close on Escape, trap focus-lite on mobile
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "Escape") setMobileOpen(false);
@@ -75,13 +75,11 @@ const Sidebar = ({
         );
         if (!focusables.length) return;
         const first = focusables[0];
-        const last = focusables[focusables.length - 1];
+        const last  = focusables[focusables.length - 1];
         if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
+          e.preventDefault(); last.focus();
         } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
+          e.preventDefault(); first.focus();
         }
       }
     };
@@ -99,55 +97,38 @@ const Sidebar = ({
     return () => document.body.classList.remove("sidebar-lock-scroll");
   }, [mobileOpen]);
 
-  const filteredTags = useMemo(() => {
-    const base = (tags || []).filter((t) => fuzzyMatch(tagSearch, t));
-    if (tagSort === "az") {
-      return base.slice().sort((a, b) => a.localeCompare(b));
-    }
-    // selected first, then A-Z
-    return base.slice().sort((a, b) => {
-      const as = activeTags.includes(a) ? 0 : 1;
-      const bs = activeTags.includes(b) ? 0 : 1;
-      if (as !== bs) return as - bs;
-      return a.localeCompare(b);
-    });
-  }, [tags, tagSearch, tagSort, activeTags]);
+  const filteredCats = useMemo(() => {
+    const base = categories || [];
+    if (!catSearch.trim()) return base;
+    return base.filter((c) => fuzzyMatch(catSearch, c));
+  }, [categories, catSearch]);
 
-  const selectedTagCount = activeTags.length;
-  const selectedTypeCount = activeTypes.length;
-
-  const clearTags = () => {
-    // toggle off each selected tag
-    activeTags.forEach((t) => onToggleTag(t));
-  };
-
-  const clearTypes = () => {
-    activeTypes.forEach((t) => onToggleType(t));
-  };
-
-  const selectAllFiltered = () => {
-    filteredTags.forEach((t) => {
-      if (!activeTags.includes(t)) onToggleTag(t);
-    });
-  };
-
-  const clearSearch = () => setTagSearch("");
+  const activeTypeCount     = activeTypes.length;
+  const activeCatCount      = activeCategories.length;
+  const activeCohortCount   = activeCohorts.length;
+  const activeProvinceCount = activeProvinces.length;
+  const totalActive         = activeTypeCount + activeCatCount + activeCohortCount + activeProvinceCount;
 
   const SidebarBody = (
     <div className="sidebar-body">
       {/* Header */}
       <div className="sidebar-header">
-        <a
-          href="https://www.glocalfoundation.ca"
-          rel="noopener noreferrer"
-        >
+        <a href="https://www.glocalfoundation.ca" rel="noopener noreferrer">
           <img src="logo.png" alt="GLOCAL Logo" className="logo" />
         </a>
         <div className="sidebar-sub">
-          {(selectedTypeCount + selectedTagCount) > 0 && (
-            <span className="pill pill-strong">
-              {selectedTypeCount + selectedTagCount} active
-            </span>
+          {totalActive > 0 ? (
+            <>
+              <span className="pill pill-strong">
+                <FontAwesomeIcon icon={faSliders} style={{ opacity: 0.8 }} />
+                {totalActive} active
+              </span>
+              <button type="button" className="clear-all-btn" onClick={onClearAll}>
+                Clear all
+              </button>
+            </>
+          ) : (
+            <span className="pill">All projects</span>
           )}
         </div>
       </div>
@@ -156,7 +137,7 @@ const Sidebar = ({
       <div className="sidebar-nav">
         <button
           type="button"
-          className={activeNavView === 'home' ? 'snav-btn active' : 'snav-btn'}
+          className={activeNavView === "home" ? "snav-btn active" : "snav-btn"}
           onClick={onNavHome}
           aria-label="Go to overview"
         >
@@ -165,7 +146,7 @@ const Sidebar = ({
         </button>
         <button
           type="button"
-          className={activeNavView === 'grid' ? 'snav-btn active' : 'snav-btn'}
+          className={activeNavView === "grid" ? "snav-btn active" : "snav-btn"}
           onClick={onNavGrid}
           aria-label="Browse projects"
         >
@@ -174,19 +155,19 @@ const Sidebar = ({
         </button>
       </div>
 
-      {/* Types */}
-      <div className="panel">
+      {/* Content Type */}
+      <div className="panel panel-type">
         <div className="panel-head">
           <div className="panel-title">
-            Content Types
-            {selectedTypeCount > 0 && <span className="badge">{selectedTypeCount}</span>}
+            Content Type
+            {activeTypeCount > 0 && <span className="badge">{activeTypeCount}</span>}
           </div>
           <div className="panel-actions">
-            {selectedTypeCount > 0 && (
+            {activeTypeCount > 0 && (
               <button
                 type="button"
                 className="icon-btn"
-                onClick={clearTypes}
+                onClick={() => activeTypes.forEach((t) => onToggleType(t))}
                 aria-label="Clear type filters"
               >
                 <FontAwesomeIcon icon={faTrash} />
@@ -194,142 +175,161 @@ const Sidebar = ({
             )}
           </div>
         </div>
-        {typesOpen && (
-          <div className="panel-content">
-            <div className="type-grid">
-              {types.map((t) => (
-                <button
-                  key={t}
-                  className={activeTypes.includes(t) ? "type-chip active" : "type-chip"}
-                  onClick={() => onToggleType(t)}
-                  type="button"
-                >
-                  <span className="icon">{typeIcons[t] || "💠"}</span>
-                  <span className="label">{cap(t)}</span>
-                </button>
-              ))}
-            </div>
+        <div className="panel-content">
+          <div className="type-grid">
+            {types.map((t) => (
+              <button
+                key={t}
+                className={activeTypes.includes(t) ? "type-chip active" : "type-chip"}
+                onClick={() => onToggleType(t)}
+                type="button"
+              >
+                <span className="icon">{typeIcons[t] || "💠"}</span>
+                <span className="label">{cap(t)}</span>
+              </button>
+            ))}
           </div>
-        )}
+        </div>
       </div>
 
-      {/* Tags */}
-      <div className="panel">
+      {/* Category */}
+      <div className="panel panel-category">
         <div className="panel-head">
           <div className="panel-title">
-            Filter by Tag
-            {selectedTagCount > 0 && <span className="badge">{selectedTagCount}</span>}
+            Category
+            {activeCatCount > 0 && <span className="badge">{activeCatCount}</span>}
           </div>
           <div className="panel-actions">
-            {selectedTagCount > 0 && (
+            {activeCatCount > 0 && (
               <button
                 type="button"
                 className="icon-btn"
-                onClick={clearTags}
-                aria-label="Clear tag filters"
+                onClick={() => activeCategories.forEach((c) => onToggleCategory(c))}
+                aria-label="Clear category filters"
               >
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             )}
           </div>
         </div>
-
-
-        {tagsOpen && (
-          <div className="panel-content">
-            {/* Search */}
-            <div className="search-row">
-              <div className="search">
-                <FontAwesomeIcon icon={faMagnifyingGlass} className="search-ico" />
-                <input
-                  ref={searchRef}
-                  type="text"
-                  placeholder="Search tags…"
-                  value={tagSearch}
-                  onChange={(e) => setTagSearch(e.target.value)}
-                  className="search-input"
-                />
-                {tagSearch && (
-                  <button type="button" className="icon-btn" onClick={clearSearch} aria-label="Clear search">
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                )}
-              </div>
-
-              <button
-                type="button"
-                className="icon-btn"
-                onClick={() => setTagSort((s) => (s === "selected" ? "az" : "selected"))}
-                aria-label="Toggle tag sort"
-                title={tagSort === "selected" ? "Sort A–Z" : "Sort by selected"}
-              >
-                <FontAwesomeIcon icon={faSortAlphaDown} />
-              </button>
-            </div>
-
-            {/* Selected chips */}
-            {activeTags.length > 0 && (
-              <div className="selected-chips" aria-label="Selected tags">
-                {activeTags.slice(0, 10).map((t) => (
-                  <button
-                    key={t}
-                    type="button"
-                    className="sel-chip"
-                    onClick={() => onToggleTag(t)}
-                    title="Remove tag"
-                  >
-                    {t} <span className="x">×</span>
-                  </button>
-                ))}
-                {activeTags.length > 10 && (
-                  <span className="muted">+{activeTags.length - 10} more</span>
-                )}
-              </div>
-            )}
-
-            {/* Bulk actions */}
-            <div className="bulk-row">
-              <button
-                type="button"
-                className="ghost-btn"
-                onClick={selectAllFiltered}
-                disabled={filteredTags.length === 0}
-              >
-                <FontAwesomeIcon icon={faCheckDouble} /> Select filtered
-              </button>
-              <span className="muted">
-                {filteredTags.length} shown
-              </span>
-            </div>
-
-            {/* Tag list */}
-            <div className="tag-list" role="list">
-              {filteredTags.length > 0 ? (
-                filteredTags.map((tag) => {
-                  const checked = activeTags.includes(tag);
-                  return (
-                    <button
-                      key={tag}
-                      type="button"
-                      role="listitem"
-                      className={checked ? "tag-row checked" : "tag-row"}
-                      onClick={() => onToggleTag(tag)}
-                    >
-                      <span className={checked ? "tick on" : "tick"} aria-hidden="true">
-                        ✓
-                      </span>
-                      <span className="tag-text">{tag}</span>
-                    </button>
-                  );
-                })
-              ) : (
-                <div className="empty">
-                  No matching tags.
-                </div>
+        <div className="panel-content">
+          <div className="search-row">
+            <div className="search">
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="search-ico" />
+              <input
+                ref={searchRef}
+                type="text"
+                placeholder="Search categories…"
+                value={catSearch}
+                onChange={(e) => setCatSearch(e.target.value)}
+                className="search-input"
+              />
+              {catSearch && (
+                <button
+                  type="button"
+                  className="icon-btn"
+                  onClick={() => setCatSearch("")}
+                  aria-label="Clear search"
+                >
+                  <FontAwesomeIcon icon={faXmark} />
+                </button>
               )}
             </div>
           </div>
-        )}
+          <div className="cat-list" role="list">
+            {filteredCats.length > 0 ? (
+              filteredCats.map((cat) => {
+                const checked = activeCategories.includes(cat);
+                return (
+                  <button
+                    key={cat}
+                    type="button"
+                    role="listitem"
+                    className={checked ? "filter-row checked" : "filter-row"}
+                    onClick={() => onToggleCategory(cat)}
+                  >
+                    <span className={checked ? "tick on" : "tick"} aria-hidden="true">✓</span>
+                    <span className="filter-text">{cat}</span>
+                  </button>
+                );
+              })
+            ) : (
+              <div className="empty">No matching categories.</div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Cohort */}
+      <div className="panel panel-cohort">
+        <div className="panel-head">
+          <div className="panel-title">
+            Cohort
+            {activeCohortCount > 0 && <span className="badge">{activeCohortCount}</span>}
+          </div>
+          <div className="panel-actions">
+            {activeCohortCount > 0 && (
+              <button
+                type="button"
+                className="icon-btn"
+                onClick={() => activeCohorts.forEach((c) => onToggleCohort(c))}
+                aria-label="Clear cohort filters"
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="panel-content">
+          <div className="cohort-grid">
+            {(cohorts || []).map((c) => (
+              <button
+                key={c}
+                type="button"
+                className={activeCohorts.includes(c) ? "type-chip active" : "type-chip"}
+                onClick={() => onToggleCohort(c)}
+              >
+                <span className="label">{c}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Province */}
+      <div className="panel panel-province">
+        <div className="panel-head">
+          <div className="panel-title">
+            Province / Territory
+            {activeProvinceCount > 0 && <span className="badge">{activeProvinceCount}</span>}
+          </div>
+          <div className="panel-actions">
+            {activeProvinceCount > 0 && (
+              <button
+                type="button"
+                className="icon-btn"
+                onClick={() => activeProvinces.forEach((p) => onToggleProvince(p))}
+                aria-label="Clear province filters"
+              >
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            )}
+          </div>
+        </div>
+        <div className="panel-content">
+          <div className="cohort-grid">
+            {(provinces || []).map((p) => (
+              <button
+                key={p}
+                type="button"
+                className={activeProvinces.includes(p) ? "type-chip active" : "type-chip"}
+                onClick={() => onToggleProvince(p)}
+              >
+                <span className="label">{p}</span>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Theme toggle */}
@@ -362,7 +362,7 @@ const Sidebar = ({
         <div className="mobile-nav-btns">
           <button
             type="button"
-            className={activeNavView === 'home' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
+            className={activeNavView === "home" ? "mobile-nav-btn active" : "mobile-nav-btn"}
             onClick={onNavHome}
             aria-label="Go to overview"
           >
@@ -370,7 +370,7 @@ const Sidebar = ({
           </button>
           <button
             type="button"
-            className={activeNavView === 'grid' ? 'mobile-nav-btn active' : 'mobile-nav-btn'}
+            className={activeNavView === "grid" ? "mobile-nav-btn active" : "mobile-nav-btn"}
             onClick={onNavGrid}
             aria-label="Browse projects"
           >
@@ -395,8 +395,8 @@ const Sidebar = ({
         >
           <FontAwesomeIcon icon={faBars} />
           <span>Filters</span>
-          {(selectedTypeCount + selectedTagCount) > 0 && (
-            <span className="badge badge-dot">{selectedTypeCount + selectedTagCount}</span>
+          {totalActive > 0 && (
+            <span className="badge badge-dot">{totalActive}</span>
           )}
         </button>
       </div>

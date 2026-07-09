@@ -1,0 +1,35 @@
+import React from "react";
+
+export default function HousifitAHouseRentingApp() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Project Team</h3>
+        <p>Team Members: Oluwatosin Adetola</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>In terms of creativity, Housifit introduces a fresh and user-friendly approach to the housing market. The interface is designed to be intuitive, offering a seamless experience for users with diverse technological backgrounds. The inclusion of geotagging, mapping features, and detailed property information not only enhances user engagement but also adds a creative touch to the traditional house-hunting experience. The feedback and rating system fosters a sense of community, encouraging users to share their thoughts and experiences creatively. Moreover, the app goes beyond the conventional housing platform by incorporating real estate trend exploration, providing users like Joan with creative insights into potential investment opportunities. In summary, Housifit demonstrates cost-efficiency through streamlined data collection and communication, while its creative features and holistic approach to the housing market set it apart, creating a unique and innovative solution to address the growing demand for housing in Canada.&quot;&quot; The project centers on the development of Housifit, a mobile application aimed at addressing the escalating housing demand in Canada, particularly impacting immigrants and young Canadians. The primary objectives include improving communication between landlords and tenants, streamlining the housing search through data-driven solutions, implementing a user-friendly interface, fostering community engagement, and ensuring cost-efficiency. The specific challenge at hand is the pronounced mismatch between the increasing demand for housing and the limited availability of suitable properties, particularly affecting vulnerable demographics. The absence of an efficient communication platform exacerbates this issue, hindering the optimal matching of tenants with appropriate housing options. Housifit seeks to alleviate these challenges by providing an innovative solution that not only streamlines communication but also incorporates targeted data collection to address the unique needs of immigrants and young Canadians. The significance of this project lies in its alignment with the goals of civic engagement and knowledge mobilization advocated by CANConnect and the GLOCAL Foundation. By actively addressing a pressing societal issue, Housifit contributes to fostering inclusive communities, promoting technological innovation, and mitigating challenges associated with housing accessibility. Through its holistic approach, the project resonates with the overarching objectives of CANConnect and the GLOCAL Foundation to empower communities, foster collaborative solutions, and enhance societal well-being.</p>
+      </section>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>About Oluwatosin</h3>
+        <p>I am a full-time student at the university of Manitoba and a part time Volunteer at GLOCAL foundation. Volunteering at the GLOCAL foundation has been a very incredible personal journey of discovery – from mastering the art of digital communication to expressing my unique creativity through design. Along the way, I&#x27;ve honed invaluable social media skills, learning how to effectively engage and connect with diverse audiences. It&#x27;s all about my unwavering commitment, dedication, and a deep embrace of the endless opportunities this vast online world offers. Let&#x27;s come together to foster meaningful discussions.</p>
+      </section>
+
+      <section style={{ marginBottom: "2rem" }}>
+        <h3>Full Document</h3>
+        <object
+          data="content/ux-case-study-presentation.pdf"
+          type="application/pdf"
+          aria-label="Housifit - A House renting app."
+          style={{ width: "100%", height: "700px", border: "1px solid #ddd", borderRadius: "8px" }}
+        >
+          <a href="content/ux-case-study-presentation.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+        </object>
+      </section>
+    </article>
+  );
+}

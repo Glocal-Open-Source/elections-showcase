@@ -1,0 +1,2518 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-06-01T16:23:42.517445+00:00",
+  "source": "GLOCAL bulk project adder",
+  "projectCount": 89,
+  "projects": [
+    {
+      "title": "Kickstart Youth Sports",
+      "type": "interactive",
+      "description": "A winter soccer program fostered inclusion, physical activity, and community connection among newcomer and local youth by providing accessible indoor play and promoting friendships and teamwork.",
+      "team": "Abdikadir A.",
+      "tags": [
+        "alberta",
+        "microgrant-2025",
+        "community-services"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "A winter soccer program brought together newcomer and local youth to promote physical activity, inclusion, and community connection during the colder months. Indoor venues and equipment were provided to ensure accessible participation in a welcoming environment. The program supported the development of friendships, teamwork, and a stronger sense of belonging while encouraging youth to stay active and engaged throughout the winter."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Effects of Screen Use on Sleep Patterns",
+      "type": "report",
+      "description": "The project investigated the negative effects of excessive pre-bed screen use on sleep, melatonin, and daily performance, and promoted healthier bedtime habits through educational materials and practical strategies.",
+      "team": "Adam A.",
+      "tags": [
+        "ontario",
+        "microgrant-2025",
+        "public-health"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project explored how excessive screen use before bed affects sleep quality, melatonin production, and daily performance. Research findings were shared through educational materials promoting healthier screen habits, increased awareness around sleep health, and practical strategies for improving bedtime routines."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "LabPath Hackathon",
+      "type": "data",
+      "description": "LabPath\u2019s two-day hackathon engaged 300 students in an endocrinology case competition, where top original research projects were published, advancing undergraduate research accessibility.",
+      "team": "Aditya L.",
+      "tags": [
+        "ontario",
+        "microgrant-2025",
+        "public-health"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "LabPath\u2019s two-day research hackathon brought together 300 students to participate in a case competition focused on endocrinology. Students developed and presented original research ideas evaluated by professors, doctors, and researchers, with top submissions published in the URNCST Journal to promote accessible undergraduate research opportunities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Newcomer Youth Voices: Civic Awareness & Community Connection Project",
+      "type": "interactive",
+      "description": "The project empowered newcomer youth to engage confidently in their communities by fostering civic awareness, promoting inclusion, and providing information on available supports in Canada.",
+      "team": "Afrasiab S.",
+      "tags": [
+        "alberta",
+        "microgrant-2025",
+        "inclusion-equity"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supported newcomer youth in developing a better understanding of civic awareness, community involvement, and available supports in Canada. Through research and an interactive school presentation, the project promoted inclusion, discussion, and greater confidence in community participation."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Know the System: Civic Research on Business Compliance Rights for Newcomers in NL",
+      "type": "report",
+      "description": "The project identified challenges faced by newcomer entrepreneurs with business regulations in Newfoundland and Labrador and created easy-to-understand guides to help them access essential civic and economic information.",
+      "team": "Afsana M.",
+      "tags": [
+        "newfoundland-and-labrador",
+        "microgrant-2025",
+        "inclusion-equity",
+        "social-entrepreneurship"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This civic research project explored barriers newcomer entrepreneurs face when navigating business regulations in Newfoundland and Labrador. The project produced plain-language guides on business compliance, taxation, permits, and self-employment rights to improve access to civic and economic information for newcomers."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Mea: Digital Mental Health Support for Postpartum Women",
+      "type": "interactive",
+      "description": "Mea is a digital initiative that enhances postpartum mental health support by offering free virtual workshops, expert discussions, and community partnerships to provide accessible information, reduce stigma, and foster supportive connections.",
+      "team": "Aknan A.",
+      "tags": [
+        "ontario",
+        "microgrant-2025",
+        "public-health",
+        "mental-health"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Mea is a digital initiative that improved access to postpartum mental health support through free virtual workshops, expert-led discussions, and community partnerships. The project created accessible spaces for postpartum individuals to access reliable information, reduce stigma, and build supportive connections."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Improving Access to Health Systems and Community Resources for Richmond\u2019s Chinese-Speaking Seniors: A Pilot Chatbot Project",
+      "type": "interactive",
+      "description": "A WeChat-based chatbot pilot project, supported by bilingual youth volunteers, was implemented to help Chinese-speaking seniors in Richmond more easily access health and community resources through resource development, community feedback, and chatbot testing.",
+      "team": "Alexander W.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025",
+        "inclusion-equity"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This pilot project explored the use of a WeChat-based chatbot to help Chinese-speaking seniors in Richmond access health and community resources more easily. The initiative included resource development, community feedback, and chatbot testing supported by bilingual youth volunteers."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Educational and Civic Barriers Faced by Newcomer and Refugee Youth in Canada",
+      "type": "report",
+      "description": "The project found that newcomer and refugee youth face significant educational and civic challenges, but school and community supports are crucial for fostering their inclusion and engagement.",
+      "team": "Alijan A.",
+      "tags": [
+        "alberta",
+        "microgrant-2025",
+        "inclusion-equity"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This research project examined the educational and civic challenges faced by newcomer and refugee youth, including language barriers, unfamiliar school systems, and limited civic knowledge. The project highlighted the importance of school and community supports in promoting inclusion, confidence, and civic engagement."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "3 x 3 Basketball for 3 Met Schools: Building Community & Belonging Through Data",
+      "type": "interactive",
+      "description": "A 3x3 basketball tournament united students from three MET schools to foster belonging and community, using a custom statistics tool to recognize player effort and blend sports, technology, and youth leadership.",
+      "team": "Antawn O.",
+      "tags": [
+        "manitoba",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project brought together students from three MET schools through a 3x3 basketball tournament designed to promote belonging, teamwork, and community connection. Using a custom-built statistics tool, the initiative recognized player effort and performance while combining sports, technology, and youth leadership."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Youth Leaders in Law",
+      "type": "data",
+      "description": "Youth Leaders in Law expanded access to legal education and mentorship for underrepresented youth through free conferences, online sessions, and educational resources.",
+      "team": "Arnaaz S.",
+      "tags": [
+        "alberta",
+        "microgrant-2025",
+        "inclusion-equity",
+        "law-judicial",
+        "accessibility"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Youth Leaders in Law connected students with legal professionals through free conferences, online sessions, and educational content focused on legal careers and civic issues. The project increased access to legal knowledge and mentorship opportunities for youth from underrepresented backgrounds."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Food Literacy @ JHES",
+      "type": "interactive",
+      "description": "The project enabled Jack Hulland Elementary students to learn about nutrition and sustainable food systems through hands-on gardening and hydroponics activities.",
+      "team": "Avery B.",
+      "tags": [
+        "yukon",
+        "microgrant-2025",
+        "accessibility",
+        "environment-climate"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supported a year-long food literacy program at Jack Hulland Elementary School by providing hydroponics kits and gardening supplies. Students engaged in hands-on learning about plant growth, nutrition, and sustainable food systems through indoor growing systems and the revitalization of the school garden."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Learning from History: Residential Schools and Reconciliation in Canada",
+      "type": "report",
+      "description": "The project explored the historical and lasting effects of colonial policies on Indigenous peoples in Canada, aiming to raise awareness about cultural genocide, intergenerational trauma, and the need for reconciliation and civic understanding.",
+      "team": "Ayda J.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project examined the history and ongoing impacts of residential schools, the Sixties Scoop, and other colonial policies affecting Indigenous peoples in Canada. It aimed to increase awareness of cultural genocide, intergenerational trauma, and the importance of reconciliation and civic understanding."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Canada Housing Affordability Analysis",
+      "type": "data",
+      "description": "The project examined housing affordability disparities among visible minority groups in Canada using key indicators and data dashboards to enhance public understanding of housing inequality.",
+      "team": "Bharat S.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project analyzed housing affordability challenges among visible minority groups in Canada using indicators such as core housing need and STIR. Findings were presented through accessible data dashboards to highlight disparities and support civic understanding of housing inequality."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "NL Youth Food Security Pitch Day",
+      "type": "data",
+      "description": "A province-wide youth competition in Newfoundland and Labrador empowered high school students to address food insecurity by developing and presenting innovative, community-based solutions, fostering civic engagement and systems thinking.",
+      "team": "Bibin B.",
+      "tags": [
+        "newfoundland-and-labrador",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This province-wide youth competition engaged high school students in exploring food insecurity in Newfoundland and Labrador. Participants developed and presented innovative, community-based solutions to a panel of judges, promoting youth civic engagement and systems thinking around local food challenges."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Youth Unemployment and Its Consequences",
+      "type": "report",
+      "description": "The project found that structural barriers worsen youth unemployment in Canada, especially for marginalized groups, leading to broader social challenges and underscoring the need for early intervention and support.",
+      "team": "Bryan L.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This research-based awareness project examined youth unemployment in Canada and its broader social impacts, including housing insecurity and long-term instability. It emphasized how structural barriers disproportionately affect marginalized youth and highlighted the importance of early intervention and support."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Youth Iftar Night",
+      "type": "data",
+      "description": "The event united Palestinian, Arab, and SWANA youth during Ramadan for reflection, creative expression, and identity-building through storytelling, discussion, and guided writing.",
+      "team": "Celina S.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This youth-centered community gathering brought together Palestinian, Arab, and SWANA youth for reflection, dialogue, and creative expression during Ramadan. The event fostered connection, emotional literacy, and identity-building through storytelling, discussion, and guided writing activities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Keep Ups for a Kause",
+      "type": "data",
+      "description": "A student-led soccer fundraising event raised awareness and funds for water insecurity by combining sport, youth leadership, and community action to support infrastructure projects and promote civic engagement.",
+      "team": "Christopher C.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This student-led initiative used a soccer-based fundraising event to raise awareness and funds for global and local water insecurity issues. It combined sport, youth leadership, and community action to support infrastructure projects while encouraging civic engagement and collaboration."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "MentHelp: Mental Health Connect",
+      "type": "interactive",
+      "description": "The platform streamlined access to trusted local mental health and social support resources, making it easier for youth, newcomers, and international students to navigate complex support systems.",
+      "team": "Damilola F.",
+      "tags": [
+        "saskatchewan",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This digital civic platform simplified access to mental health and social support services by organizing trusted local resources in an accessible format. The project focused on improving navigation of complex support systems, particularly for youth, newcomers, and international students."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "THE180!",
+      "type": "data",
+      "description": "A media arts initiative empowered refugee and homeless youth to critically explore and express social norms through creative projects, fostering dialogue and reflection on social change.",
+      "team": "Daniel-James C.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This media arts and digital storytelling initiative engaged refugee and homeless youth in exploring social norms related to gender, culture, religion, and identity. Through creative production such as podcasts and skits, the project encouraged critical reflection, expression, and dialogue around social change."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Modeling and Stress-Testing Housing Affordability in Canada Using Econometric and Machine Learning Methods",
+      "type": "data",
+      "description": "The project models housing affordability in Canada using econometric and machine learning methods to analyze how income, interest rates, and housing supply affect affordability, providing scenario-based insights for policy and decision-making.",
+      "team": "Dessailly K.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project aims to model and analyze housing affordability in Canada using econometric and machine learning methods. It examines how factors such as income, interest rates, and housing supply influence affordability across provinces and major housing markets. Using public datasets and affordability indicators like price-to-income ratios and mortgage burden, the project produces scenario-based insights to support evidence-informed policy and decision-making."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Northern Adventures",
+      "type": "interactive",
+      "description": "The project promotes Inuit cultural preservation and intergenerational learning by engaging youth and Elders in traditional land- and water-based activities.",
+      "team": "Elaina I.",
+      "tags": [
+        "nunavut",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project preserves and shares Inuit cultural knowledge through hands-on land- and water-based activities such as dog sledding and boating. It focuses on strengthening connections between Inuit youth, Elders, and the land while supporting cultural continuity, skills development, and intergenerational learning."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Wealth & Risk: An AI-Enhanced Analysis of Assets and Debt in Canadian Households",
+      "type": "data",
+      "description": "The project uses Statistics Canada data, visualization, forecasting, and AI tools to make complex information on household assets, debt, and financial resilience in Canada more accessible and to enhance understanding of wealth inequality.",
+      "team": "Elsie M.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project analyzes household assets, debt, and financial resilience across regions, age groups, and family types in Canada using publicly available Statistics Canada data. It combines data visualization, forecasting models, and AI-assisted tools to make complex economic information more accessible and support civic understanding of wealth inequality and financial wellbeing."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Mobilizing Student Tenants in North York",
+      "type": "data",
+      "description": "The project created a digital platform offering curated resources, workshops, and advocacy tools to help North York student tenants understand their housing rights and combat misinformation.",
+      "team": "Emilia K.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project developed a digital-first platform to support student tenants in North York in understanding their housing rights and accessing reliable resources. In collaboration with community partners, it provided curated tenant information, workshops, and surveys to improve awareness, combat misinformation, and support tenant advocacy."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Hockey Cares Youth Cultural Exchange",
+      "type": "interactive",
+      "description": "Hockey Cares and Experiences Canada are organizing a 2026 youth exchange for 13\u201316-year-olds from Kugaaruk and St. Catharines, featuring reciprocal visits with hockey, cultural sharing, and leadership development activities to foster cross-community understanding.",
+      "team": "Emma K.",
+      "tags": [
+        "nunavut",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "A youth cultural exchange program is being facilitated by Hockey Cares in partnership with Experiences Canada for participants aged 13\u201316 from Kugaaruk and St. Catharines. The two-phase exchange in 2026 involves reciprocal visits, including hockey training, games, cultural and social activities, and post-secondary and career exploration opportunities. The program emphasizes cultural sharing, with Kugaaruk youth hosting Southern participants through land-based activities such as feasts, drum dancing, and ice fishing, strengthening cultural identity, leadership, and cross-community understanding."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Waveform Damping as a Coupled Head-Neck Protection Principle",
+      "type": "report",
+      "description": "The study used finite-element modeling to show that optimizing deceleration waveform shape can influence brain and neck injury outcomes in ballistic- and blast-like impacts, informing protective system design.",
+      "team": "Ethan L.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This study used a validated finite-element head\u2013neck model to examine whether deceleration waveform shape can be optimized as a primary protective variable in short-duration ballistic- and blast-like impacts. A systematic simulation matrix varied waveform type, impact timing, deceleration ratios, and jerk levels, with outcomes measured through brain strain, cumulative damage metrics, and neck injury criteria. The findings contribute to understanding how engineered loading profiles may influence injury outcomes in head\u2013neck protection systems."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "DigiMePro: Empowering Youth with Digital Identity for Civic Engagement",
+      "type": "interactive",
+      "description": "DigiMePro empowers underserved youth to build digital identities and expand opportunities through workshops, support, and innovative tools like NFC-enabled cards.",
+      "team": "Fabiha T.",
+      "tags": [
+        "ontario",
+        "microgrant-2025",
+        "inclusion-equity"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "DigiMePro is a youth-led initiative addressing digital exclusion by helping young people, especially newcomers and underserved youth, build strong digital identities for civic and professional engagement. Through workshops and guided support, participants developed digital profiles and tools such as NFC-enabled cards to showcase skills, experiences, and community involvement, strengthening confidence, networking, and access to opportunities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Stories Without Borders: Refugee Stories of Hope, Survival, and Resilience",
+      "type": "interactive",
+      "description": "Stories Without Borders is a platform that shares refugees' experiences in Canada, documenting their challenges and contributions while offering insights to improve understanding and support.",
+      "team": "Fariah R.",
+      "tags": [
+        "ontario",
+        "microgrant-2025",
+        "inclusion-equity",
+        "accessibility"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Stories Without Borders is a storytelling platform that amplifies the lived experiences of refugees in Canada, highlighting both challenges and contributions. Through interviews with refugee professionals and students, the project documents barriers such as credential recognition and access to education and employment, while sharing insights and solutions from participants to improve understanding and support for refugee communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Enhancing Telehealth Access and Digital Literacy for IMR Communities in BC",
+      "type": "data",
+      "description": "The project investigates obstacles to telehealth access for immigrant, migrant, and refugee groups in British Columbia\u2014such as language, digital literacy, and socioeconomic barriers\u2014while developing resources and recommendations to enhance equitable virtual healthcare.",
+      "team": "Fatima R.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project examines barriers to telehealth access among immigrant, migrant, and refugee populations in British Columbia, focusing on challenges related to language, digital literacy, and socioeconomic factors, while measuring usage and satisfaction with virtual healthcare services. It develops accessible digital resources, including a website, educational materials, and webinars, and produces a research report with recommendations to improve equitable access to telehealth across underserved communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "A Million Acts of Love Changemaker Program",
+      "type": "data",
+      "description": "The project created age-specific Changemaker Toolkits and a centralized web resource to guide and support students and educators in effective civic engagement and community action.",
+      "team": "Felix T.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project developed two age-appropriate Changemaker Toolkits to help elementary and high school students turn their ideas into meaningful community action through structured, step-by-step guidance. It also created a web landing page to centralize resources and improve accessibility, supporting educators and youth in engaging more easily in civic participation and community-driven initiatives."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Kasama: Bridging the Gap to University for Filipino-Canadians",
+      "type": "data",
+      "description": "The project creates an online platform to support Filipino-Canadian youth in overcoming financial, academic, and guidance barriers to post-secondary education by providing resources, navigation support, and representation.",
+      "team": "Flor D.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project addresses barriers to post-secondary education faced by Filipino-Canadian youth, including financial pressures, academic streaming, and limited guidance. It develops an online platform offering educational resources, navigation support, and storytelling to increase representation, access, and a sense of belonging in higher education."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Web-Ready Access Platform",
+      "type": "interactive",
+      "description": "The Web-Ready Access Platform is a digital tool that centralizes resources to help nonprofits enhance website accessibility, sustainability, and effectiveness for a more equitable online civic presence.",
+      "team": "Gabriel D.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Web-Ready Access Platform is a digital resource that helps nonprofits and community organizations improve website accessibility, sustainability, and effectiveness. It consolidates guidance on inclusive design, digital efficiency, and funding opportunities to support stronger, more equitable online civic infrastructure."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Action Pact",
+      "type": "interactive",
+      "description": "The Action Pact is a civic engagement initiative that boosts Canadian youth participation in democracy through interactive workshops, election simulations, and the ActiVote digital tool for informed voting.",
+      "team": "Grace L.",
+      "tags": [
+        "quebec",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Action Pact is a civic engagement initiative designed to increase youth participation in Canadian democracy through interactive workshops and experiential learning. It includes election simulations and the development of ActiVote, a digital tool that helps users explore political issues and party alignment to support informed and strategic voting."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Human and AI: Digital Literacy Through Social Media",
+      "type": "data",
+      "description": "The project leverages interactive social media posts to enhance youth digital literacy by teaching them to identify AI-generated versus human-created content, fostering critical thinking and awareness of online misinformation.",
+      "team": "Grace C.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project uses social media to improve youth digital literacy by helping users distinguish between AI-generated and human-created content. Through interactive TikTok and Instagram posts, participants engage in \u201cguess and reveal\u201d activities that build critical thinking skills and awareness of online misinformation in an accessible and engaging format."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Cybersecurity Awareness Program for Newcomers",
+      "type": "data",
+      "description": "The Digital Security Action Program (DSAP) educates newcomers in Canada on cybersecurity and scam prevention through online resources and community outreach, effectively reducing incidents of digital fraud.",
+      "team": "Hussain K.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Digital Security Action Program (DSAP) is a community initiative that provides cybersecurity education to newcomers in Canada, focusing on identifying and avoiding online scams. Through a website and social media outreach, the project equips users with practical digital safety knowledge and has already demonstrated impact in preventing real-world fraud attempts."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "National Transit Equity Research Audit",
+      "type": "data",
+      "description": "NTERA is a Canada-wide data project that combines transit and census data to reveal and address disparities in public transit access across income groups and neighborhoods.",
+      "team": "Jason P.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The National Transit Equity Research Audit (NTERA) is a Canada-wide data project that examines disparities in public transit access across income groups and neighborhoods. By combining transit schedule data with census information, it produces accessible, open-source insights to support equitable transit planning and informed civic participation."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "A Digital Tricuspid Valve Model for 3D Printing and Education Purposes",
+      "type": "data",
+      "description": "The project developed a 3D-printed PCL tricuspid valve model and public educational resources to advance research, learning, and discussion in regenerative valve replacement and cardiac health.",
+      "team": "Jiahao W.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project explores the feasibility of developing a 3D-printed tricuspid valve model using PCL for regenerative valve replacement research. The team created a public educational resource and printable prototype to support learning, outreach, and discussion around cardiac health and biomedical innovation."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "LitSpark Youth",
+      "type": "data",
+      "description": "LitSpark Youth empowers underserved Ottawa youth through literacy, creativity, and civic engagement initiatives, fostering confidence and communication skills via workshops, mentorship, and community partnerships.",
+      "team": "Jin B.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "LitSpark Youth is a student-led initiative that promotes literacy, creativity, and civic engagement among underserved youth in Ottawa through workshops, mentorship, and community partnerships. By creating inclusive spaces for reading, writing, and self-expression, the project empowers youth to build confidence, strengthen communication skills, and actively participate in their communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "One Nation Sports Kids",
+      "type": "data",
+      "description": "The project leverages inclusive sports programs in Toronto to foster youth engagement, leadership, and community connection while building confidence, healthy habits, and life skills.",
+      "team": "Kalifa T.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project uses sports programs such as soccer and basketball to promote youth engagement, leadership, teamwork, and community connection in Toronto. Through inclusive recreational activities, participants developed confidence, healthy habits, and civic values while learning important life and leadership skills."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Helping Newcomers Navigate Essential Services in Canada",
+      "type": "data",
+      "description": "The project aids newcomers in Canada by offering accessible guides and outreach to connect them with essential services, thereby fostering inclusion and community integration.",
+      "team": "Kalsoom S.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supports newcomers in Canada by providing accessible guides and outreach that help individuals connect with essential services such as healthcare, education, housing, and employment support. By improving awareness and reducing barriers, the initiative promotes inclusion, civic awareness, and stronger community integration."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Newcomer and Resident Support",
+      "type": "data",
+      "description": "The Newcomer and Resident Support project offers personalized assistance to help individuals access essential services and strengthen community ties.",
+      "team": "Kamran S.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Newcomer and Resident Support project provides one-on-one outreach, referrals, and guidance to help newcomers and local residents better navigate services related to housing, employment, healthcare, and education. Through practical and accessible support, the project strengthens community connections and improves access to important resources."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Perspective Project",
+      "type": "data",
+      "description": "The Perspective Project is a youth-led initiative that promotes awareness of global vision health inequities through interactive workshops using simulation goggles to foster empathy and civic engagement among students.",
+      "team": "Kobe L.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Perspective Project is a youth-led advocacy initiative that raises awareness about global vision health inequities through immersive workshops and experiential learning. Using simulation goggles and educational materials, the project helps students better understand visual impairments while encouraging empathy, advocacy, and civic engagement."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Snow Spirit and Science",
+      "type": "data",
+      "description": "Spring, Spirit & Science is an Indigenous-led program that blends land-based learning, Indigenous knowledge, and environmental science to engage youth in climate, water, and stewardship education through hands-on and culturally-rooted activities.",
+      "team": "Krista C.",
+      "tags": [
+        "saskatchewan",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Spring, Spirit & Science is an Indigenous-led environmental education initiative that combines land-based learning, Indigenous knowledge, and environmental science to teach youth about climate change, water systems, and environmental stewardship. Through hands-on activities and cultural teachings, the project strengthens environmental awareness, cultural connection, and youth participation in community learning."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Knowledge Mobilization Hub for Sleuth Studies: The Hardy Boys Podcast",
+      "type": "data",
+      "description": "The project enhanced the Sleuth Studies website with blog and timeline features to foster public engagement, critical thinking, and youth involvement in literary and civic discussions through diverse digital content.",
+      "team": "Kyra D.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project expanded the Sleuth Studies website by creating blog and timeline sections that support public access to discussions about the Hardy Boys series, Canadian literary history, and civic engagement. Through podcasts, written content, and digital outreach, the initiative promotes critical thinking, knowledge mobilization, and youth engagement with literature and society."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Expanding Access to School-Based Music Therapy at Heydon Park Secondary School",
+      "type": "data",
+      "description": "Weekly group music therapy at Heydon Park Secondary School improved communication, emotional regulation, and inclusion for special needs students by providing accessible, evidence-based support within the school setting.",
+      "team": "Lauren H.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project provided weekly group music therapy sessions for students with special needs at Heydon Park Secondary School to support communication, emotional regulation, and inclusion. By embedding therapy within the school environment, the initiative improved access to evidence-based supports for students facing developmental and communication challenges."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "MELI (Multilingual Education and Learning for Immigrants)",
+      "type": "data",
+      "description": "MELI is a multilingual seminar initiative that supports newcomer and first-generation students navigating Canadian post-secondary education by offering culturally accessible guidance, mentorship, and practical information in English, Mandarin, and Hindi.",
+      "team": "Lin L.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "MELI is a multilingual seminar initiative that helps newcomer and first-generation students navigate Canadian post-secondary education through culturally accessible guidance and mentorship. Delivered in English, Mandarin, and Hindi, the project provided practical information on applications, career pathways, and settlement support while empowering immigrant families through inclusive education."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Kingston Homeless Alliance Education Day",
+      "type": "data",
+      "description": "The Kingston Homeless Alliance Education Day engages elementary students in interactive workshops and care package assembly to teach about homelessness, promote empathy and social equity, and inspire youth civic engagement in Kingston.",
+      "team": "Luka P.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Kingston Homeless Alliance Education Day brings interactive workshops into elementary schools to teach students about homelessness, empathy, and social equity while assembling care packages for unhoused community members. By combining education with direct community action, the project encourages youth civic engagement and raises awareness about homelessness in Kingston."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "FBLC Ottawa",
+      "type": "data",
+      "description": "FBLC Ottawa empowers youth with business, leadership, and financial literacy skills through educational programming and connections with industry professionals.",
+      "team": "Lynnzi C.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "FBLC Ottawa is a student-led organization that provides accessible business, leadership, and financial literacy programming for youth through workshops, conferences, and competitions. By connecting students with industry professionals and practical learning opportunities, the initiative helps youth build confidence, career readiness, and civic engagement skills."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Herb Grow Station for Food Studies Class and the Ijaiits (Cooks) After-School Cooking Club",
+      "type": "interactive",
+      "description": "A school kitchen herb-growing station allowed Food Studies students to grow, harvest, and use fresh herbs in cooking, fostering healthier eating, environmental responsibility, and increased student engagement.",
+      "team": "Madigan R.",
+      "tags": [
+        "nunavut",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "An herb-growing station was introduced in the school kitchen to provide Food Studies students with hands-on learning opportunities connected to nutrition, meal planning, and food preparation. Students grew and used fresh herbs and greens in their cooking, promoting healthier eating, environmental responsibility, and greater student engagement through growing, harvesting, and preparing their own ingredients."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Crimes Against Humanity: Report on the Armenian Genocide",
+      "type": "report",
+      "description": "The project analyzes the 1915 Armenian Genocide, highlighting the roles of propaganda and violence by the Ottoman Empire, and connects these historical events to contemporary issues of discrimination to emphasize the ongoing need for human rights protection.",
+      "team": "Madineh J.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project examines the 1915 Armenian Genocide and explores how propaganda, dehumanization, and violence were used against Armenian people by the Ottoman Empire. By connecting historical events to present-day issues of discrimination and injustice, the project raises awareness about human rights and the importance of preventing future crimes against humanity."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Cultural Connections: Indigenous Traditional Craft Program",
+      "type": "data",
+      "description": "The after-school program fosters cultural pride and intergenerational connections by offering hands-on Indigenous craft workshops led by Elders and community members, promoting Indigenization and cultural awareness among students.",
+      "team": "Madison H.",
+      "tags": [
+        "northwest-territories",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This after-school program promotes Indigenization and cultural awareness by teaching students traditional Indigenous crafts through hands-on workshops led by Elders and community members. The project fosters cultural pride, intergenerational learning, and stronger connections between youth and Indigenous traditions."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "New Roots, New Dreams",
+      "type": "data",
+      "description": "The project fosters inclusion and support for newcomers and youth in Toronto through community activities, accessible resources, and opportunities for connection and personal growth.",
+      "team": "Marjan A.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supports newcomers and youth in Toronto by creating inclusive community activities and accessible resources focused on education, personal growth, and local opportunities. By encouraging connection, confidence, and participation, the initiative helps newcomers feel more supported and engaged in their communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Confessions on Native Land",
+      "type": "data",
+      "description": "A youth-led storytelling initiative raises awareness of colonialism and inequality in Canada by sharing marginalized voices through digital stories, fostering empathy and informed civic dialogue.",
+      "team": "Maya S.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This youth-led storytelling initiative uses personal narratives and educational resources to raise awareness about colonialism, systemic inequality, and civic disengagement in Canada. By amplifying marginalized voices through accessible digital storytelling, the project promotes empathy, critical reflection, and informed civic dialogue."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Understanding Eco-Anxiety in Winnipeg\u2019s Children and Youth: A Community-Informed Research Study",
+      "type": "data",
+      "description": "The project investigates the impact of eco-anxiety on Winnipeg's children and youth, aiming to create practical resources for educators and families to support young people dealing with climate-related anxiety.",
+      "team": "Mhaolene P.",
+      "tags": [
+        "manitoba",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project explores how eco-anxiety affects children and youth in Winnipeg through research and expert insights focused on educational and community settings. Its goal is to develop practical, community-informed resources that help educators and families better support young people facing climate-related anxiety."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Winter Dignity Kits",
+      "type": "data",
+      "description": "The project provides winter care kits to unhoused residents in Vancouver\u2019s Downtown Eastside and develops digital resources to raise public awareness about homelessness, promoting dignity, safety, and civic engagement.",
+      "team": "Mona W.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project assembles and distributes essential winter care kits to unhoused residents in Vancouver\u2019s Downtown Eastside while also creating digital resources that increase public understanding of homelessness in the community. By addressing immediate needs and promoting awareness, the initiative supports dignity, safety, and informed civic engagement."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Canadian Household Energy Advisor Dashboard",
+      "type": "data",
+      "description": "The project created an interactive dashboard using predictive models and visualizations to help Canadians and policymakers better understand and make informed decisions about household energy use, costs, and efficiency trends nationwide.",
+      "team": "Mutaal F.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project developed an interactive dashboard that helps Canadians better understand household energy use, costs, and efficiency trends across provinces and territories. Using predictive models and accessible visualizations, the platform empowers households and policymakers to make more informed decisions about sustainable energy use."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Indigenous Land Claims",
+      "type": "data",
+      "description": "The project explores the Lubicon Cree and Piikani Nations' ongoing challenges with land rights and resource development, aiming to raise awareness and foster dialogue on reconciliation and Indigenous rights in Canada.",
+      "team": "Nabia F.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project examines the experiences of the Lubicon Cree Nation and Piikani Nation in Alberta, highlighting ongoing struggles related to land rights, resource development, and treaty obligations. By raising awareness about historical and present-day injustices, the project encourages informed discussion about reconciliation and Indigenous rights in Canada."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Positivitree: Bridging the Gap Between Youth Climate Anxiety and Tangible Political Action Through Arts-Based Civic Engagement",
+      "type": "data",
+      "description": "The project empowers youth to turn climate anxiety into civic action by using art to engage in political dialogue and advocacy through exhibitions and policymaker interactions.",
+      "team": "Nathanael I.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project uses arts-based civic engagement to help youth express climate concerns and transform eco-anxiety into constructive political dialogue. Through public exhibitions and conversations with policymakers, the initiative empowers young people to participate in climate advocacy and community decision-making."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Structural Performance and Optimization of FDM-Printed Bridge Models Using Desktop Additive Manufacturing",
+      "type": "data",
+      "description": "The project evaluates the structural performance of 3D-printed arch bridges using various materials and joints to enhance reliability and engineering education through open-source resources and collaborative learning.",
+      "team": "Ng Y.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project investigates how 3D-printed arch bridges perform under load using different materials and joint designs to improve structural reliability and engineering education. By sharing open-source models and testing protocols, the project promotes hands-on learning, technical literacy, and collaborative knowledge sharing."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Canadian Legal Language & Ambiguity Toolkit",
+      "type": "data",
+      "description": "The e-toolkit explores how ambiguous language in key Canadian documents causes confusion, offering examples and resources to help Canadians better understand civic, legal, and democratic concepts.",
+      "team": "Oliver N.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This e-toolkit examines how ambiguity in important Canadian documents can lead to confusion and misinterpretation. By providing examples, historical context, and explanatory resources, the project helps Canadians better understand civic issues, legal language, and democratic processes."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Pathway Pavers NextGen Leadership Summit",
+      "type": "data",
+      "description": "The project empowered Black high school students in the Greater Toronto and Hamilton Area by providing mentorship, practical guidance, and leadership opportunities at the NextGen Leadership Summit.",
+      "team": "Oluwapolola I.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supported Black high school students across the Greater Toronto and Hamilton Area by delivering interactive leadership and post-secondary pathway sessions at the NextGen Leadership Summit. Through practical discussions and mentorship-focused activities, the initiative helped students build confidence, access useful guidance, and see themselves reflected in academic and leadership spaces."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Refugee Bridge Academy",
+      "type": "data",
+      "description": "Refugee Bridge Academy empowers refugee and displaced youth through education, mentorship, and leadership development to help them succeed and integrate into new communities.",
+      "team": "Omer M.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Refugee Bridge Academy is a youth-led initiative that helps refugee and displaced youth access education, mentorship, leadership development, and career opportunities. Through workshops, mentorship, and community learning, the project empowers participants with the knowledge, confidence, and networks needed to engage in civic life and succeed in their new communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Women\u2019s Wellness and Skincare",
+      "type": "data",
+      "description": "The project delivers accessible skincare education through workshops and discussions, empowering diverse community members to make informed skincare decisions and build confidence.",
+      "team": "Parisa J.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project provides accessible skincare education to help youth, newcomers, and community members better understand their skin and make informed decisions about skincare practices. By sharing trustworthy information through workshops and community discussions, the initiative promotes confidence, healthy habits, and inclusive learning."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Tag4Access",
+      "type": "data",
+      "description": "Tag4Access is an app that crowdsources and verifies accessibility information in Nova Scotia to promote inclusion and civic engagement.",
+      "team": "Prisha P.",
+      "tags": [
+        "nova-scotia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Tag4Access is an accessibility mapping app designed to help people identify and report accessibility features and barriers in public spaces across Nova Scotia. By combining community contributions with youth-led verification, the project promotes inclusion, accessibility awareness, and civic participation through shared public knowledge."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Newcomer Health Compass",
+      "type": "data",
+      "description": "The project guides newcomer families in Ontario through the healthcare system with multilingual resources, improving access, understanding, and community engagement.",
+      "team": "Raheen F.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project helps newcomer families in Ontario better navigate the healthcare system by providing multilingual guidance on OHIP registration, finding family doctors, and accessing appropriate health services. By simplifying complex healthcare information, the initiative supports informed decision-making, equitable access, and stronger community participation."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Knight Owls Robotics Team",
+      "type": "data",
+      "description": "The Knight Owls Robotics Team is a student-led group that builds robots for the 2026 FIRST Robotics Competition while fostering leadership, STEAM skills, and community engagement through mentorship and hands-on learning.",
+      "team": "Raima F.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Knight Owls Robotics Team is a student-led initiative that designed and built a robot for the 2026 FIRST Robotics Competition while mentoring new members in robotics, programming, and teamwork. Through hands-on learning and peer mentorship, the project develops leadership, STEAM skills, and community engagement among youth."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Mapping Winnipeg",
+      "type": "data",
+      "description": "The project enhances access to Winnipeg\u2019s history by using an interactive website that links street names to their origins through archival research and community involvement.",
+      "team": "Ran S.",
+      "tags": [
+        "manitoba",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This digital project makes Winnipeg\u2019s local history more accessible by connecting street names to their historical and cultural origins through an interactive website. By combining archival research with community participation, the project promotes civic knowledge and public engagement with local history."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Nursing Without Borders",
+      "type": "data",
+      "description": "The project empowers internationally educated nurses in Canada by providing mentorship, workshops, and peer support to overcome barriers and promote equity and inclusion in healthcare.",
+      "team": "Regina A.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project supports internationally educated nurses navigating licensure and employment pathways in Canada through mentorship, workshops, and peer-led guidance. By addressing barriers such as systemic racism, lack of information, and professional isolation, the initiative promotes equity, inclusion, and community empowerment within healthcare."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Faces of Change: Youth Voices Against Racism (Pilot Documentary & Community Dialogue)",
+      "type": "data",
+      "description": "The project showcases grassroots organizations and leaders driving social change, using storytelling to raise awareness, foster youth engagement, and promote inclusion and equity.",
+      "team": "Richard C.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This youth-led documentary project highlights grassroots organizations and community leaders working to create positive social change through storytelling, photography, and interviews. By documenting local leadership and community-driven solutions, the project raises awareness, encourages youth engagement, and promotes dialogue around inclusion and equity."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Stay or Return? Legal Navigation Guide for Syrian Nationals in Canada",
+      "type": "data",
+      "description": "The project provides an accessible legal guide for Syrian nationals in Canada, simplifying immigration rules to help newcomers understand refugee status, residency obligations, and travel, thereby enabling informed decision-making.",
+      "team": "Riley C.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project creates a plain-language legal guide to help Syrian nationals in Canada understand immigration rules related to refugee status, residency obligations, and travel considerations. By translating complex legal information into accessible resources, the initiative empowers newcomer communities to make informed decisions and engage more confidently with Canadian legal systems."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Empowering Ribbons",
+      "type": "data",
+      "description": "\u201cEmpowering Ribbons\u201d is a youth-led initiative that donates handmade ribbon skirts to support Indigenous women in shelters, fostering cultural reconnection, healing, and awareness of the impacts of colonization.",
+      "team": "Ryanna S.",
+      "tags": [
+        "manitoba",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "\u201cEmpowering Ribbons\u201d is a youth-led project created to support Indigenous women in shelters by providing handmade ribbon skirts for use during ceremonies such as sweat lodges and full moon ceremonies. By creating and donating ten ribbon skirts to the West Central Women\u2019s Resource Centre in Winnipeg, the project promotes cultural reconnection, healing, and access to Indigenous traditions while raising awareness about the lasting impacts of colonization and the lack of culturally supportive resources for Indigenous women."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Healthy Aging Initiative: Tamil Dementia Awareness and Community Engagement",
+      "type": "data",
+      "description": "This youth-led initiative advances dementia awareness and healthy aging among Tamil-speaking older adults and caregivers in the Greater Toronto Area by providing culturally relevant outreach, bilingual workshops, resource translation, and youth mentorship in health equity and education.",
+      "team": "Sathurthika S.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This youth-led initiative promotes dementia awareness and healthy aging education among Tamil-speaking older adults and caregivers in the Greater Toronto Area through culturally and linguistically accessible outreach. By delivering bilingual workshops, translating healthcare resources, and mentoring youth in research and knowledge mobilization, the project supports health equity, community engagement, and accessible aging education."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Community Connections Workshop",
+      "type": "data",
+      "description": "The Community Connections Workshop empowers high school students in the Northwest Territories to overcome challenges and build practical skills through resume-building, speaker workshops, and a career fair connecting them with local opportunities and support systems.",
+      "team": "Shaelee K.",
+      "tags": [
+        "northwest-territories",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Community Connections Workshop is a youth-led initiative designed to support high school students in the Northwest Territories by helping them build stronger connections to local opportunities and support systems. Through resume-building sessions, speaker workshops, and a community career fair, the project empowers youth facing challenges such as poverty, food insecurity, and housing instability to develop practical skills, explore career pathways, and connect with local First Nations, M\u00e9tis, education, health, and employment resources."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Growing Older, Living Deeply (GOLD) Poetry Project",
+      "type": "data",
+      "description": "The GOLD Poetry Project combats ageism in Canada by empowering older adults to share original poetry about aging, fostering intergenerational understanding and dialogue through a national digital platform and public anthology.",
+      "team": "Shanuki G.",
+      "tags": [
+        "alberta",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Growing Older, Living Deeply (GOLD) Poetry Project is a community initiative that addresses ageism by creating a national platform for older adults to share original poetry about the realities of aging. Through digital poetry calls and a public anthology, the project amplifies older adult voices, promotes intergenerational understanding, and encourages meaningful conversations about aging, creativity, and inclusion in Canada."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Waking Hours",
+      "type": "data",
+      "description": "Waking Hours is a short film that delves into identity, cultural resilience, and the challenges faced by minority communities in Canada, aiming to promote reflection on multiculturalism and representation.",
+      "team": "Shivam S.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Waking Hours is a short film exploring identity, cultural resilience, and the experiences of minority communities in Canada through the story of a young man searching for meaning and belonging. By showcasing diverse actors and perspectives, the project encourages viewers to reflect on multiculturalism, representation, and the social realities faced by marginalized communities in Canada."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The English Launchpad",
+      "type": "data",
+      "description": "The English Launchpad is a free, mobile-friendly platform that helps newcomers and adult immigrants in Canada improve practical English skills for daily life, focusing on healthcare, employment, and civic participation to reduce language barriers and boost community engagement.",
+      "team": "Shivani N.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The English Launchpad is a free, mobile-first language learning platform designed to help newcomers and adult immigrants improve practical English skills needed for daily life in Canada. By offering accessible modules focused on healthcare, employment, and civic participation, the project reduces language barriers and empowers newcomers to engage more confidently with services, institutions, and their communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Misinformation and Democratic Participation: Kenyan-Canadian Immigrant Experiences",
+      "type": "data",
+      "description": "The project analyzes how misinformation circulating in digital networks affects the political views and democratic involvement of Kenyan-Canadian immigrants, aiming to understand its impact on immigrant communities and democracy in Canada.",
+      "team": "Sofiya M.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This research project examines how misinformation spreads through both local and transnational digital networks and how it influences the political perceptions and democratic participation of Kenyan-Canadian immigrants. By exploring the intersection of migration, media, and civic engagement, the project aims to better understand how misinformation impacts immigrant communities and democratic processes in Canada."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Growing Food Security: Indoor Gardening with Aqsarniit Green Club",
+      "type": "data",
+      "description": "Aqsarniit Green Club empowers Iqaluit youth to address food insecurity by teaching indoor gardening skills, supporting a school snack program with fresh produce, and fostering community engagement and environmental awareness.",
+      "team": "Sophia B.",
+      "tags": [
+        "nunavut",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Growing Food Security: Indoor Gardening with Aqsarniit Green Club is a student-led initiative focused on addressing food insecurity in Iqaluit through indoor food production using hydroponics, grow lights, and window garden beds. By teaching students practical gardening skills, supporting a school snack program with fresh produce, and engaging in community outreach, the project empowers youth to develop local solutions to food access challenges in Northern communities while promoting civic engagement and environmental awareness."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Chess for Hope",
+      "type": "data",
+      "description": "Chess for Hope is a youth-led initiative in Regina that empowers students and builds inclusive school communities through mentoring, chess club development, and student-led events that promote leadership, connection, and civic engagement.",
+      "team": "Sougoto D.",
+      "tags": [
+        "saskatchewan",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Chess for Hope is a youth-led initiative in Regina that strengthens school communities by supporting and expanding student-run chess clubs as inclusive spaces for leadership, connection, and engagement. Through mentoring, club development, and student-led events, it uses chess to foster problem-solving, teamwork, and civic participation while aligning with CANConnect and GLOCAL\u2019s goals of youth empowerment and community-driven change."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Collective Closet",
+      "type": "data",
+      "description": "The Collective Closet fosters sustainability and community by hosting clothing swaps that reduce waste, promote social connection, and encourage civic engagement around issues like fast fashion and environmental responsibility.",
+      "team": "Stephanie T.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Collective Closet is a community-led initiative that uses clothing swaps to promote sustainability, social connection, and civic engagement. By creating welcoming spaces where people can exchange clothing and discuss issues such as fast fashion, environmental responsibility, and community care, the project encourages participants to take part in more sustainable and collaborative ways of living while reducing clothing waste and strengthening community relationships."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Crafting Kinship",
+      "type": "data",
+      "description": "This virtual workshop empowers Indigenous participants to create ceremonial rattles and learn about sound-based healing, fostering cultural revitalization, community wellness, and intergenerational knowledge-sharing through accessible art bundles and Elder guidance.",
+      "team": "Syndel K.",
+      "tags": [
+        "saskatchewan",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Crafting Kinship: Sound as Medicine \u2013 Rattle Making is a culturally grounded virtual workshop that supports Indigenous participants in creating ceremonial rattles while learning about Indigenous teachings related to sound, healing, and relationality. Through free art bundles, Elder guidance, and hands-on cultural practice, the project promotes accessibility, cultural revitalization, intergenerational knowledge sharing, and community wellness for Indigenous participants across urban, rural, and remote communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Cultures in Conversation: Conversations on Land, History, and Belonging",
+      "type": "data",
+      "description": "Cultures in Conversation is a community-based project fostering dialogue and civic engagement to help newcomers to Canada understand Indigenous Peoples, reconciliation, and their roles within Canadian society.",
+      "team": "Thiranga W.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Cultures in Conversation is a community-based research and dialogue project that explores how newcomers to Canada understand Indigenous Peoples, reconciliation, and belonging within Canadian society. Through interviews and open discussions, the project encourages cross-cultural learning, civic engagement, and meaningful conversations about Indigenous history, settlement, and social responsibility while helping newcomers build a deeper understanding of reconciliation and their role within Canada\u2019s multicultural society."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Great Trek for Transit",
+      "type": "data",
+      "description": "The Great Trek for Transit is a student-led advocacy campaign mobilizing community support and civic engagement for extending SkyTrain service to UBC\u2019s Vancouver campus to advance sustainable and accessible public transit.",
+      "team": "Vedin S.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Great Trek for Transit is a student-led advocacy initiative focused on raising awareness and community support for a SkyTrain extension to UBC\u2019s Vancouver campus. Through petitions, rallies, volunteer engagement, and public outreach, the project encourages students and community members to participate in conversations about sustainable transportation, climate action, and accessible public transit while promoting civic involvement in local infrastructure decisions."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Dancing Forward Nunavut Program",
+      "type": "data",
+      "description": "The Dancing Forward Nunavut Program offers free dance instruction to Indigenous youth in remote Arctic communities, fostering confidence, cultural expression, and healthy living by making arts and recreation more accessible.",
+      "team": "Victoria G.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Dancing Forward Nunavut Program is an initiative that brings accessible dance programming to Indigenous youth in remote Arctic communities where opportunities for arts and sports are limited. By partnering with local governments to provide free dance instruction in styles such as hip hop, ballet, jazz, and modern dance, the program supports confidence, self-expression, cultural celebration, and healthy lifestyles while reducing barriers to youth participation in recreation and the arts."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "NEOS: A Community Platform That Connects and Empowers Students and Newcomers Across Canada",
+      "type": "data",
+      "description": "NEOS is a youth-led initiative in Canada that empowers students and newcomers through accessible resources, peer support, and community engagement opportunities.",
+      "team": "Viratanak T.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "NEOS is a youth-led initiative that supports students and newcomers across Canada by providing accessible information, peer support, and community engagement opportunities. Through an online resource platform, workshops, and networking events, the project helps newcomers build social connections, navigate daily life, and become more informed and active participants in their communities."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The CARES Project",
+      "type": "data",
+      "description": "The CARES Project enhances healthcare access for newcomer families by pairing them with trained university student volunteers who provide navigation, interpretation, and support in understanding medical information and health systems.",
+      "team": "Vivienne L.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The CARES Project (Community Access, Resources, Empowerment & Support) is an initiative focused on improving healthcare experiences for newcomer families by connecting them with trained university student volunteers. Through support such as healthcare navigation, interpretation, transportation guidance, and assistance understanding medical information and digital health systems, the project helps newcomers access healthcare services more confidently and effectively."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Bridging Language Barriers in Healthcare: A Bilingual Mandarin\u2013English Medical Terminology Guide for Community Access",
+      "type": "data",
+      "description": "This project creates a bilingual Mandarin\u2013English medical terminology pamphlet to help Mandarin-speaking immigrants navigate Canada\u2019s healthcare system by improving health literacy, reducing medication errors, and enhancing patient\u2013provider communication.",
+      "team": "Wanqi C.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "This project develops a bilingual Mandarin\u2013English medical terminology pamphlet to support Mandarin-speaking immigrants in navigating Canada\u2019s healthcare system more safely and effectively. By translating key pharmacy terms, medication instructions, dosage guidance, and emergency information into accessible language, the resource aims to improve health literacy, reduce medication errors, and strengthen communication between patients and healthcare providers."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Little St. Nick Foundation Queen\u2019s",
+      "type": "data",
+      "description": "The Little St. Nick Foundation Queen\u2019s chapter is a student-led program that reduces pediatric patient anxiety at Kingston Health Sciences Centre by delivering personalized comfort gift bags, distributing over 500 bags, and engaging more than 3,000 community members in meaningful acts of care.",
+      "team": "Zein H.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Little St. Nick Foundation Queen\u2019s chapter is a student-led initiative that supports pediatric patients at Kingston Health Sciences Centre by creating and delivering personalized comfort gift bags to reduce anxiety during hospital stays. To date, the program has distributed over 500 gift bags and engaged more than 3,000 community members in collaborative acts of care, strengthening civic engagement and community connection."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "The Find Your Way Database",
+      "type": "data",
+      "description": "The Find Your Way Database is an online platform that connects at-risk and unhoused youth to personalized shelters and support services, offering real-time availability, inclusive searches, and early access through school partnerships to reduce barriers to care.",
+      "team": "Zohra K.",
+      "tags": [
+        "british-columbia",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "The Find Your Way Database is an online tool that helps at-risk and unhoused youth access tailored shelters and support services by matching them with resources based on their needs and the information they choose to share. It also reduces barriers to care by providing real-time availability, inclusive search options, and early introduction through school partnerships to ensure youth can access support before reaching crisis points."
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "title": "Queer Ecology Hikes",
+      "type": "data",
+      "description": "Queer Ecology Hikes are inclusive, community walks that foster mindful, consensual, and reflective connections with nature and each other, emphasizing care and learning over extraction or performance.",
+      "team": "Zwena G.",
+      "tags": [
+        "ontario",
+        "microgrant-2025"
+      ],
+      "thumbnail": {
+        "url": "",
+        "credit": ""
+      },
+      "embed": {
+        "kind": "url",
+        "path": "",
+        "url": "",
+        "originalName": ""
+      },
+      "useCustomPage": true,
+      "sections": [
+        {
+          "heading": "Summary",
+          "body": "Queer Ecology Hikes are guided community walks that focus on consent, choice, and connection while encouraging participants to engage with land through care, slowness, and observation rather than extraction or performance. These hikes create space for queer relational practices with nature and community, often covering short distances while emphasizing reflection, collective healing, and learning to \u201cread\u201d the land in accessible, inclusive ways."
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

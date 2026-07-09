@@ -1,0 +1,25 @@
+import React from "react";
+
+export default function NewYoungImmigrantsInCanada2() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>My research project focuses on enhancing the integration and well-being of new young immigrants in Canada. The primary objectives include identifying the specific challenges faced by this demographic, exploring factors contributing to successful integration, proposing evidence-based strategies, and assessing the effectiveness of existing support programs.</p>
+      </section>
+
+      <section style={{ marginBottom: "2rem" }}>
+        <h3>Full Document</h3>
+        <object
+          data="content/copie-de-community-and-family-history-history-1st-grade.pdf"
+          type="application/pdf"
+          aria-label="New Young immigrants in Canada"
+          style={{ width: "100%", height: "700px", border: "1px solid #ddd", borderRadius: "8px" }}
+        >
+          <a href="content/copie-de-community-and-family-history-history-1st-grade.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
+        </object>
+      </section>
+    </article>
+  );
+}

@@ -1,0 +1,13 @@
+import React from "react";
+
+export default function PlasticPollutionAndTheMarine() {
+  return (
+    <article style={{ lineHeight: 1.6 }}>
+
+      <section style={{ marginBottom: "1.5rem" }}>
+        <h3>Summary</h3>
+        <p>The objective of my research project on plastic marine pollution is to address the issue of increasing plastic waste in our oceans and its detrimental impact on the natural environment, human health, and key industries such as tourism, fishery, and agriculture. It aims to raise awareness about the severity of the problem and promote sustainable solutions for waste management. Thus, the main goal of my project is to increase civic engagement and civic knowledge mobilization of CANConnect and the GLOCAL Foundation. By actively involving local residents, academic-community partnerships can be established to identify local sources of pollution and implement protective measures. These partnerships not only empower the community to take immediate action, but also foster a sense of ownership and responsibility for their environment. Through educational activities and engagement with citizen science, individuals become active participants in the fight against plastic marine pollution. In line with the goals of civic engagement, this research project seeks to mobilize knowledge and empower communities to be agents of change. By disseminating information about the causes and impacts of marine waste, we aim to equip individuals with the necessary knowledge to make informed decisions. Through educational initiatives, we can change attitudes and behaviours surrounding waste disposal, leading to a reduction in plastic marine pollution.</p>
+      </section>
+    </article>
+  );
+}

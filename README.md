@@ -83,10 +83,12 @@ The tool opens a local browser app, saves draft entries in that browser, and cre
 Inside the bulk tool, use **Download template** under **CSV import** to get a starter CSV. The CSV supports these columns:
 
 ```text
-title,type,description,team,embedUrl,tags,useCustomPage,section1Heading,section1Body,section2Heading,section2Body,section3Heading,section3Body,notes
+title,type,description,team,embedUrl,thumbnailUrl,tags,useCustomPage,section1Heading,section1Body,section2Heading,section2Body,section3Heading,section3Body,notes
 ```
 
 Use `|` between multiple tags, such as `open-data|housing-policy|custom-tag`. CSV-imported rows become editable draft projects, so thumbnails and local files can be attached after import before creating the final export.
+
+Use **Import previous export** to load a returned folder that contains `manifest.json` and its assets. For thumbnails, either attach an image file, provide `thumbnailUrl` in the CSV, or enter a Pexels API key in the thumbnail area and click **Find on Pexels**.
 
 To import returned work, place either the JSON export file or the complete package folder inside `imports/`, then run:
 

@@ -1,14 +1,12 @@
 import React, { useMemo, useState, useEffect } from "react";
 import { flushSync } from "react-dom";
-import Sidebar from "./components/Sidebar";
+import TopBar from "./components/TopBar";
 import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
-import StatsPage from "./components/StatsPage";
+import DiscoveryHub from "./components/DiscoveryHub";
+import TagTool from "./components/TagTool";
 import projectsData from "./data/projects";
 import "./App.css";
-
-// ── Feature flags ─────────────────────────────────────────────────────────────
-const SHOW_HOME = false;
 
 // ── Hash routing helpers ──────────────────────────────────────────────────────
 const parseHash = () => {
@@ -18,16 +16,19 @@ const parseHash = () => {
     const project = projectsData.find(p => p.id === id) ?? null;
     return { view: 'grid', selectedProject: project };
   }
-  if (hash === '/projects') return { view: 'grid', selectedProject: null };
-  return { view: SHOW_HOME ? 'home' : 'grid', selectedProject: null };
+  if (hash === '/overview' || hash === '') return { view: 'home', selectedProject: null };
+  if (hash === '/tag-tool') return { view: 'tag-tool', selectedProject: null };
+  return { view: 'grid', selectedProject: null };
 };
 
 function App() {
   const initial = parseHash();
   const [view, setView]                       = useState(initial.view);
   const [selectedProject, setSelectedProject] = useState(initial.selectedProject);
-  const [activeTypes, setActiveTypes]         = useState([]);
-  const [activeTags, setActiveTags]           = useState([]);
+  const [activeTypes, setActiveTypes]           = useState([]);
+  const [activeCategories, setActiveCategories] = useState([]);
+  const [activeCohorts, setActiveCohorts]       = useState([]);
+  const [activeProvinces, setActiveProvinces]   = useState([]);
 
   // ── Theme ─────────────────────────────────────────────────────────────────
   const [isDark, setIsDark] = useState(() => {
@@ -63,30 +64,68 @@ function App() {
   }, [selectedProject]);
 
   // ── Filters ───────────────────────────────────────────────────────────────
+  const PROVINCE_TAGS = {
+    "british-columbia":   "British Columbia",
+    "ontario":            "Ontario",
+    "alberta":            "Alberta",
+    "manitoba":           "Manitoba",
+    "quebec":             "Quebec",
+    "nova-scotia":        "Nova Scotia",
+    "nunavut":            "Nunavut",
+    "northwest-territories": "Northwest Territories",
+    "new-brunswick":      "New Brunswick",
+    "saskatchewan":       "Saskatchewan",
+    "prince-edward-island": "Prince Edward Island",
+    "newfoundland":       "Newfoundland & Labrador",
+    "yukon":              "Yukon",
+  };
+
   const typeOptions = ["report", "data", "interactive", "events"];
 
-  const tagOptions = useMemo(() => {
-    const tags = new Set();
-    projectsData.forEach((p) => (p.tags || []).forEach((t) => tags.add(t)));
-    return Array.from(tags).sort((a, b) => a.localeCompare(b));
+  const categoryOptions = useMemo(() => {
+    const cats = new Set();
+    projectsData.forEach((p) => { if (p.category) cats.add(p.category); });
+    return Array.from(cats).sort((a, b) => a.localeCompare(b));
+  }, []);
+
+  const cohortOptions = useMemo(() => {
+    const cs = new Set();
+    projectsData.forEach((p) => { if (p.cohort) cs.add(p.cohort); });
+    return Array.from(cs).sort((a, b) => a.localeCompare(b));
   }, []);
 
   const toggleType = (t) =>
     setActiveTypes((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
 
-  const toggleTag = (t) =>
-    setActiveTags((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]));
+  const toggleCategory = (c) =>
+    setActiveCategories((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]));
 
-  const clearAllFilters = () => { setActiveTypes([]); setActiveTags([]); };
+  const provinceOptions = useMemo(() => {
+    const found = new Set();
+    projectsData.forEach((p) => {
+      (p.tags || []).forEach((t) => { if (PROVINCE_TAGS[t]) found.add(PROVINCE_TAGS[t]); });
+    });
+    return Array.from(found).sort((a, b) => a.localeCompare(b));
+  }, []);
+
+  const toggleCohort = (c) =>
+    setActiveCohorts((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]));
+
+  const toggleProvince = (p) =>
+    setActiveProvinces((prev) => (prev.includes(p) ? prev.filter((x) => x !== p) : [...prev, p]));
+
+  const clearAllFilters = () => { setActiveTypes([]); setActiveCategories([]); setActiveCohorts([]); setActiveProvinces([]); };
 
   const filteredProjects = useMemo(() => {
     return projectsData.filter((p) => {
-      const typeMatch = activeTypes.length === 0 || activeTypes.includes(p.type);
-      const projTags = p.tags || [];
-      const tagMatch = activeTags.length === 0 || projTags.some((tag) => activeTags.includes(tag));
-      return typeMatch && tagMatch;
+      const typeMatch     = activeTypes.length === 0     || activeTypes.includes(p.type);
+      const catMatch      = activeCategories.length === 0 || activeCategories.includes(p.category);
+      const cohortMatch   = activeCohorts.length === 0   || activeCohorts.includes(p.cohort);
+      const projProvinces = (p.tags || []).map((t) => PROVINCE_TAGS[t]).filter(Boolean);
+      const provMatch     = activeProvinces.length === 0 || projProvinces.some((pv) => activeProvinces.includes(pv));
+      return typeMatch && catMatch && cohortMatch && provMatch;
     });
-  }, [activeTypes, activeTags]);
+  }, [activeTypes, activeCategories, activeCohorts, activeProvinces]);
 
   // ── Image preload while on StatsPage ──────────────────────────────────────
   useEffect(() => {
@@ -129,20 +168,29 @@ function App() {
   // ── Navigation ────────────────────────────────────────────────────────────
   const handleSelectProject = (project) => { window.location.hash = `/project/${project.id}`; };
   const handleBack          = ()          => { window.location.hash = '/projects'; };
-  const handleNavHome       = ()          => { window.location.hash = '/'; };
+  const handleNavHome       = ()          => { window.location.hash = '/overview'; };
   const handleNavGrid       = ()          => { window.location.hash = '/projects'; };
 
   const activeNavView = selectedProject ? 'grid' : view;
 
+  if (view === 'tag-tool') return <TagTool />;
+
   return (
     <div className="app">
-      <Sidebar
+      <TopBar
         types={typeOptions}
         activeTypes={activeTypes}
         onToggleType={toggleType}
-        tags={tagOptions}
-        activeTags={activeTags}
-        onToggleTag={toggleTag}
+        categories={categoryOptions}
+        activeCategories={activeCategories}
+        onToggleCategory={toggleCategory}
+        cohorts={cohortOptions}
+        provinces={provinceOptions}
+        activeProvinces={activeProvinces}
+        onToggleProvince={toggleProvince}
+        activeCohorts={activeCohorts}
+        onToggleCohort={toggleCohort}
+        onClearAll={clearAllFilters}
         onNavHome={handleNavHome}
         onNavGrid={handleNavGrid}
         activeNavView={activeNavView}
@@ -158,22 +206,13 @@ function App() {
             allProjects={projectsData}
             onSelectProject={handleSelectProject}
           />
-        ) : view === 'home' && SHOW_HOME ? (
-          <StatsPage onExplore={handleNavGrid} />
+        ) : view === 'home' ? (
+          <DiscoveryHub
+            onSelectProject={handleSelectProject}
+            onNavGrid={handleNavGrid}
+          />
         ) : (
-          <>
-            {(activeTypes.length > 0 || activeTags.length > 0) && (
-              <div className="content-toolbar">
-                <div className="content-toolbar-left">
-                  Showing <strong>{filteredProjects.length}</strong> projects
-                </div>
-                <button className="content-toolbar-btn" type="button" onClick={clearAllFilters}>
-                  Clear all filters
-                </button>
-              </div>
-            )}
-            <CardGrid projects={filteredProjects} onSelect={handleSelectProject} />
-          </>
+          <CardGrid projects={filteredProjects} onSelect={handleSelectProject} />
         )}
       </main>
     </div>
