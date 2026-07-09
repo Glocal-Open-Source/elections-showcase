@@ -52,3 +52,5 @@ imports/*
 # Public binary assets — only needed locally for npm run deploy (gh-pages)
 public/content/
 public/thumbnails/
+public/globe.png
+thumbnails/
