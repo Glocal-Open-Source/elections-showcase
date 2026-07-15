@@ -61,6 +61,7 @@ body.sidebar-lock-scroll { overflow: hidden; }
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
+  text-decoration: none;
   transition: background 120ms, color 120ms;
   white-space: nowrap;
   font-family: inherit;

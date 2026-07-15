@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { Suspense, useEffect, useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -478,7 +478,9 @@ const ProjectView = ({ project, onBack, allProjects = null, onSelectProject = nu
               </ul>
               {ContentComponent && (
                 <div className="pv-content-inner">
-                  <ContentComponent />
+                  <Suspense fallback={<div className="pv-content-loading" aria-busy="true" />}>
+                    <ContentComponent />
+                  </Suspense>
                 </div>
               )}
               {embedMode === "iframe" && <EmbedViewer src={embed} title={project.title} ext={ext} />}

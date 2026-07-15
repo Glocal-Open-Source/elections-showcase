@@ -12,10 +12,21 @@ const ProjectCard = ({ project, onSelect }) => {
   const desc = truncate(project.description, 160);
 
   return (
-    <div className="card" onClick={() => onSelect(project)}>
+    <div
+      className="card"
+      role="button"
+      tabIndex={0}
+      onClick={() => onSelect(project)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSelect(project);
+        }
+      }}
+    >
       <div className="card-img-wrap">
         {project.image
-          ? <img src={project.image} alt={project.title} className="card-img" />
+          ? <img src={project.image} alt={project.title} className="card-img" loading="lazy" decoding="async" />
           : <div className="card-img-placeholder" aria-hidden="true" />
         }
       </div>

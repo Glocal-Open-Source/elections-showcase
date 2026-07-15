@@ -1,13 +1,33 @@
-import React, { useMemo, useState, useEffect } from "react";
+import React, { Suspense, lazy, useMemo, useState, useEffect } from "react";
 import { flushSync } from "react-dom";
 import TopBar from "./components/TopBar";
 import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
 import DiscoveryHub from "./components/DiscoveryHub";
-import TagTool from "./components/TagTool";
-import SecretRepo from "./components/SecretRepo";
 import projectsData from "./data/projects";
 import "./App.css";
+
+const TagTool       = lazy(() => import("./components/TagTool"));
+const SecretRepo    = lazy(() => import("./components/SecretRepo"));
+const SubmitProject = lazy(() => import("./components/SubmitProject"));
+
+const PROVINCE_TAGS = {
+  "british-columbia":   "British Columbia",
+  "ontario":            "Ontario",
+  "alberta":            "Alberta",
+  "manitoba":           "Manitoba",
+  "quebec":             "Quebec",
+  "nova-scotia":        "Nova Scotia",
+  "nunavut":            "Nunavut",
+  "northwest-territories": "Northwest Territories",
+  "new-brunswick":      "New Brunswick",
+  "saskatchewan":       "Saskatchewan",
+  "prince-edward-island": "Prince Edward Island",
+  "newfoundland":       "Newfoundland & Labrador",
+  "yukon":              "Yukon",
+};
+
+const typeOptions = ["report", "data", "interactive", "events"];
 
 // ── Hash routing helpers ──────────────────────────────────────────────────────
 const parseHash = () => {
@@ -19,6 +39,7 @@ const parseHash = () => {
   }
   if (hash === '/overview' || hash === '') return { view: 'home', selectedProject: null };
   if (hash === '/tag-tool') return { view: 'tag-tool', selectedProject: null };
+  if (hash === '/submit') return { view: 'submit', selectedProject: null };
   if (hash === '/super-secret-repo') return { view: 'super-secret-repo', selectedProject: null };
   return { view: 'grid', selectedProject: null };
 };
@@ -66,24 +87,6 @@ function App() {
   }, [selectedProject]);
 
   // ── Filters ───────────────────────────────────────────────────────────────
-  const PROVINCE_TAGS = {
-    "british-columbia":   "British Columbia",
-    "ontario":            "Ontario",
-    "alberta":            "Alberta",
-    "manitoba":           "Manitoba",
-    "quebec":             "Quebec",
-    "nova-scotia":        "Nova Scotia",
-    "nunavut":            "Nunavut",
-    "northwest-territories": "Northwest Territories",
-    "new-brunswick":      "New Brunswick",
-    "saskatchewan":       "Saskatchewan",
-    "prince-edward-island": "Prince Edward Island",
-    "newfoundland":       "Newfoundland & Labrador",
-    "yukon":              "Yukon",
-  };
-
-  const typeOptions = ["report", "data", "interactive", "events"];
-
   const categoryOptions = useMemo(() => {
     const cats = new Set();
     projectsData.forEach((p) => { if (p.category) cats.add(p.category); });
@@ -132,8 +135,10 @@ function App() {
   // ── Image preload while on StatsPage ──────────────────────────────────────
   useEffect(() => {
     if (view !== 'home' || selectedProject) return;
+    // Cap preloading to roughly the first screenful — grid images below the
+    // fold are lazy-loaded, so warming all ~350 wastes bandwidth on mobile.
     const preload = () => {
-      projectsData.forEach(p => {
+      projectsData.slice(0, 24).forEach(p => {
         if (!p.image) return;
         const img = new Image();
         img.src = p.image;
@@ -175,8 +180,9 @@ function App() {
 
   const activeNavView = selectedProject ? 'grid' : view;
 
-  if (view === 'tag-tool') return <TagTool />;
-  if (view === 'super-secret-repo') return <SecretRepo />;
+  if (view === 'tag-tool') return <Suspense fallback={null}><TagTool /></Suspense>;
+  if (view === 'submit') return <Suspense fallback={null}><SubmitProject /></Suspense>;
+  if (view === 'super-secret-repo') return <Suspense fallback={null}><SecretRepo /></Suspense>;
 
   return (
     <div className="app">

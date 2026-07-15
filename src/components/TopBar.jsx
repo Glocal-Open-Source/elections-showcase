@@ -14,6 +14,7 @@ import {
   faSun,
   faMoon,
   faChevronDown,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 
 const cap = (s) => (s ? s.charAt(0).toUpperCase() + s.slice(1) : "");
@@ -264,6 +265,10 @@ const TopBar = ({
               <FontAwesomeIcon icon={faGrip} />
               <span className="tnav-label">Projects</span>
             </button>
+            <a href="#/submit" className="tnav-btn" aria-label="Submit a project">
+              <FontAwesomeIcon icon={faPlus} />
+              <span className="tnav-label">Submit</span>
+            </a>
           </nav>
 
           {activeNavView !== "home" && <div className="topbar-divider" />}

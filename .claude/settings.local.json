@@ -24,7 +24,13 @@
       "Bash(magick \"public/logo.png\" -trim -define trim:percent-background=20% +repage -format \"%wx%h%O\\\\n\" info:)",
       "Bash(magick \"public/logo.png\" -format \"%wx%h\\\\n\" info:)",
       "Bash(magick \"public/logo.png\" -trim +repage -crop 850x798+0+0 +repage -trim +repage \"public/globe.png\")",
-      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|gif|webp|svg|mp4|pdf\\)$\")"
+      "Bash(grep -E \"\\\\.\\(png|jpg|jpeg|gif|webp|svg|mp4|pdf\\)$\")",
+      "Bash(sed -i 's|^import \\\\\\([A-Za-z0-9_]*\\\\\\) from \"\\\\\\(\\\\.\\\\./content/[^\"]*\\\\\\)\";$|const \\\\1 = lazy\\(\\(\\) => import\\(\"\\\\2\"\\)\\);|' src/data/projects.js)",
+      "Bash(sed -i '1i import { lazy } from \"react\";' src/data/projects.js)",
+      "Bash(npx eslint *)",
+      "Bash(taskkill //F //IM node.exe //FI \"WINDOWTITLE eq vite*\")",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //PID 32312)"
     ]
   }
 }
