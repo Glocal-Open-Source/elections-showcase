@@ -5,13 +5,31 @@
     <link rel="icon" type="image/svg+xml" href="/showcase/leaf.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GLOCAL • Open Source Projects</title>
+    <meta name="description" content="Explore youth-led open source projects from the GLOCAL Foundation of Canada — reports, data tools, and civic engagement initiatives from across the country." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GLOCAL • Open Source Projects" />
+    <meta property="og:description" content="Explore youth-led open source projects from the GLOCAL Foundation of Canada — reports, data tools, and civic engagement initiatives from across the country." />
+    <meta property="og:image" content="https://glocal-open-source.github.io/showcase/logo.png" />
+    <meta property="og:url" content="https://glocal-open-source.github.io/showcase/" />
+    <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="/showcase/assets/index-DfPYna8i.js"></script>
-    <link rel="stylesheet" crossorigin href="/showcase/assets/index-Dl_NsSh_.css">
+    <script type="module" crossorigin src="/showcase/assets/index-Cwyv38wX.js"></script>
+    <link rel="modulepreload" crossorigin href="/showcase/assets/react-Bzgz95E1.js">
+    <link rel="modulepreload" crossorigin href="/showcase/assets/motion-e2F-A5yu.js">
+    <link rel="modulepreload" crossorigin href="/showcase/assets/icons-Bnn3sYZl.js">
+    <link rel="stylesheet" crossorigin href="/showcase/assets/index-hGmZPjS6.css">
   </head>
   <body>
+    <script>
+      // Set theme before first paint to avoid a light-mode flash for dark users.
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    </script>
     <div id="root"></div>
   </body>
 </html>
