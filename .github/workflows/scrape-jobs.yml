@@ -1,0 +1,64 @@
+name: Scrape jobs & publish
+
+on:
+  schedule:
+    # Every Monday at 13:00 UTC
+    - cron: "0 13 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install scraper dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Install Playwright Chromium
+        run: python -m playwright install chromium --with-deps
+
+      - name: Run job scraper
+        working-directory: scripts
+        run: python scrape_jobs.py
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Regenerate jobs data
+        run: npm run build:jobs
+
+      - name: Commit refreshed job data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/scraped_jobs.csv src/data/jobs.js
+          git diff --cached --quiet || git commit -m "chore: weekly job listings refresh"
+          git push
+
+      - name: Build site
+        run: npm run build
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

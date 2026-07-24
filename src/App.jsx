@@ -10,6 +10,7 @@ import "./App.css";
 const TagTool       = lazy(() => import("./components/TagTool"));
 const SecretRepo    = lazy(() => import("./components/SecretRepo"));
 const SubmitProject = lazy(() => import("./components/SubmitProject"));
+const JobsBoard     = lazy(() => import("./components/JobsBoard"));
 
 const PROVINCE_TAGS = {
   "british-columbia":   "British Columbia",
@@ -41,6 +42,7 @@ const parseHash = () => {
   if (hash === '/tag-tool') return { view: 'tag-tool', selectedProject: null };
   if (hash === '/submit') return { view: 'submit', selectedProject: null };
   if (hash === '/super-secret-repo') return { view: 'super-secret-repo', selectedProject: null };
+  if (hash.startsWith('/jobs-board')) return { view: 'jobs-board', selectedProject: null };
   return { view: 'grid', selectedProject: null };
 };
 
@@ -183,6 +185,7 @@ function App() {
   if (view === 'tag-tool') return <Suspense fallback={null}><TagTool /></Suspense>;
   if (view === 'submit') return <Suspense fallback={null}><SubmitProject /></Suspense>;
   if (view === 'super-secret-repo') return <Suspense fallback={null}><SecretRepo /></Suspense>;
+  if (view === 'jobs-board') return <Suspense fallback={null}><JobsBoard /></Suspense>;
 
   return (
     <div className="app">
