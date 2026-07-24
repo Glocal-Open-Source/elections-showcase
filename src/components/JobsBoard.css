@@ -1,4 +1,21 @@
 .jb-page {
+  /* Always light, regardless of the showcase app's dark/light theme state —
+     this page is an embeddable widget dropped into third-party sites and
+     must not shift with the visitor's OS/browser color-scheme preference. */
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel-strong: #f8f7f5;
+  --text: #0c0913;
+  --text-2: rgba(12, 9, 19, 0.56);
+  --text-3: rgba(12, 9, 19, 0.36);
+  --accent: #6d28d9;
+  --accent-light: rgba(109, 40, 217, 0.08);
+  --accent-border: rgba(109, 40, 217, 0.22);
+  --border: rgba(12, 9, 19, 0.08);
+  --border-2: rgba(12, 9, 19, 0.14);
+  --shadow-soft: 0 1px 4px rgba(12, 9, 19, 0.05);
+  --shadow-hover: 0 12px 40px rgba(109, 40, 217, 0.14);
+
   max-width: 1080px;
   margin: 0 auto;
   padding: 20px 20px 60px;
@@ -159,4 +176,7 @@
 
 @media (max-width: 560px) {
   .jb-page { padding: 16px 16px 48px; }
+  .jb-grid { grid-template-columns: 1fr; }
+  .jb-chip { padding: 10px 16px; font-size: 0.88rem; }
+  .jb-card { height: auto; min-height: 220px; }
 }

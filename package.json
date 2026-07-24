@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "build:jobs": "node scripts/build-jobs-data.mjs",
     "predeploy": "node -e \"require('fs').writeFileSync('dist/.nojekyll','')\"",
-    "deploy": "gh-pages -d dist --dotfiles"
+    "deploy": "gh-pages -d dist --dotfiles --add"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
