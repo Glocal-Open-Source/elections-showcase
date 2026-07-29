@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """
 Government job scraper for the GLOCAL newsletter Canadian provincial & federal job boards.
-Output CSV columns: source, title, department/ministry, location, employment_type, Duration, Salary, url
+Output CSV columns: source, title, department/ministry, location, employment_type, Duration,
+Closing Date, Salary, url
+
+"Duration" is the job's term length (e.g. "6 months", "Summer") when a source states one.
+"Closing Date" is the application deadline. These are never the same thing — several sources
+(Nova Scotia, Manitoba, New Brunswick, Saskatchewan, Ontario, BC, federal, Senate) only expose
+a deadline, not a term length, so it belongs in its own column rather than being mislabeled
+as a duration.
 """
 
 import csv
@@ -36,7 +43,7 @@ OUTPUT_CSV = "scraped_jobs.csv"
 DELAY = 1.5
 FIELDNAMES = [
     "source", "title", "department/ministry", "location",
-    "employment_type", "Duration", "Salary", "url",
+    "employment_type", "Duration", "Closing Date", "Salary", "url",
 ]
 
 YOUTH_KEYWORDS = {
@@ -92,6 +99,7 @@ class Job:
     location: str = ""
     employment_type: str = ""
     duration: str = ""
+    closing_date: str = ""
     salary: str = ""
     url: str = ""
 
@@ -103,6 +111,7 @@ class Job:
             "location": self.location,
             "employment_type": self.employment_type,
             "Duration": self.duration,
+            "Closing Date": self.closing_date,
             "Salary": self.salary,
             "url": self.url,
         }
@@ -349,7 +358,7 @@ def scrape_nova_scotia(limit: int = 30) -> List[Job]:
             jobs.append(Job(
                 source="Nova Scotia",
                 title=title, department=dept, location=location,
-                duration=closing, salary=salary,
+                closing_date=closing, salary=salary,
                 url=job_url,
             ))
 
@@ -406,7 +415,7 @@ def scrape_ontario(limit: int = 30) -> List[Job]:
                     title=title,
                     department=_gojobs_field(raw, "Organization"),
                     location=_gojobs_field(raw, "Location"),
-                    duration=_gojobs_field(raw, "Closing Date"),
+                    closing_date=_gojobs_field(raw, "Closing Date"),
                     salary=_gojobs_field(raw, "Salary"),
                     url=job_url,
                 ))
@@ -452,7 +461,7 @@ def scrape_manitoba(limit: int = 30) -> List[Job]:
             department=fields.get("Department", ""),
             location=fields.get("Location(s)", ""),
             employment_type=fields.get("Job Type(s)", ""),
-            duration=fields.get("Closing Date", ""),
+            closing_date=fields.get("Closing Date", ""),
             salary=extract_salary(fields.get("Salary(s)", "")),
             url=link,
         ))
@@ -522,7 +531,7 @@ def scrape_new_brunswick(limit: int = 30) -> List[Job]:
             title=title,
             department=dept,
             location=location,
-            duration=closing,
+            closing_date=closing,
             url=job_url,
         ))
 
@@ -575,7 +584,8 @@ def scrape_nunavut(limit: int = 20) -> List[Job]:
 
 def _parse_nwt_title(text: str):
     """NWT link text format: '{Title} $Xk - $Yk {City} Closes: {date}'
-    Returns (title, salary, location, duration).
+    Returns (title, salary, location, closing_date). The trailing "Closes: {date}"
+    (or "Open until filled") is an application deadline, not a job term length.
     """
     m = re.search(r'\$(\d+k?)\s*[-–]\s*\$(\d+k?)', text, re.I)
     if not m:
@@ -592,15 +602,15 @@ def _parse_nwt_title(text: str):
 
     if closes_m:
         location = remainder[:closes_m.start()].strip()
-        duration = closes_m.group(1).strip()
+        closing_date = closes_m.group(1).strip()
     elif open_m:
         location = remainder[:open_m.start()].strip()
-        duration = "Open until filled"
+        closing_date = "Open until filled"
     else:
         location = remainder
-        duration = ""
+        closing_date = ""
 
-    return title, salary, location, duration
+    return title, salary, location, closing_date
 
 
 def scrape_nwt(limit: int = 20) -> List[Job]:
@@ -630,11 +640,11 @@ def scrape_nwt(limit: int = 20) -> List[Job]:
             continue
         seen.add(job_url)
 
-        title, salary, location, duration = _parse_nwt_title(text)
+        title, salary, location, closing_date = _parse_nwt_title(text)
 
         jobs.append(Job(
             source="Northwest Territories",
-            title=title, salary=salary, location=location, duration=duration,
+            title=title, salary=salary, location=location, closing_date=closing_date,
             url=job_url,
         ))
         if len(jobs) >= limit:
@@ -677,7 +687,7 @@ def scrape_saskatchewan(limit: int = 30) -> List[Job]:
             title=req.get("Title", ""),
             department=dept,
             location=req.get("PrimaryLocation", ""),
-            duration=req.get("PostingEndDate", ""),
+            closing_date=req.get("PostingEndDate", ""),
             url=f"https://careers.saskatchewan.ca/en/sites/CX_1/job/{req.get('Id')}",
         ))
         if len(jobs) >= limit:
@@ -749,7 +759,8 @@ def scrape_bc(limit: int = 30) -> List[Job]:
             department=clean(cells[0]),
             location=location,
             employment_type=clean(cells[4]),
-            duration=clean(cells[7]),
+            # Column 7 in this HRSmart grid is "Close Date", not a job term length.
+            closing_date=clean(cells[7]),
             url=job_url,
         ))
         if len(jobs) >= limit:
@@ -872,7 +883,7 @@ def scrape_senate(limit: int = 30) -> List[Job]:
             job.salary           = extract_salary(_field("Classification", "Job Type|Location"))
             m = re.search(r'Closing Date:\s*(\w+, \w+ \d{1,2}, \d{4})', text)
             if m:
-                job.duration = m.group(1)
+                job.closing_date = m.group(1)
             loc = _field("Location", "Closing Date")
             if loc:
                 job.location = re.sub(r',\s*Canada$', '', loc).replace(", Ontario", ", ON")
@@ -960,7 +971,7 @@ def scrape_federal(limit: int = 30) -> List[Job]:
                         title=title,
                         department=fields["dept"],
                         location=fields["location"],
-                        duration=fields["closing"],
+                        closing_date=fields["closing"],
                         salary=fields["salary"],
                         url=job_url,
                     ))
@@ -982,7 +993,8 @@ def scrape_federal(limit: int = 30) -> List[Job]:
 _DEPT_RE     = re.compile(r'(?:ministry|department|division|branch|organization|employer)\s*[:\-]\s*([^\n|<]{3,80})', re.I)
 _LOCATION_RE = re.compile(r'(?:location|city|region|work location|workplace)\s*[:\-]\s*([^\n|<]{3,80})', re.I)
 _TYPE_RE     = re.compile(r'(?:employment type|job type|appointment type|type of employment)\s*[:\-]\s*([^\n|<]{3,60})', re.I)
-_DURATION_RE = re.compile(r'(?:duration|term length|closing date|close date|deadline|apply by)\s*[:\-]\s*([^\n|<]{3,60})', re.I)
+_DURATION_RE = re.compile(r'(?:duration|term length|contract length|assignment length)\s*[:\-]\s*([^\n|<]{3,60})', re.I)
+_CLOSING_DATE_RE = re.compile(r'(?:closing date|close date|deadline|apply by|application deadline)\s*[:\-]\s*([^\n|<]{3,60})', re.I)
 _SALARY_RE   = re.compile(
     r'\$[\d,]+(?:\.\d+)?(?:\s*(?:to|[-–])\s*\$[\d,]+(?:\.\d+)?)?'
     r'(?:\s*(?:per|/)\s*(?:hour|hr|year|yr|annum|week|wk))?', re.I,
@@ -1007,6 +1019,7 @@ def enrich_job(job: Job) -> Job:
     if not job.department:    job.department    = _find(_DEPT_RE)
     if not job.location:      job.location      = _find(_LOCATION_RE)
     if not job.duration:      job.duration      = _find(_DURATION_RE)
+    if not job.closing_date:  job.closing_date  = _find(_CLOSING_DATE_RE)
     if not job.salary:
         m = _SALARY_RE.search(text)
         job.salary = m.group(0).strip() if m else ""

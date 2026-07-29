@@ -71,16 +71,20 @@ export default function JobsBoard() {
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.22, delay: Math.min(i, 16) * 0.02, ease: [0.2, 0, 0, 1] }}
               >
-                <div className="jb-card-top">
-                  <span className="jb-badge">{job.source}</span>
-                  {job.employmentType && <span className="jb-badge jb-badge-2">{job.employmentType}</span>}
+                <div className="jb-card-head">
+                  <span className="jb-eyebrow">{job.source}</span>
+                  {job.isProgram ? (
+                    <span className="jb-pill jb-pill-program">Opportunity</span>
+                  ) : (
+                    job.employmentType && <span className="jb-pill">{job.employmentType}</span>
+                  )}
                 </div>
                 <h2 className="jb-card-title">{job.title}</h2>
-                <div className="jb-card-dept">{job.department || " "}</div>
-                <div className="jb-card-facts">
-                  <span className="jb-fact">{job.location ? `📍 ${job.location}` : ""}</span>
-                  <span className="jb-fact">{job.duration ? `🗓 ${job.duration}` : ""}</span>
-                  <span className="jb-fact">{job.salary ? `💰 ${job.salary}` : ""}</span>
+                <div className="jb-card-dept">{job.department || " "}</div>
+                <div className="jb-card-meta">
+                  {[job.location, job.closingDate ? `Closes ${job.closingDate}` : job.duration, job.salary]
+                    .filter(Boolean)
+                    .join("  ·  ")}
                 </div>
                 <a
                   className="jb-card-link"
