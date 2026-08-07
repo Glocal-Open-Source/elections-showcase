@@ -61,7 +61,7 @@ export default function SubmitProject() {
       return;
     }
     if (file.size > MAX_THUMB_BYTES) {
-      setErrors(["Thumbnail must be under 2 MB. Please resize or compress the image."]);
+      setErrors(["Thumbnail must be smaller than 2 MB."]);
       e.target.value = "";
       return;
     }
@@ -135,23 +135,22 @@ export default function SubmitProject() {
     <div className="sp-page">
       <header className="sp-header">
         <a href="#/projects" className="sp-back">← Back to projects</a>
-        <h1>Submit a Project</h1>
+        <h1>Create Project Package</h1>
         <p className="sp-intro">
-          Fill in the details below and download your project package. Send the
-          downloaded <code>.json</code> file to the GLOCAL team — we review every
-          submission before it appears on the showcase.
+          Staff tool for creating project import packages. Enter the project details,
+          then download the JSON file.
         </p>
       </header>
 
       {errors.length > 0 && (
         <div className="sp-alert sp-alert-error" role="alert">
-          <strong>Please fix the following:</strong>
+          <strong>Fix these fields:</strong>
           <ul>{errors.map((e, i) => <li key={i}>{e}</li>)}</ul>
         </div>
       )}
       {exported && errors.length === 0 && (
         <div className="sp-alert sp-alert-ok" role="status">
-          Package downloaded. Email it to the GLOCAL team to complete your submission.
+          Package downloaded. Import the JSON file with the project importer.
         </div>
       )}
 
@@ -177,7 +176,7 @@ export default function SubmitProject() {
                 list="sp-categories"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                placeholder="Pick one or type your own"
+                placeholder="Select or enter a category"
                 maxLength={80}
               />
               <datalist id="sp-categories">
@@ -286,7 +285,7 @@ export default function SubmitProject() {
         </section>
 
         <section className="sp-card">
-          <h2>Thumbnail &amp; Contact</h2>
+          <h2>Thumbnail &amp; Submitter</h2>
           <label className="sp-field">
             <span>Thumbnail image <em>(optional, under 2 MB)</em></span>
             <input type="file" accept={THUMBNAIL_TYPES.join(",")} onChange={onThumbnailChange} />
@@ -301,11 +300,11 @@ export default function SubmitProject() {
           )}
           <div className="sp-row">
             <label className="sp-field">
-              <span>Your name</span>
+              <span>Submitter name</span>
               <input value={submitterName} onChange={(e) => setSubmitterName(e.target.value)} maxLength={100} />
             </label>
             <label className="sp-field">
-              <span>Your email <em>(so we can follow up)</em></span>
+              <span>Submitter email</span>
               <input
                 value={submitterEmail}
                 onChange={(e) => setSubmitterEmail(e.target.value)}
@@ -318,7 +317,7 @@ export default function SubmitProject() {
 
         <div className="sp-actions">
           <button type="button" className="sp-export" onClick={handleExport}>
-            Download project package
+            Download JSON package
           </button>
         </div>
       </div>
