@@ -31,7 +31,6 @@ import_project_exports.py
 project_tool.py
 tools/
 imports/
-ADDING_PROJECTS.md
 ARCHITECTURE.md
 bulk_project_adder/
 bulk_project_adder.zip

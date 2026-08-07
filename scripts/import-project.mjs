@@ -4,7 +4,7 @@
 // to src/data/projects.js.
 //
 // Usage:
-//   node scripts/import-project.mjs <package.json> [--cohort "NYSN"] [--id 400] [--dry-run]
+//   npm run project:import -- <package.json> [--cohort "NYSN"] [--id 400] [--dry-run]
 
 import fs from "node:fs";
 import path from "node:path";
@@ -18,23 +18,48 @@ const THUMBS_DIR = path.join(ROOT, "public", "thumbnails");
 const TYPES = ["report", "data", "interactive", "events"];
 const COHORT_RE = /^(Admin|NYSN|Intern|Microgrant \d{4})$/;
 const IMAGE_MIMES = { "image/png": "png", "image/jpeg": "jpg", "image/webp": "webp", "image/gif": "gif" };
+const USAGE = `Usage:
+  npm run project:import -- <project-package.json> [options]
+
+Options:
+  --cohort <value>  Admin | NYSN | Intern | Microgrant 20XX (default: NYSN)
+  --id <number>     Override the automatically assigned project ID
+  --dry-run         Validate and preview without writing files
+  -h, --help        Show this help`;
 
 // ── CLI args ─────────────────────────────────────────────────────────────────
 const args = process.argv.slice(2);
 const flags = { cohort: "NYSN", id: null, dryRun: false };
 let pkgPath = null;
 for (let i = 0; i < args.length; i++) {
-  if (args[i] === "--cohort") flags.cohort = args[++i];
-  else if (args[i] === "--id") flags.id = parseInt(args[++i], 10);
+  if (args[i] === "-h" || args[i] === "--help") {
+    console.log(USAGE);
+    process.exit(0);
+  }
+  if (args[i] === "--cohort") {
+    if (!args[i + 1]) fail("--cohort requires a value");
+    flags.cohort = args[++i];
+  }
+  else if (args[i] === "--id") {
+    if (!args[i + 1]) fail("--id requires a number");
+    flags.id = Number(args[++i]);
+    if (!Number.isSafeInteger(flags.id) || flags.id < 1) fail("--id must be a positive integer");
+  }
   else if (args[i] === "--dry-run") flags.dryRun = true;
+  else if (args[i].startsWith("--")) fail(`Unknown option: ${args[i]}\n\n${USAGE}`);
   else if (!pkgPath) pkgPath = args[i];
   else fail(`Unexpected argument: ${args[i]}`);
 }
-if (!pkgPath) fail("Usage: node scripts/import-project.mjs <package.json> [--cohort <value>] [--id <n>] [--dry-run]");
+if (!pkgPath) fail(USAGE);
 
 function fail(msg) {
   console.error(`✖ ${msg}`);
   process.exit(1);
+}
+
+pkgPath = path.resolve(pkgPath);
+if (!fs.existsSync(pkgPath) || !fs.statSync(pkgPath).isFile()) {
+  fail(`Package file not found: ${pkgPath}`);
 }
 
 // ── Load & validate package ──────────────────────────────────────────────────
@@ -43,6 +68,9 @@ try {
   pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
 } catch (e) {
   fail(`Could not read package: ${e.message}`);
+}
+if (!pkg || typeof pkg !== "object" || Array.isArray(pkg)) {
+  fail("Project package must be a JSON object");
 }
 
 const isStr = (v) => typeof v === "string";
@@ -99,6 +127,11 @@ if (!/^[A-Za-z]/.test(baseName)) baseName = `Project${baseName}`;
 if (!baseName) baseName = "UntitledProject";
 
 const projectsSrc = fs.readFileSync(PROJECTS_FILE, "utf8");
+const titleLiteral = JSON.stringify(pkg.title.trim());
+if (projectsSrc.includes(`title: ${titleLiteral},`)) {
+  fail(`A project titled ${titleLiteral} already exists. This package may already have been imported.`);
+}
+
 let componentName = baseName;
 for (let n = 2; fs.existsSync(path.join(CONTENT_DIR, `${componentName}.jsx`)) ||
                 projectsSrc.includes(`const ${componentName} `); n++) {
@@ -106,7 +139,7 @@ for (let n = 2; fs.existsSync(path.join(CONTENT_DIR, `${componentName}.jsx`)) ||
 }
 
 const usedIds = [...projectsSrc.matchAll(/^\s*id:\s*(\d+)\s*,/gm)].map((m) => parseInt(m[1], 10));
-const id = flags.id ?? Math.max(...usedIds) + 1;
+const id = flags.id ?? Math.max(0, ...usedIds) + 1;
 if (usedIds.includes(id)) fail(`id ${id} is already in use`);
 
 // ── Generate content component ────────────────────────────────────────────────
@@ -161,7 +194,11 @@ ${sectionsJsx.join("\n\n")}
 let imagePath = "";
 let thumbFile = null;
 if (thumbBuffer) {
-  thumbFile = `${slug}-thumbnail.${thumbExt}`;
+  const baseThumbFile = `${slug}-thumbnail`;
+  thumbFile = `${baseThumbFile}.${thumbExt}`;
+  for (let n = 2; fs.existsSync(path.join(THUMBS_DIR, thumbFile)); n++) {
+    thumbFile = `${baseThumbFile}-${n}.${thumbExt}`;
+  }
   imagePath = `thumbnails/${thumbFile}`;
 }
 
@@ -216,4 +253,4 @@ if (thumbBuffer) {
 }
 fs.writeFileSync(PROJECTS_FILE, patched);
 
-console.log("\n✔ Imported. Review the diff, run the dev server to check the project page.");
+console.log("\n✔ Imported. Next: review the diff, then run npm run lint and npm run build.");

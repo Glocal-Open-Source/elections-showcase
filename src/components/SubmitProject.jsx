@@ -5,6 +5,7 @@ import "./SubmitProject.css";
 const PACKAGE_VERSION = 1;
 const TYPE_OPTIONS = ["report", "data", "interactive", "events"];
 const MAX_THUMB_BYTES = 2 * 1024 * 1024;
+const THUMBNAIL_TYPES = ["image/png", "image/jpeg", "image/webp", "image/gif"];
 
 const slugify = (s) =>
   s
@@ -54,8 +55,8 @@ export default function SubmitProject() {
   const onThumbnailChange = (e) => {
     const file = e.target.files?.[0];
     if (!file) { setThumbnail(null); return; }
-    if (!file.type.startsWith("image/")) {
-      setErrors(["Thumbnail must be an image file."]);
+    if (!THUMBNAIL_TYPES.includes(file.type)) {
+      setErrors(["Thumbnail must be a PNG, JPEG, WebP, or GIF image."]);
       e.target.value = "";
       return;
     }
@@ -288,7 +289,7 @@ export default function SubmitProject() {
           <h2>Thumbnail &amp; Contact</h2>
           <label className="sp-field">
             <span>Thumbnail image <em>(optional, under 2 MB)</em></span>
-            <input type="file" accept="image/*" onChange={onThumbnailChange} />
+            <input type="file" accept={THUMBNAIL_TYPES.join(",")} onChange={onThumbnailChange} />
           </label>
           {thumbnail && (
             <div className="sp-thumb-preview">
