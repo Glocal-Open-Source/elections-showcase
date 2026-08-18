@@ -137,8 +137,7 @@ export default function SubmitProject() {
         <a href="#/projects" className="sp-back">← Back to projects</a>
         <h1>Create Project Package</h1>
         <p className="sp-intro">
-          Staff tool for creating project import packages. Enter the project details,
-          then download the JSON file.
+          Staff only. Create a JSON package, validate it, then import it into the showcase.
         </p>
       </header>
 
@@ -155,6 +154,76 @@ export default function SubmitProject() {
       )}
 
       <div className="sp-form">
+        <section className="sp-card sp-workflow">
+          <h2>Import workflow</h2>
+          <ol>
+            <li>
+              <strong>Complete the form.</strong>
+              <p>
+                Enter the title, type, category, and card description. Add at least
+                one content section or an HTTPS project URL. Check all copy, tags,
+                names, links, and the thumbnail before continuing.
+              </p>
+            </li>
+            <li>
+              <strong>Download the package.</strong>
+              <p>
+                Click <strong>Download JSON package</strong> at the bottom of this page. Keep
+                the downloaded <code>project-package-*.json</code> file outside the
+                repository. It is import input and should not be committed.
+              </p>
+            </li>
+            <li>
+              <strong>Open a terminal in the repository root.</strong>
+              <p>Install dependencies if this checkout has not been set up:</p>
+              <pre><code>npm ci</code></pre>
+            </li>
+            <li>
+              <strong>Validate the package without changing files.</strong>
+              <pre><code>{`npm run project:import -- "path/to/project-package.json" --cohort "Intern" --dry-run`}</code></pre>
+              <p>
+                Use <code>Admin</code>, <code>NYSN</code>, <code>Intern</code>, or
+                <code>Microgrant 20XX</code> as the cohort. The cohort defaults to
+                <code>NYSN</code> when the option is omitted. Read the validation
+                output and correct this form if any field is rejected.
+              </p>
+            </li>
+            <li>
+              <strong>Import the package.</strong>
+              <p>Run the same command without <code>--dry-run</code>:</p>
+              <pre><code>{`npm run project:import -- "path/to/project-package.json" --cohort "Intern"`}</code></pre>
+              <p>
+                The importer assigns the next project ID, creates the overview
+                component, saves the thumbnail, and updates the project list. Do not
+                run the same package twice.
+              </p>
+            </li>
+            <li>
+              <strong>Review every generated change.</strong>
+              <pre><code>git status --short</code></pre>
+              <pre><code>git diff -- src/data/projects.js src/content</code></pre>
+              <p>
+                Confirm the assigned ID, cohort, category, type, description, tags,
+                embed URL, component import, and generated content. Confirm that the
+                thumbnail path printed by the importer exists under
+                <code> public/thumbnails/</code>. Submitter contact details must not
+                appear in public files.
+              </p>
+            </li>
+            <li>
+              <strong>Run the checks and inspect the project.</strong>
+              <pre><code>npm run lint</code></pre>
+              <pre><code>npm run build</code></pre>
+              <pre><code>npm run dev</code></pre>
+              <p>
+                Open the local site. Check the project card, thumbnail, filters,
+                Overview page, links, and embedded content. Fix all errors before
+                committing or deploying. Press <code>Ctrl+C</code> to stop the local server.
+              </p>
+            </li>
+          </ol>
+        </section>
+
         <section className="sp-card">
           <h2>Basics</h2>
           <label className="sp-field">
