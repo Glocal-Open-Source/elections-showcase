@@ -1,0 +1,1 @@
+import{j as e}from"./icons-QvIQLqtv.js";function s(){return e.jsxs("article",{style:{lineHeight:1.6},children:[e.jsxs("section",{style:{marginBottom:"1.5rem"},children:[e.jsx("h3",{children:"Project Team"}),e.jsx("p",{children:"Team Members: Terrance Micheal"})]}),e.jsx("section",{style:{marginBottom:"1.5rem"},children:e.jsx("h3",{children:"Summary"})})]})}export{s as default};
