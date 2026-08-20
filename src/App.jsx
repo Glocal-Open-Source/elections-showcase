@@ -5,6 +5,7 @@ import CardGrid from "./components/CardGrid";
 import ProjectView from "./components/ProjectView";
 import DiscoveryHub from "./components/DiscoveryHub";
 import projectsData from "./data/projects";
+import { getFilterOptions, parseFilterParams } from "./api/projects";
 import "./App.css";
 
 const TagTool       = lazy(() => import("./components/TagTool"));
@@ -30,30 +31,55 @@ const PROVINCE_TAGS = {
 
 const typeOptions = ["report", "data", "interactive", "events"];
 
+// ── URL filter sync (?type=&cohort=&category=&province=, slug or exact value) ─
+const FILTER_OPTIONS = getFilterOptions();
+
+function resolveFilterValues(options, rawValues) {
+  return rawValues
+    .map((raw) => options.find((o) => o.slug === raw.toLowerCase() || o.value === raw || o.tag === raw))
+    .filter(Boolean)
+    .map((o) => o.value);
+}
+
+function filtersFromQuery(query) {
+  const parsed = parseFilterParams(query);
+  return {
+    types: resolveFilterValues(FILTER_OPTIONS.types, parsed.types),
+    cohorts: resolveFilterValues(FILTER_OPTIONS.cohorts, parsed.cohorts),
+    categories: resolveFilterValues(FILTER_OPTIONS.categories, parsed.categories),
+    provinces: resolveFilterValues(FILTER_OPTIONS.provinces, parsed.provinces),
+  };
+}
+
+function slugFor(options, value) {
+  return options.find((o) => o.value === value)?.slug ?? value;
+}
+
 // ── Hash routing helpers ──────────────────────────────────────────────────────
 const parseHash = () => {
-  const hash = window.location.hash.slice(1);
-  if (hash.startsWith('/project/')) {
-    const id = parseInt(hash.slice('/project/'.length), 10);
+  const rawHash = window.location.hash.slice(1);
+  const [path, query] = rawHash.split('?');
+  if (path.startsWith('/project/')) {
+    const id = parseInt(path.slice('/project/'.length), 10);
     const project = projectsData.find(p => p.id === id) ?? null;
-    return { view: 'grid', selectedProject: project };
+    return { view: 'grid', selectedProject: project, filters: null };
   }
-  if (hash === '/overview' || hash === '') return { view: 'home', selectedProject: null };
-  if (hash === '/tag-tool') return { view: 'tag-tool', selectedProject: null };
-  if (hash === '/submit') return { view: 'submit', selectedProject: null };
-  if (hash === '/super-secret-repo') return { view: 'super-secret-repo', selectedProject: null };
-  if (hash.startsWith('/jobs-board')) return { view: 'jobs-board', selectedProject: null };
-  return { view: 'grid', selectedProject: null };
+  if (path === '/overview' || path === '') return { view: 'home', selectedProject: null, filters: null };
+  if (path === '/tag-tool') return { view: 'tag-tool', selectedProject: null, filters: null };
+  if (path === '/submit') return { view: 'submit', selectedProject: null, filters: null };
+  if (path === '/super-secret-repo') return { view: 'super-secret-repo', selectedProject: null, filters: null };
+  if (path.startsWith('/jobs-board')) return { view: 'jobs-board', selectedProject: null, filters: null };
+  return { view: 'grid', selectedProject: null, filters: query ? filtersFromQuery(query) : null };
 };
 
 function App() {
   const initial = parseHash();
   const [view, setView]                       = useState(initial.view);
   const [selectedProject, setSelectedProject] = useState(initial.selectedProject);
-  const [activeTypes, setActiveTypes]           = useState([]);
-  const [activeCategories, setActiveCategories] = useState([]);
-  const [activeCohorts, setActiveCohorts]       = useState([]);
-  const [activeProvinces, setActiveProvinces]   = useState([]);
+  const [activeTypes, setActiveTypes]           = useState(initial.filters?.types ?? []);
+  const [activeCategories, setActiveCategories] = useState(initial.filters?.categories ?? []);
+  const [activeCohorts, setActiveCohorts]       = useState(initial.filters?.cohorts ?? []);
+  const [activeProvinces, setActiveProvinces]   = useState(initial.filters?.provinces ?? []);
 
   // ── Theme ─────────────────────────────────────────────────────────────────
   const [isDark, setIsDark] = useState(() => {
@@ -163,16 +189,38 @@ function App() {
 
   useEffect(() => {
     const onHashChange = () => {
-      const { view: nextView, selectedProject: nextProject } = parseHash();
+      const { view: nextView, selectedProject: nextProject, filters } = parseHash();
       flushSync(() => {
         setView(nextView);
         setSelectedProject(nextProject);
+        if (filters) {
+          setActiveTypes(filters.types);
+          setActiveCohorts(filters.cohorts);
+          setActiveCategories(filters.categories);
+          setActiveProvinces(filters.provinces);
+        }
       });
       scrollTop();
     };
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
+
+  // Keep the URL's query string in sync with active filters (shareable links,
+  // e.g. #/projects?province=ab) without polluting browser history.
+  useEffect(() => {
+    if (view !== 'grid' || selectedProject) return;
+    const params = new URLSearchParams();
+    activeTypes.forEach((v) => params.append('type', slugFor(FILTER_OPTIONS.types, v)));
+    activeCohorts.forEach((v) => params.append('cohort', slugFor(FILTER_OPTIONS.cohorts, v)));
+    activeCategories.forEach((v) => params.append('category', slugFor(FILTER_OPTIONS.categories, v)));
+    activeProvinces.forEach((v) => params.append('province', slugFor(FILTER_OPTIONS.provinces, v)));
+    const query = params.toString();
+    const newHash = `#/projects${query ? `?${query}` : ''}`;
+    if (window.location.hash !== newHash) {
+      window.history.replaceState(null, '', newHash);
+    }
+  }, [view, selectedProject, activeTypes, activeCohorts, activeCategories, activeProvinces]);
 
   // ── Navigation ────────────────────────────────────────────────────────────
   const handleSelectProject = (project) => { window.location.hash = `/project/${project.id}`; };

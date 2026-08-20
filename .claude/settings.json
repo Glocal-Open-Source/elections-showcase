@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx eslint *)"
+      "Bash(npx eslint *)",
+      "Bash(npm ping *)",
+      "Read(//c/Users/danie/AppData/Local/npm-cache/_logs/**)",
+      "Bash(tail -30 \"C:\\\\Users\\\\danie\\\\AppData\\\\Local\\\\npm-cache\\\\_logs\\\\2026-08-20T18_49_20_635Z-debug-0.log\" 2>&1)",
+      "Bash(curl -s \"http://localhost:5173/showcase/#/projects?province=ab\" -o /dev/null -w \"root status: %{http_code}\\\\n\")",
+      "Bash(curl -s \"http://localhost:5173/showcase/src/App.jsx\" -o /dev/null -w \"app.jsx status: %{http_code}\\\\n\")",
+      "Bash(chromium-cli --help)"
     ]
   }
 }

@@ -53,3 +53,7 @@ public/content/
 public/thumbnails/
 public/globe.png
 thumbnails/
+
+# Generated snapshot of src/data/projects.js for the worker/API — regenerated
+# by npm run data:json (also runs automatically before build/worker:deploy).
+public/data/
