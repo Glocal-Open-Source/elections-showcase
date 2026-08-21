@@ -1,1 +1,0 @@
-import{j as e}from"./motion-e2F-A5yu.js";import"./react-Bzgz95E1.js";function i(){return e.jsx("article",{style:{lineHeight:1.6},children:e.jsxs("section",{style:{marginBottom:"1.5rem"},children:[e.jsx("h3",{children:"Project Team"}),e.jsx("p",{children:"Team Members: Bupa"})]})})}export{i as default};
